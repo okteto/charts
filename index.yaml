@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  hello-world:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: 2019-10-06T10:25:59.200917-07:00
+    description: A Helm chart for Kubernetes
+    digest: f73768b2a754657076a8b1981748c9cb02ea656b18b4ace63a618773e5086bfb
+    name: hello-world
+    urls:
+    - https://charts.okteto.com/hello-world/hello-world-0.1.0.tgz
+    version: 0.1.0
+generated: 2019-10-06T10:25:59.199658-07:00
