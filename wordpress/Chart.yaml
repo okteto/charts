@@ -16,6 +16,6 @@ home: http://www.wordpress.com/
 sources:
 - https://github.com/bitnami/bitnami-docker-wordpress
 maintainers:
-- name: Bitnami
-  email: containers@bitnami.com
+- name: okteto
+  email: hello@okteto.com
 engine: gotpl
