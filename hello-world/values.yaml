@@ -1,7 +1,6 @@
 replicaCount: 1
 
-image:
-  repository: okteto/hello-world:golang
+image: okteto/hello-world:golang
 
 service:
   type: ClusterIP

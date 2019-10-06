@@ -1,0 +1,13 @@
+image:
+  tag: 10.3.18-debian-9-r0
+
+rootUser:
+  password: okteto
+
+db:
+  user: okteto
+  password: okteto
+  name: okteto
+
+replication:
+  enabled: false

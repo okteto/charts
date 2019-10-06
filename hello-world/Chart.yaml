@@ -1,6 +1,7 @@
 apiVersion: v2
 name: hello-world
-description: Hello world chart for Okteto Cloud
+description: Hello world chart for Okteto Cloud 
+icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -15,7 +16,3 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 version: 0.1.0
-
-# This is the version number of the application being deployed. This version number should be
-# incremented each time you make changes to the application.
-appVersion: 1.16.0
