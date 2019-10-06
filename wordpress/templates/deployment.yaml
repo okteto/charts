@@ -134,32 +134,6 @@ spec:
         ports:
         - name: http
           containerPort: 80
-        - name: https
-          containerPort: 443
-        livenessProbe:
-          httpGet:
-            path: /wp-login.php
-            port: {{ ternary "https" "http" .Values.healthcheckHttps }}
-            {{- if .Values.healthcheckHttps }}
-            scheme: HTTPS
-            {{- end }}
-          {{- if .Values.livenessProbeHeaders }}
-            httpHeaders:
-{{ toYaml .Values.livenessProbeHeaders | indent 14 }}
-          {{- end }}
-{{ toYaml .Values.livenessProbe | indent 10 }}
-        readinessProbe:
-          httpGet:
-            path: /wp-login.php
-            port: {{ ternary "https" "http" .Values.healthcheckHttps }}
-            {{- if .Values.healthcheckHttps }}
-            scheme: HTTPS
-            {{- end }}
-          {{- if .Values.readinessProbeHeaders }}
-            httpHeaders:
-{{ toYaml .Values.readinessProbeHeaders | indent 14 }}
-          {{- end }}
-{{ toYaml .Values.readinessProbe | indent 10 }}
         volumeMounts:
         - mountPath: /bitnami/wordpress
           name: wordpress-data

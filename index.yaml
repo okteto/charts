@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   hello-world:
   - apiVersion: v2
-    created: "2019-10-06T21:44:59.393863736Z"
+    created: "2019-10-06T23:44:57.089822183Z"
     description: Hello world chart for Okteto Cloud
     digest: 9a8ab0c6d40f190905f4054428db984456901cc3a94b7c0f55b7d7a3e67d35dc
     icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
@@ -13,7 +13,7 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.18
-    created: "2019-10-06T21:44:59.397591678Z"
+    created: "2019-10-06T23:44:57.092872676Z"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
@@ -39,7 +39,7 @@ entries:
   mongodb:
   - apiVersion: v1
     appVersion: 4.0.12
-    created: "2019-10-06T21:44:59.399951937Z"
+    created: "2019-10-06T23:44:57.094522708Z"
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
@@ -65,7 +65,7 @@ entries:
   postgresql:
   - apiVersion: v1
     appVersion: 11.5.0
-    created: "2019-10-06T21:44:59.401675635Z"
+    created: "2019-10-06T23:44:57.096839647Z"
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
     digest: e75d7c778c6ee4104a6abd59ad60e5b27bf759ec062735f62947f29cf699085e
@@ -92,7 +92,7 @@ entries:
   rabbitmq:
   - apiVersion: v1
     appVersion: 3.7.19
-    created: "2019-10-06T21:44:59.403704923Z"
+    created: "2019-10-06T23:44:57.099441429Z"
     description: Open source message broker software that implements the Advanced
       Message Queuing Protocol (AMQP)
     digest: 1f9bdf7757b60eea6451a445c24ad795c95a94b5c358ad4f1174cd88259a0ed6
@@ -114,7 +114,7 @@ entries:
   redis:
   - apiVersion: v1
     appVersion: 5.0.5
-    created: "2019-10-06T21:44:59.40653255Z"
+    created: "2019-10-06T23:44:57.176157739Z"
     description: Open source, advanced key-value store. It is often referred to as
       a data structure server since keys can contain strings, hashes, lists, sets
       and sorted sets.
@@ -134,4 +134,36 @@ entries:
     urls:
     - https://apps.okteto.com/redis/redis-9.2.2.tgz
     version: 9.2.2
-generated: "2019-10-06T21:44:59.393153385Z"
+  wordpress:
+  - apiVersion: v1
+    appVersion: 5.2.3
+    created: "2019-10-06T23:44:57.182066963Z"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      tags:
+      - wordpress-database
+      version: 6.x.x
+    description: Web publishing platform for building blogs and websites.
+    digest: bf7dcde174791c248baea0492bc1e051321f3537655c3672f798ecbb9f7499a6
+    home: http://www.wordpress.com/
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - wordpress
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: hello@okteto.com
+      name: okteto
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    urls:
+    - https://apps.okteto.com/wordpress/wordpress-7.3.9.tgz
+    version: 7.3.9
+generated: "2019-10-06T23:44:57.089070942Z"
