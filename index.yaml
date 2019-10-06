@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   hello-world:
   - apiVersion: v2
-    created: "2019-10-06T21:14:38.496591961Z"
+    created: "2019-10-06T21:20:00.303464052Z"
     description: Hello world chart for Okteto Cloud
     digest: 9a8ab0c6d40f190905f4054428db984456901cc3a94b7c0f55b7d7a3e67d35dc
     icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
@@ -13,7 +13,7 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.18
-    created: "2019-10-06T21:14:38.499277856Z"
+    created: "2019-10-06T21:20:00.30696756Z"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
@@ -39,7 +39,7 @@ entries:
   mongodb:
   - apiVersion: v1
     appVersion: 4.0.12
-    created: "2019-10-06T21:14:38.501648944Z"
+    created: "2019-10-06T21:20:00.308977543Z"
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
@@ -62,4 +62,31 @@ entries:
     urls:
     - https://apps.okteto.com/mongodb/mongodb-7.2.11.tgz
     version: 7.2.11
-generated: "2019-10-06T21:14:38.495684914Z"
+  postgresql:
+  - apiVersion: v1
+    appVersion: 11.5.0
+    created: "2019-10-06T21:20:00.372360175Z"
+    description: Chart for PostgreSQL, an object-relational database management system
+      (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: e75d7c778c6ee4104a6abd59ad60e5b27bf759ec062735f62947f29cf699085e
+    home: https://www.postgresql.org/
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    urls:
+    - https://apps.okteto.com/postgresql/postgresql-6.3.12.tgz
+    version: 6.3.12
+generated: "2019-10-06T21:20:00.302740683Z"

@@ -1,0 +1,10 @@
+
+image:
+  repository: bitnami/postgresql
+  tag: 11.5.0-debian-9-r60
+
+postgresqlUsername: okteto
+postgresqlPassword: okteto
+postgresqlDatabase: okteto
+fullnameOverride: postgresql
+
