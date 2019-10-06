@@ -2,12 +2,39 @@ apiVersion: v1
 entries:
   hello-world:
   - apiVersion: v2
-    appVersion: 1.16.0
-    created: 2019-10-06T10:25:59.200917-07:00
-    description: A Helm chart for Kubernetes
-    digest: f73768b2a754657076a8b1981748c9cb02ea656b18b4ace63a618773e5086bfb
+    created: 2019-10-06T13:50:36.593569-07:00
+    description: Hello world chart for Okteto Cloud
+    digest: 9a8ab0c6d40f190905f4054428db984456901cc3a94b7c0f55b7d7a3e67d35dc
+    icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
     name: hello-world
     urls:
-    - https://charts.okteto.com/hello-world/hello-world-0.1.0.tgz
+    - https://apps.okteto.com/hello-world/hello-world-0.1.0.tgz
     version: 0.1.0
-generated: 2019-10-06T10:25:59.199658-07:00
+  mariadb:
+  - apiVersion: v1
+    appVersion: 10.3.18
+    created: 2019-10-06T13:50:36.595384-07:00
+    description: Fast, reliable, scalable, and easy to use open-source relational
+      database system. MariaDB Server is intended for mission-critical, heavy-load
+      production systems as well as for embedding into mass-deployed software. Highly
+      available MariaDB cluster.
+    digest: 2666b4bb4f690f53ffd5a3fa51bb17e64457acc9478d720b7e09791280015ea8
+    engine: gotpl
+    home: https://mariadb.org
+    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: hello@okteto.com
+      name: okteto
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    - https://github.com/prometheus/mysqld_exporter
+    urls:
+    - https://apps.okteto.com/mariadb/mariadb-6.10.1.tgz
+    version: 6.10.1
+generated: 2019-10-06T13:50:36.592453-07:00
