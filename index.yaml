@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   hello-world:
   - apiVersion: v2
-    created: 2019-10-06T13:50:36.593569-07:00
+    created: "2019-10-06T21:14:38.496591961Z"
     description: Hello world chart for Okteto Cloud
     digest: 9a8ab0c6d40f190905f4054428db984456901cc3a94b7c0f55b7d7a3e67d35dc
     icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
@@ -13,13 +13,12 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.18
-    created: 2019-10-06T13:50:36.595384-07:00
+    created: "2019-10-06T21:14:38.499277856Z"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
     digest: 2666b4bb4f690f53ffd5a3fa51bb17e64457acc9478d720b7e09791280015ea8
-    engine: gotpl
     home: https://mariadb.org
     icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
     keywords:
@@ -37,4 +36,30 @@ entries:
     urls:
     - https://apps.okteto.com/mariadb/mariadb-6.10.1.tgz
     version: 6.10.1
-generated: 2019-10-06T13:50:36.592453-07:00
+  mongodb:
+  - apiVersion: v1
+    appVersion: 4.0.12
+    created: "2019-10-06T21:14:38.501648944Z"
+    description: NoSQL document-oriented database that stores JSON-like documents
+      with dynamic schemas, simplifying the integration of data in content-driven
+      applications.
+    digest: d11269412ea673ce692fffbfa41feeb3dfdc5877ddef533ae0ec5b51fc19e514
+    home: https://mongodb.org
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - email: hello@okteto.com
+      name: okteto
+    name: mongodb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mongodb
+    urls:
+    - https://apps.okteto.com/mongodb/mongodb-7.2.11.tgz
+    version: 7.2.11
+generated: "2019-10-06T21:14:38.495684914Z"

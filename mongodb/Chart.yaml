@@ -15,6 +15,6 @@ icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
 sources:
 - https://github.com/bitnami/bitnami-docker-mongodb
 maintainers:
-- name: Bitnami
-  email: containers@bitnami.com
+- name: okteto
+  email: hello@okteto.com
 engine: gotpl
