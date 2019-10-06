@@ -3,7 +3,13 @@
 This repository contains Helm charts for the Okteto Cloud default repository:
 
 - [Hello World](https://github.com/okteto/charts/hello-world)
+- [WordPress](https://github.com/okteto/charts/wordpress)
+- [Redis](https://github.com/okteto/charts/redis)
+- [MongoDB](https://github.com/okteto/charts/mongodb)
+- [PostgreSQL](https://github.com/okteto/charts/postgresql)
 - [MariaDB](https://github.com/okteto/charts/mariadb)
+- [RabbitMQ](https://github.com/okteto/charts/rabbitmq)
+
 
 # How to add a new chart
 

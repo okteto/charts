@@ -1,0 +1,8 @@
+simage:
+  repository: bitnami/redis
+  tag: 5.0.5-debian-9-r141
+
+password: okteto
+
+cluster:
+  enabled: false
