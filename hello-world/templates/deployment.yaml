@@ -3,7 +3,10 @@ kind: Deployment
 metadata:
   name: {{ template "hello-world.fullname" . }}
   labels:
-{{ include "hello-world.labels" . | indent 4 }}
+    app: "{{ template "hello-world.fullname" . }}"
+    chart: "{{ template "hello-world.chart" . }}"
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
