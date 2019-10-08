@@ -2,73 +2,45 @@ apiVersion: v1
 entries:
   hello-world:
   - apiVersion: v2
-    created: "2019-10-06T23:44:57.089822183Z"
+    created: 2019-10-08T15:09:34.049616-07:00
     description: Hello world chart for Okteto Cloud
-    digest: 9a8ab0c6d40f190905f4054428db984456901cc3a94b7c0f55b7d7a3e67d35dc
+    digest: d4957df7b460aa347b27059f249d98a618470e48ec1566194f707cf31565bb80
     icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
     name: hello-world
     urls:
     - https://apps.okteto.com/hello-world/hello-world-0.1.0.tgz
     version: 0.1.0
-  wordpress:
+  mariadb:
   - apiVersion: v1
-    appVersion: 5.2.3
-    created: "2019-10-06T23:44:57.182066963Z"
-    dependencies:
-    - condition: mariadb.enabled
-      name: mariadb
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      tags:
-      - wordpress-database
-      version: 6.x.x
-    description: Web publishing platform for building blogs and websites.
-    digest: bf7dcde174791c248baea0492bc1e051321f3537655c3672f798ecbb9f7499a6
-    home: http://www.wordpress.com/
-    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    appVersion: 10.3.18
+    created: 2019-10-08T15:09:34.051092-07:00
+    description: Fast, reliable, scalable, and easy to use open-source relational
+      database system. MariaDB Server is intended for mission-critical, heavy-load
+      production systems as well as for embedding into mass-deployed software. Highly
+      available MariaDB cluster.
+    digest: 2666b4bb4f690f53ffd5a3fa51bb17e64457acc9478d720b7e09791280015ea8
+    engine: gotpl
+    home: https://mariadb.org
+    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
     keywords:
-    - wordpress
-    - cms
-    - blog
-    - http
-    - web
-    - application
-    - php
-    maintainers:
-    - email: hello@okteto.com
-      name: okteto
-    name: wordpress
-    sources:
-    - https://github.com/bitnami/bitnami-docker-wordpress
-    urls:
-    - https://apps.okteto.com/wordpress/wordpress-7.3.9.tgz
-    version: 7.3.9
-  redis:
-  - apiVersion: v1
-    appVersion: 5.0.5
-    created: "2019-10-06T23:44:57.176157739Z"
-    description: Open source, advanced key-value store. It is often referred to as
-      a data structure server since keys can contain strings, hashes, lists, sets
-      and sorted sets.
-    digest: 941a5efc7d4409acd8890cffa2f2a17ee6bef067726e736c98226f26f99d68ad
-    home: http://redis.io/
-    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
-    keywords:
-    - redis
-    - keyvalue
+    - mariadb
+    - mysql
     - database
+    - sql
     maintainers:
     - email: hello@okteto.com
       name: okteto
-    name: redis
+    name: mariadb
     sources:
-    - https://github.com/bitnami/bitnami-docker-redis
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    - https://github.com/prometheus/mysqld_exporter
     urls:
-    - https://apps.okteto.com/redis/redis-9.2.2.tgz
-    version: 9.2.2
+    - https://apps.okteto.com/mariadb/mariadb-6.10.1.tgz
+    version: 6.10.1
   mongodb:
   - apiVersion: v1
     appVersion: 4.0.12
-    created: "2019-10-06T23:44:57.094522708Z"
+    created: 2019-10-08T15:09:34.052975-07:00
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
@@ -94,7 +66,7 @@ entries:
   postgresql:
   - apiVersion: v1
     appVersion: 11.5.0
-    created: "2019-10-06T23:44:57.096839647Z"
+    created: 2019-10-08T15:09:34.054006-07:00
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
     digest: e75d7c778c6ee4104a6abd59ad60e5b27bf759ec062735f62947f29cf699085e
@@ -118,36 +90,10 @@ entries:
     urls:
     - https://apps.okteto.com/postgresql/postgresql-6.3.12.tgz
     version: 6.3.12
-  mariadb:
-  - apiVersion: v1
-    appVersion: 10.3.18
-    created: "2019-10-06T23:44:57.092872676Z"
-    description: Fast, reliable, scalable, and easy to use open-source relational
-      database system. MariaDB Server is intended for mission-critical, heavy-load
-      production systems as well as for embedding into mass-deployed software. Highly
-      available MariaDB cluster.
-    digest: 2666b4bb4f690f53ffd5a3fa51bb17e64457acc9478d720b7e09791280015ea8
-    home: https://mariadb.org
-    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
-    keywords:
-    - mariadb
-    - mysql
-    - database
-    - sql
-    maintainers:
-    - email: hello@okteto.com
-      name: okteto
-    name: mariadb
-    sources:
-    - https://github.com/bitnami/bitnami-docker-mariadb
-    - https://github.com/prometheus/mysqld_exporter
-    urls:
-    - https://apps.okteto.com/mariadb/mariadb-6.10.1.tgz
-    version: 6.10.1
   rabbitmq:
   - apiVersion: v1
     appVersion: 3.7.19
-    created: "2019-10-06T23:44:57.099441429Z"
+    created: 2019-10-08T15:09:34.055075-07:00
     description: Open source message broker software that implements the Advanced
       Message Queuing Protocol (AMQP)
     digest: 1f9bdf7757b60eea6451a445c24ad795c95a94b5c358ad4f1174cd88259a0ed6
@@ -166,4 +112,52 @@ entries:
     urls:
     - https://apps.okteto.com/rabbitmq/rabbitmq-6.8.2.tgz
     version: 6.8.2
-generated: "2019-10-06T23:44:57.089070942Z"
+  redis:
+  - apiVersion: v1
+    appVersion: 5.0.5
+    created: 2019-10-08T15:09:34.056599-07:00
+    description: Open source, advanced key-value store. It is often referred to as
+      a data structure server since keys can contain strings, hashes, lists, sets
+      and sorted sets.
+    digest: 941a5efc7d4409acd8890cffa2f2a17ee6bef067726e736c98226f26f99d68ad
+    home: http://redis.io/
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: hello@okteto.com
+      name: okteto
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    urls:
+    - https://apps.okteto.com/redis/redis-9.2.2.tgz
+    version: 9.2.2
+  wordpress:
+  - apiVersion: v1
+    appVersion: 5.2.3
+    created: 2019-10-08T15:09:34.060659-07:00
+    description: Web publishing platform for building blogs and websites.
+    digest: bf7dcde174791c248baea0492bc1e051321f3537655c3672f798ecbb9f7499a6
+    home: http://www.wordpress.com/
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - wordpress
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: hello@okteto.com
+      name: okteto
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    urls:
+    - https://apps.okteto.com/wordpress/wordpress-7.3.9.tgz
+    version: 7.3.9
+generated: 2019-10-08T15:09:34.048932-07:00

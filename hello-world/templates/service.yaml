@@ -5,7 +5,10 @@ metadata:
   annotations:
     dev.okteto.com/auto-ingress: "true"    
   labels:
-{{ include "hello-world.labels" . | indent 4 }}
+    app: "{{ template "hello-world.fullname" . }}"
+    chart: "{{ template "hello-world.chart" . }}"
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
 spec:
   type: {{ .Values.service.type }}
   ports:
