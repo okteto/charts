@@ -1,7 +1,3 @@
-image:
-  repository: bitnami/mongodb
-  tag: 4.0.12-debian-9-r43
-
 mongodbRootPassword: okteto
 mongodbUsername: okteto
 mongodbPassword: okteto

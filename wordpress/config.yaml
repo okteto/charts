@@ -1,12 +1,3 @@
-image:
-  repository: bitnami/wordpress
-  tag: 5.2.3-debian-9-r5
-
-service:
-  type: ClusterIP
-  annotations:
-    dev.okteto.com/auto-ingress: "true"
-
 wordpressEmail: change-me@okteto.com
 wordpressUsername: okteto
 wordpressPassword: okteto
@@ -40,3 +31,8 @@ resources:
 
 updateStrategy:
   type: Recreate
+
+service:
+  type: ClusterIP
+  annotations:
+    dev.okteto.com/auto-ingress: "true"

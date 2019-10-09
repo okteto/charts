@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   hello-world:
   - apiVersion: v2
-    created: 2019-10-08T17:30:13.327369-07:00
+    created: 2019-10-08T17:33:58.271233-07:00
     description: Hello world chart for Okteto Cloud
     digest: aa1dd25d4fb0d75a2ee744497684cc29e66eb8d6b86aeb1d04b018046a27a51a
     icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
@@ -11,7 +11,7 @@ entries:
     - https://apps.okteto.com/hello-world/hello-world-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: 2019-10-08T17:30:13.327003-07:00
+    created: 2019-10-08T17:33:58.270236-07:00
     description: Hello world chart for Okteto Cloud
     digest: 2608a6b82bbd8a0b7da10c96cf6afee2eb33d70585c7f79b3fbf4cb8c0ded12c
     icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
@@ -22,12 +22,12 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.18
-    created: 2019-10-08T17:30:13.329761-07:00
+    created: 2019-10-08T17:33:58.274477-07:00
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
-    digest: 2666b4bb4f690f53ffd5a3fa51bb17e64457acc9478d720b7e09791280015ea8
+    digest: c0ee2fddbdc9b65850445aad18fd4ae7f4bd5974a907fc214538b02b565bfe44
     engine: gotpl
     home: https://mariadb.org
     icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
@@ -49,11 +49,12 @@ entries:
   mongodb:
   - apiVersion: v1
     appVersion: 4.0.12
-    created: 2019-10-08T17:30:13.330324-07:00
+    created: 2019-10-08T17:33:58.275876-07:00
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
-    digest: d11269412ea673ce692fffbfa41feeb3dfdc5877ddef533ae0ec5b51fc19e514
+    digest: 15a9dc193944cc38c8351a8c3a238612eede40234daf2c6cddc726fc4fe919e2
+    engine: gotpl
     home: https://mongodb.org
     icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
     keywords:
@@ -75,10 +76,11 @@ entries:
   postgresql:
   - apiVersion: v1
     appVersion: 11.5.0
-    created: 2019-10-08T17:30:13.330865-07:00
+    created: 2019-10-08T17:33:58.277201-07:00
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
-    digest: e75d7c778c6ee4104a6abd59ad60e5b27bf759ec062735f62947f29cf699085e
+    digest: f9c15e14bb328fa75dbc2a8bcf218291880162965343ee1c017c110869a130a8
+    engine: gotpl
     home: https://www.postgresql.org/
     icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
     keywords:
@@ -89,10 +91,8 @@ entries:
     - replication
     - cluster
     maintainers:
-    - email: containers@bitnami.com
-      name: Bitnami
-    - email: cedric@desaintmartin.fr
-      name: desaintmartin
+    - email: hello@okteto.com
+      name: okteto
     name: postgresql
     sources:
     - https://github.com/bitnami/bitnami-docker-postgresql
@@ -102,10 +102,11 @@ entries:
   rabbitmq:
   - apiVersion: v1
     appVersion: 3.7.19
-    created: 2019-10-08T17:30:13.331348-07:00
+    created: 2019-10-08T17:33:58.278989-07:00
     description: Open source message broker software that implements the Advanced
       Message Queuing Protocol (AMQP)
-    digest: 1f9bdf7757b60eea6451a445c24ad795c95a94b5c358ad4f1174cd88259a0ed6
+    digest: e04905a4924b1084a338358d985109188f179e003ea93df4aa2f827ffeea32de
+    engine: gotpl
     home: https://www.rabbitmq.com
     icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
     keywords:
@@ -124,11 +125,12 @@ entries:
   redis:
   - apiVersion: v1
     appVersion: 5.0.5
-    created: 2019-10-08T17:30:13.332479-07:00
+    created: 2019-10-08T17:33:58.281029-07:00
     description: Open source, advanced key-value store. It is often referred to as
       a data structure server since keys can contain strings, hashes, lists, sets
       and sorted sets.
-    digest: 941a5efc7d4409acd8890cffa2f2a17ee6bef067726e736c98226f26f99d68ad
+    digest: a9c0e1ef6ea3a48b33f7dacd23200e52f8c07b3505b62a45855d30ff18f906bb
+    engine: gotpl
     home: http://redis.io/
     icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
     keywords:
@@ -147,9 +149,10 @@ entries:
   wordpress:
   - apiVersion: v1
     appVersion: 5.2.3
-    created: 2019-10-08T17:30:13.334976-07:00
+    created: 2019-10-08T17:33:58.285793-07:00
     description: Web publishing platform for building blogs and websites.
-    digest: bf7dcde174791c248baea0492bc1e051321f3537655c3672f798ecbb9f7499a6
+    digest: ae82ef857f3e10b6aa14bf204d6c843c95a23eea483fe176dc5b022504a884bf
+    engine: gotpl
     home: http://www.wordpress.com/
     icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
     keywords:
@@ -169,4 +172,4 @@ entries:
     urls:
     - https://apps.okteto.com/wordpress/wordpress-7.3.9.tgz
     version: 7.3.9
-generated: 2019-10-08T17:30:13.326442-07:00
+generated: 2019-10-08T17:33:58.26855-07:00
