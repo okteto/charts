@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image }}"
+          image: okteto/hello-world:golang-v2
           ports:
             - name: http
               containerPort: 8080

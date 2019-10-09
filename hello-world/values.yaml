@@ -1,7 +1,5 @@
 replicaCount: 1
 
-image: okteto/hello-world:golang
-
 service:
   type: ClusterIP
   port: 8080
