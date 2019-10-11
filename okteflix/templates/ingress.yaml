@@ -6,20 +6,17 @@ metadata:
     {{- include "okteflix.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
+    dev.okteto.com/generate-host: "true"
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
-  tls:
-  - hosts:
-    - dev-okteflix-ramiro.sf.okteto.net
   rules:
-    - host: dev-okteflix-ramiro.sf.okteto.net
-      http:
+    - http:
         paths:
           - path: /api
             backend:
               serviceName: {{ include "okteflix.fullname" . }}-api
-              servicePort: 80
+              servicePort: 8080
           - path: /
             backend:
               serviceName: {{ include "okteflix.fullname" . }}-frontend

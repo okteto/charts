@@ -1,12 +1,10 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ include "okteflix.fullname" . }}
+  name: {{ include "okteflix.fullname" . }}-job
   labels:
     {{- include "okteflix.labels" . | nindent 4 }}
     app.kubernetes.io/component: job
-  annotations:
-    "helm.sh/hook": post-install
 spec:
   template:
     metadata:
@@ -15,6 +13,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/component: job
     spec:
+      restartPolicy: OnFailure
       containers:
         - name: {{ .Chart.Name }}
           image: okteto/okteflix-job
