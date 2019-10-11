@@ -1,9 +1,10 @@
-  apiVersion: batch/v1
+apiVersion: batch/v1
 kind: Job
 metadata:
   name: {{ include "okteflix.fullname" . }}
   labels:
     {{- include "okteflix.labels" . | nindent 4 }}
+    app.kubernetes.io/component: job
   annotations:
     "helm.sh/hook": post-install
 spec:
@@ -12,6 +13,7 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "okteflix.name" . }}-frontend
         app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/component: job
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -23,7 +25,7 @@ spec:
                 secretKeyRef:
                   name: {{ .Release.Name }}-mongodb
                   key: mongodb-password
-            - name: MONGODB_USER
+            - name: MONGODB_USERNAME
               value: {{ .Values.mongodb.mongodbUsername }}
             - name: MONGODB_DATABASE
               value: {{ .Values.mongodb.mongodbDatabase }}

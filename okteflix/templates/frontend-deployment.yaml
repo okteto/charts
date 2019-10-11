@@ -4,6 +4,7 @@ metadata:
   name: {{ include "okteflix.fullname" . }}-frontend
   labels:
     {{- include "okteflix.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frontend
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -15,6 +16,7 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "okteflix.name" . }}-frontend
         app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/component: frontend
     spec:
       containers:
         - name: frontend

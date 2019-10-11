@@ -36,28 +36,9 @@ Common labels
 */}}
 {{- define "okteflix.labels" -}}
 helm.sh/chart: {{ include "okteflix.chart" . }}
-{{ include "okteflix.selectorLabels" . }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+app.kubernetes.io/instance: {{ .Release.Name }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
-{{- end -}}
-
-{{/*
-Selector labels
-*/}}
-{{- define "okteflix.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "okteflix.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
-{{- end -}}
-
-{{/*
-Create the name of the service account to use
-*/}}
-{{- define "okteflix.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create -}}
-    {{ default (include "okteflix.fullname" .) .Values.serviceAccount.name }}
-{{- else -}}
-    {{ default "default" .Values.serviceAccount.name }}
-{{- end -}}
 {{- end -}}
