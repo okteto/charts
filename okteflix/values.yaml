@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 ingress:
   annotations: {}
