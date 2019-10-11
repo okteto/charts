@@ -1,0 +1,6 @@
+dependencies:
+- name: mongodb
+  repository: https://apps.okteto.com
+  version: 7.2.11
+digest: sha256:7245e3368b9ff5965d379a45600826c03558f88744240aaca2b25930d898eecc
+generated: "2019-10-10T14:39:09.4665-07:00"

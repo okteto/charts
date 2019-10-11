@@ -1,0 +1,21 @@
+# Default values for okteflix.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  api:
+    repository: nginx
+  frontend:
+    repository: nginx
+  pullPolicy: IfNotPresent
+
+ingress:
+  annotations: {}
+
+replicaCount: 1
+resources: {}
+
+mongodb:
+  usePassword: true
+  mongodbUsername: okteto
+  mongodbDatabase: okteto 

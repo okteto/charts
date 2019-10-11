@@ -1,0 +1,33 @@
+  apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "okteflix.fullname" . }}
+  labels:
+    {{- include "okteflix.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "okteflix.name" . }}-frontend
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: okteto/okteflix-job
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}-mongodb
+                  key: mongodb-password
+            - name: MONGODB_USER
+              value: {{ .Values.mongodb.mongodbUsername }}
+            - name: MONGODB_DATABASE
+              value: {{ .Values.mongodb.mongodbDatabase }}
+            - name: MONGODB_HOST
+              value: {{ .Release.Name }}-mongodb
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

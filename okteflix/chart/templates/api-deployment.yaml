@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "okteflix.fullname" . }}-api
+  labels:
+    {{- include "okteflix.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "okteflix.name" . }}-api
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "okteflix.name" . }}-api
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: api
+          image: okteto/okteflix-api
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}-mongodb
+                  key: mongodb-password
+            - name: MONGODB_USER
+              value: {{ .Values.mongodb.mongodbUsername }}
+            - name: MONGODB_DATABASE
+              value: {{ .Values.mongodb.mongodbDatabase }}
+            - name: MONGODB_HOST
+              value: {{ .Release.Name }}-mongodb
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
