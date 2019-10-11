@@ -16,7 +16,10 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: {{ .Chart.Name }}
-          image: okteto/okteflix-job
+          image: okteto/okteflix-api
+          command:
+            - yarn
+            - load
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: MONGODB_PASSWORD
