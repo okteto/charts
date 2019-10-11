@@ -4,9 +4,9 @@ metadata:
   name: {{ include "okteflix.fullname" . }}
   labels:
     {{- include "okteflix.labels" . | nindent 4 }}
-  {{- with .Values.ingress.annotations }}
   annotations:
     dev.okteto.com/generate-host: "true"
+  {{- with .Values.ingress.annotations }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
