@@ -8,7 +8,7 @@ keywords:
 - message queue
 - AMQP
 home: https://www.rabbitmq.com
-icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
+icon: https://apps.okteto.com/rabbitmq/icon.png
 sources:
 - https://github.com/bitnami/bitnami-docker-rabbitmq
 maintainers:

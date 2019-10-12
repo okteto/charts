@@ -11,7 +11,7 @@ keywords:
 - replication
 - cluster
 home: https://www.postgresql.org/
-icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
+icon: https://apps.okteto.com/postgresql/icon.png
 sources:
 - https://github.com/bitnami/bitnami-docker-postgresql
 maintainers:

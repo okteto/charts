@@ -1,7 +1,7 @@
 apiVersion: v2
 name: hello-world
-description: Hello world chart for Okteto Cloud 
-icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
+description: Hello world chart for Okteto Cloud
+icon: https://apps.okteto.com/hello-world/icon.png
 
 # A chart can be either an 'application' or a 'library' chart.
 #

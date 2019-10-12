@@ -11,7 +11,7 @@ keywords:
 - replicaset
 - replication
 home: https://mongodb.org
-icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+icon: https://apps.okteto.com/mongodb/icon.png
 sources:
 - https://github.com/bitnami/bitnami-docker-mongodb
 maintainers:
