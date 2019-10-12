@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   hello-world:
   - apiVersion: v2
-    created: 2019-10-08T17:33:58.271233-07:00
+    created: "2019-10-12T11:05:34.198165-07:00"
     description: Hello world chart for Okteto Cloud
     digest: aa1dd25d4fb0d75a2ee744497684cc29e66eb8d6b86aeb1d04b018046a27a51a
     icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
@@ -11,7 +11,7 @@ entries:
     - https://apps.okteto.com/hello-world/hello-world-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: 2019-10-08T17:33:58.270236-07:00
+    created: "2019-10-12T11:05:34.196619-07:00"
     description: Hello world chart for Okteto Cloud
     digest: 2608a6b82bbd8a0b7da10c96cf6afee2eb33d70585c7f79b3fbf4cb8c0ded12c
     icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
@@ -22,13 +22,12 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.18
-    created: 2019-10-08T17:33:58.274477-07:00
+    created: "2019-10-12T11:05:34.205272-07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
     digest: c0ee2fddbdc9b65850445aad18fd4ae7f4bd5974a907fc214538b02b565bfe44
-    engine: gotpl
     home: https://mariadb.org
     icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
     keywords:
@@ -49,12 +48,11 @@ entries:
   mongodb:
   - apiVersion: v1
     appVersion: 4.0.12
-    created: 2019-10-08T17:33:58.275876-07:00
+    created: "2019-10-12T11:05:34.208824-07:00"
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
     digest: 15a9dc193944cc38c8351a8c3a238612eede40234daf2c6cddc726fc4fe919e2
-    engine: gotpl
     home: https://mongodb.org
     icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
     keywords:
@@ -73,14 +71,30 @@ entries:
     urls:
     - https://apps.okteto.com/mongodb/mongodb-7.2.11.tgz
     version: 7.2.11
+  okteflix:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2019-10-12T11:05:34.214311-07:00"
+    dependencies:
+    - name: mongodb
+      repository: https://apps.okteto.com
+      tags:
+      - okteflix-database
+      version: 7.x.x
+    description: A Helm chart for Kubernetes
+    digest: 801c0cc7b8503f71cca611aecfcf4448f4f19debf21b611ec43173ab27073b53
+    name: okteflix
+    type: application
+    urls:
+    - https://apps.okteto.com/okteflix/okteflix-0.1.0.tgz
+    version: 0.1.0
   postgresql:
   - apiVersion: v1
     appVersion: 11.5.0
-    created: 2019-10-08T17:33:58.277201-07:00
+    created: "2019-10-12T11:05:34.21841-07:00"
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
     digest: f9c15e14bb328fa75dbc2a8bcf218291880162965343ee1c017c110869a130a8
-    engine: gotpl
     home: https://www.postgresql.org/
     icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
     keywords:
@@ -102,11 +116,10 @@ entries:
   rabbitmq:
   - apiVersion: v1
     appVersion: 3.7.19
-    created: 2019-10-08T17:33:58.278989-07:00
+    created: "2019-10-12T11:05:34.221459-07:00"
     description: Open source message broker software that implements the Advanced
       Message Queuing Protocol (AMQP)
     digest: e04905a4924b1084a338358d985109188f179e003ea93df4aa2f827ffeea32de
-    engine: gotpl
     home: https://www.rabbitmq.com
     icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
     keywords:
@@ -125,12 +138,11 @@ entries:
   redis:
   - apiVersion: v1
     appVersion: 5.0.5
-    created: 2019-10-08T17:33:58.281029-07:00
+    created: "2019-10-12T11:05:34.228289-07:00"
     description: Open source, advanced key-value store. It is often referred to as
       a data structure server since keys can contain strings, hashes, lists, sets
       and sorted sets.
     digest: a9c0e1ef6ea3a48b33f7dacd23200e52f8c07b3505b62a45855d30ff18f906bb
-    engine: gotpl
     home: http://redis.io/
     icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
     keywords:
@@ -149,10 +161,16 @@ entries:
   wordpress:
   - apiVersion: v1
     appVersion: 5.2.3
-    created: 2019-10-08T17:33:58.285793-07:00
+    created: "2019-10-12T11:05:34.235444-07:00"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      tags:
+      - wordpress-database
+      version: 6.x.x
     description: Web publishing platform for building blogs and websites.
     digest: ae82ef857f3e10b6aa14bf204d6c843c95a23eea483fe176dc5b022504a884bf
-    engine: gotpl
     home: http://www.wordpress.com/
     icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
     keywords:
@@ -172,4 +190,4 @@ entries:
     urls:
     - https://apps.okteto.com/wordpress/wordpress-7.3.9.tgz
     version: 7.3.9
-generated: 2019-10-08T17:33:58.26855-07:00
+generated: "2019-10-12T11:05:34.195249-07:00"
