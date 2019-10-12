@@ -1,0 +1,4 @@
+replicaCount: 1
+
+mongodb:
+  mongodbPassword: "Password!1@2" 
