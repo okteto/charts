@@ -35,7 +35,6 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 {{- define "okteflix.labels" -}}
-app: "{{ include "okteflix.fullname" . }}"
 helm.sh/chart: {{ include "okteflix.chart" . }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 app.kubernetes.io/instance: {{ .Release.Name }}
