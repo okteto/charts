@@ -83,6 +83,7 @@ entries:
       version: 7.x.x
     description: A Helm chart for Kubernetes
     digest: 801c0cc7b8503f71cca611aecfcf4448f4f19debf21b611ec43173ab27073b53
+    icon: https://apps.okteto.com/okteflix/icon.png
     name: okteflix
     type: application
     urls:
