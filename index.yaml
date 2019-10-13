@@ -5,7 +5,7 @@ entries:
     created: "2019-10-12T11:05:34.198165-07:00"
     description: Hello world chart for Okteto Cloud
     digest: aa1dd25d4fb0d75a2ee744497684cc29e66eb8d6b86aeb1d04b018046a27a51a
-    icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
+    icon: https://apps.okteto.com/hello-world/icon.png
     name: hello-world
     urls:
     - https://apps.okteto.com/hello-world/hello-world-0.1.1.tgz
@@ -14,7 +14,7 @@ entries:
     created: "2019-10-12T11:05:34.196619-07:00"
     description: Hello world chart for Okteto Cloud
     digest: 2608a6b82bbd8a0b7da10c96cf6afee2eb33d70585c7f79b3fbf4cb8c0ded12c
-    icon: https://img8.apk.tools/150/b/d/1/com.abdallah_abdelazim.helloworld.png
+    icon: https://apps.okteto.com/hello-world/icon.png
     name: hello-world
     urls:
     - https://apps.okteto.com/hello-world/hello-world-0.1.0.tgz
@@ -29,7 +29,7 @@ entries:
       available MariaDB cluster.
     digest: c0ee2fddbdc9b65850445aad18fd4ae7f4bd5974a907fc214538b02b565bfe44
     home: https://mariadb.org
-    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
+    icon: https://apps.okteto.com/mariadb/icon.png
     keywords:
     - mariadb
     - mysql
@@ -54,7 +54,7 @@ entries:
       applications.
     digest: 15a9dc193944cc38c8351a8c3a238612eede40234daf2c6cddc726fc4fe919e2
     home: https://mongodb.org
-    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    icon: https://apps.okteto.com/mongodb/icon.png
     keywords:
     - mongodb
     - database
@@ -96,7 +96,7 @@ entries:
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
     digest: f9c15e14bb328fa75dbc2a8bcf218291880162965343ee1c017c110869a130a8
     home: https://www.postgresql.org/
-    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
+    icon: https://apps.okteto.com/postgresql/icon.png
     keywords:
     - postgresql
     - postgres
@@ -121,7 +121,7 @@ entries:
       Message Queuing Protocol (AMQP)
     digest: e04905a4924b1084a338358d985109188f179e003ea93df4aa2f827ffeea32de
     home: https://www.rabbitmq.com
-    icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
+    icon: https://apps.okteto.com/rabbitmq/icon.png
     keywords:
     - rabbitmq
     - message queue
@@ -144,7 +144,7 @@ entries:
       and sorted sets.
     digest: a9c0e1ef6ea3a48b33f7dacd23200e52f8c07b3505b62a45855d30ff18f906bb
     home: http://redis.io/
-    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    icon: https://apps.okteto.com/redis/icon.png
     keywords:
     - redis
     - keyvalue
@@ -172,7 +172,7 @@ entries:
     description: Web publishing platform for building blogs and websites.
     digest: ae82ef857f3e10b6aa14bf204d6c843c95a23eea483fe176dc5b022504a884bf
     home: http://www.wordpress.com/
-    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    icon: https://apps.okteto.com/wordpress/icon.png
     keywords:
     - wordpress
     - cms
