@@ -2,18 +2,9 @@ apiVersion: v1
 entries:
   hello-world:
   - apiVersion: v2
-    created: "2019-10-12T11:05:34.198165-07:00"
+    created: 2019-10-14T22:05:11.561639+02:00
     description: Hello world chart for Okteto Cloud
-    digest: aa1dd25d4fb0d75a2ee744497684cc29e66eb8d6b86aeb1d04b018046a27a51a
-    icon: https://apps.okteto.com/hello-world/icon.png
-    name: hello-world
-    urls:
-    - https://apps.okteto.com/hello-world/hello-world-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    created: "2019-10-12T11:05:34.196619-07:00"
-    description: Hello world chart for Okteto Cloud
-    digest: 2608a6b82bbd8a0b7da10c96cf6afee2eb33d70585c7f79b3fbf4cb8c0ded12c
+    digest: e7af26319b0ca7fe864a17665207bacc2442fafdfbbc219bd9ad58e4d62e8293
     icon: https://apps.okteto.com/hello-world/icon.png
     name: hello-world
     urls:
@@ -22,12 +13,13 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.18
-    created: "2019-10-12T11:05:34.205272-07:00"
+    created: 2019-10-14T22:05:11.563273+02:00
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
-    digest: c0ee2fddbdc9b65850445aad18fd4ae7f4bd5974a907fc214538b02b565bfe44
+    digest: 3ebf43e7057482de7cc4f885df563cc9de1fad515742618edd131c241a4a1ddc
+    engine: gotpl
     home: https://mariadb.org
     icon: https://apps.okteto.com/mariadb/icon.png
     keywords:
@@ -48,11 +40,12 @@ entries:
   mongodb:
   - apiVersion: v1
     appVersion: 4.0.12
-    created: "2019-10-12T11:05:34.208824-07:00"
+    created: 2019-10-14T22:05:11.564561+02:00
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
-    digest: 15a9dc193944cc38c8351a8c3a238612eede40234daf2c6cddc726fc4fe919e2
+    digest: 8418915e7eedd047cb876792dd91a4f9b404236caf9c6096542ff5e1f0b71ef4
+    engine: gotpl
     home: https://mongodb.org
     icon: https://apps.okteto.com/mongodb/icon.png
     keywords:
@@ -71,31 +64,25 @@ entries:
     urls:
     - https://apps.okteto.com/mongodb/mongodb-7.2.11.tgz
     version: 7.2.11
-  okteflix:
+  movies:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2019-10-12T11:05:34.214311-07:00"
-    dependencies:
-    - name: mongodb
-      repository: https://apps.okteto.com
-      tags:
-      - okteflix-database
-      version: 7.x.x
-    description: A Helm chart for Kubernetes
-    digest: 801c0cc7b8503f71cca611aecfcf4448f4f19debf21b611ec43173ab27073b53
-    icon: https://apps.okteto.com/okteflix/icon.png
-    name: okteflix
-    type: application
+    created: 2019-10-14T22:05:11.567565+02:00
+    description: A Node + React application in Kubernetes
+    digest: f898bacc98a3072fa3c40579fe355cb76ee3156c0aa8290c7610925c68c18100
+    icon: https://apps.okteto.com/movies/icon.png
+    name: movies
     urls:
-    - https://apps.okteto.com/okteflix/okteflix-0.1.0.tgz
+    - https://apps.okteto.com/movies/movies-0.1.0.tgz
     version: 0.1.0
   postgresql:
   - apiVersion: v1
     appVersion: 11.5.0
-    created: "2019-10-12T11:05:34.21841-07:00"
+    created: 2019-10-14T22:05:11.568985+02:00
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
-    digest: f9c15e14bb328fa75dbc2a8bcf218291880162965343ee1c017c110869a130a8
+    digest: 5d11aa477550d15fa9524f26e4ca301b9f0a3ccf5f039d24967b793f8ac5a0c3
+    engine: gotpl
     home: https://www.postgresql.org/
     icon: https://apps.okteto.com/postgresql/icon.png
     keywords:
@@ -117,10 +104,11 @@ entries:
   rabbitmq:
   - apiVersion: v1
     appVersion: 3.7.19
-    created: "2019-10-12T11:05:34.221459-07:00"
+    created: 2019-10-14T22:05:11.569981+02:00
     description: Open source message broker software that implements the Advanced
       Message Queuing Protocol (AMQP)
-    digest: e04905a4924b1084a338358d985109188f179e003ea93df4aa2f827ffeea32de
+    digest: 8ab859cb1f11731e5a1927b3a90158380e5973d3819e84b9d425f157986477d1
+    engine: gotpl
     home: https://www.rabbitmq.com
     icon: https://apps.okteto.com/rabbitmq/icon.png
     keywords:
@@ -139,11 +127,12 @@ entries:
   redis:
   - apiVersion: v1
     appVersion: 5.0.5
-    created: "2019-10-12T11:05:34.228289-07:00"
+    created: 2019-10-14T22:05:11.572744+02:00
     description: Open source, advanced key-value store. It is often referred to as
       a data structure server since keys can contain strings, hashes, lists, sets
       and sorted sets.
-    digest: a9c0e1ef6ea3a48b33f7dacd23200e52f8c07b3505b62a45855d30ff18f906bb
+    digest: c790dcb10249a02dff7138fa1f5956b5f62da6cf6f0cab7fdfa9ae88920a2d83
+    engine: gotpl
     home: http://redis.io/
     icon: https://apps.okteto.com/redis/icon.png
     keywords:
@@ -162,16 +151,10 @@ entries:
   wordpress:
   - apiVersion: v1
     appVersion: 5.2.3
-    created: "2019-10-12T11:05:34.235444-07:00"
-    dependencies:
-    - condition: mariadb.enabled
-      name: mariadb
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      tags:
-      - wordpress-database
-      version: 6.x.x
+    created: 2019-10-14T22:05:11.57602+02:00
     description: Web publishing platform for building blogs and websites.
-    digest: ae82ef857f3e10b6aa14bf204d6c843c95a23eea483fe176dc5b022504a884bf
+    digest: 2c6fd2012a0728d391f2be24f565d71f3894cf8608c1356745e64ebc353b937d
+    engine: gotpl
     home: http://www.wordpress.com/
     icon: https://apps.okteto.com/wordpress/icon.png
     keywords:
@@ -191,4 +174,4 @@ entries:
     urls:
     - https://apps.okteto.com/wordpress/wordpress-7.3.9.tgz
     version: 7.3.9
-generated: "2019-10-12T11:05:34.195249-07:00"
+generated: 2019-10-14T22:05:11.560468+02:00

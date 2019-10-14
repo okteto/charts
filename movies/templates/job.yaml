@@ -1,22 +1,22 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ include "okteflix.fullname" . }}-job
+  name: {{ include "movies.fullname" . }}-job
   labels:
-    {{- include "okteflix.labels" . | nindent 4 }}
+    {{- include "movies.labels" . | nindent 4 }}
     app.kubernetes.io/component: job
 spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "okteflix.name" . }}-frontend
+        app.kubernetes.io/name: {{ include "movies.name" . }}-frontend
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/component: job
     spec:
       restartPolicy: OnFailure
       containers:
         - name: {{ .Chart.Name }}
-          image: okteto/okteflix-api
+          image: okteto/movies-api
           command:
             - yarn
             - load

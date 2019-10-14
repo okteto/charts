@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "okteflix.fullname" . }}-api
+  name: {{ include "movies.fullname" . }}-api
   labels:
-    {{- include "okteflix.labels" . | nindent 4 }}
+    {{- include "movies.labels" . | nindent 4 }}
 spec:
   type: ClusterIP
   ports:
@@ -12,5 +12,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: {{ include "okteflix.name" . }}-api
+    app.kubernetes.io/name: {{ include "movies.name" . }}-api
     app.kubernetes.io/instance: {{ .Release.Name }}
