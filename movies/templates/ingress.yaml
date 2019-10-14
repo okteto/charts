@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ include "okteflix.fullname" . }}
+  name: {{ include "movies.fullname" . }}
   labels:
-    {{- include "okteflix.labels" . | nindent 4 }}
+    {{- include "movies.labels" . | nindent 4 }}
   annotations:
     dev.okteto.com/generate-host: "true"
   {{- with .Values.ingress.annotations }}
@@ -15,9 +15,9 @@ spec:
         paths:
           - path: /api
             backend:
-              serviceName: {{ include "okteflix.fullname" . }}-api
+              serviceName: {{ include "movies.fullname" . }}-api
               servicePort: 8080
           - path: /
             backend:
-              serviceName: {{ include "okteflix.fullname" . }}-frontend
+              serviceName: {{ include "movies.fullname" . }}-frontend
               servicePort: 80

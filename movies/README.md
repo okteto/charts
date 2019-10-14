@@ -1,4 +1,4 @@
-# Okteflix
+# Movies
 
 This example shows how to leverage Okteto to deploy and develop a Node + React application in Kubernetes.
 
