@@ -9,7 +9,7 @@ This repository contains Helm charts for the Okteto Cloud default repository:
 - [PostgreSQL](https://github.com/okteto/charts/postgresql)
 - [MariaDB](https://github.com/okteto/charts/mariadb)
 - [RabbitMQ](https://github.com/okteto/charts/rabbitmq)
-- [Okteflix](https://github.com/okteto/charts/okteflix)
+- [Movies](https://github.com/okteto/charts/movies)
 
 
 # How to add a new chart
