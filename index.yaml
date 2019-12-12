@@ -10,6 +10,10 @@ entries:
     urls:
     - https://apps.okteto.com/hello-world/hello-world-0.1.0.tgz
     version: 0.1.0
+    devs:
+      - name: hello-world
+        repo: https://github.com/okteto/go-getting-started
+        manifest: okteto.yaml
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.18
@@ -75,6 +79,13 @@ entries:
     urls:
     - https://apps.okteto.com/movies/movies-0.1.0.tgz
     version: 0.1.0
+    devs:
+      - name: api
+        repo: https://github.com/okteto/movies
+        manifest: api/okteto.yaml
+      - name: frontend
+        repo: https://github.com/okteto/movies
+        manifest: frontend/okteto.yaml
   postgresql:
   - apiVersion: v1
     appVersion: 11.5.0
