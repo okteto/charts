@@ -35,4 +35,5 @@ spec:
               path: /
               port: http
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+            limits:
+              cpu: 1
