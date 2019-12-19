@@ -16,3 +16,9 @@ mongodb:
   mongodbUsername: okteto
   mongodbDatabase: okteto 
   mongodbPassword: "okteto" 
+  persistence:
+    enabled: false
+  livenessProbe:
+    enabled: false
+  readinessProbe:
+    enabled: false
