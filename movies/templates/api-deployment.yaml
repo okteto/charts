@@ -47,4 +47,5 @@ spec:
               path: /api/healthz
               port: 8080
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+            limits:
+              cpu: 1
