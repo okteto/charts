@@ -8,6 +8,11 @@ rbac: false
 # disabled by default to make development easier
 basic_auth: false
 
+ingress:
+  enabled: true
+  annotations:
+     dev.okteto.com/generate-host: true
+
 gateway:
   resources:
     limits:
@@ -40,14 +45,7 @@ nats:
   resources:
     limits:
       memory: "120Mi"
-    requests:
-      memory: "120Mi"
-      cpu: "100m"
-
-ingress:
-  enabled: true
-  annotations:
-     dev.okteto.com/generate-host: true
+      cpu: "50m"
 
 faasIdler:
   resources:
