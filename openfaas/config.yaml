@@ -8,16 +8,29 @@ rbac: false
 # disabled by default to make development easier
 basic_auth: false
 
-ingress:
-  enabled: true
-  annotations:
-     dev.okteto.com/generate-host: true
+# generate the basic auth token automatically if enabled
+generateBasicAuth: true
 
 gateway:
+  # set to false to disable scaling up from zero replicas https://docs.openfaas.com/architecture/autoscaling/
+  scaleFromZero: true
   resources:
     limits:
       memory: "120Mi"
       cpu: "50m"
+
+faasIdler:
+  # Set to false to enable scaling down to zero replicas when function is idle
+  dryRun: true
+  resources:
+    limits:
+      memory: "64Mi"
+      cpu: "100m"
+
+ingress:
+  enabled: true
+  annotations:
+     dev.okteto.com/generate-host: true
 
 faasnetes:
   resources:
@@ -46,12 +59,6 @@ nats:
     limits:
       memory: "120Mi"
       cpu: "50m"
-
-faasIdler:
-  resources:
-    limits:
-      memory: "64Mi"
-      cpu: "100m"
 
 basicAuthPlugin:
   enabled: false
