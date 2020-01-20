@@ -4,7 +4,7 @@ functionNamespace: $NAMESPACE
 basicAuthPassword: "Password123!"
 
 faasIdler:
-  # Set to false to enable scaling down to zero replicas when function is idle
+  # Set to true to disable scaling down to zero replicas when function is idle
   dryRun: false
   resources:
     limits:
