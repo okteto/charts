@@ -3,9 +3,9 @@ functionNamespace: openfaas-fn  # Default namespace for functions
 async: true
 
 exposeServices: true
-serviceType: NodePort
+serviceType: ClusterIP
 httpProbe: true               # Setting to true will use HTTP for readiness and liveness probe on the OpenFaaS system Pods (incompatible with Istio < 1.1.5)
-rbac: true
+rbac: false
 clusterRole: false            # Set to true to have OpenFaaS administrate multiple namespaces
 
 # create pod security policies for OpenFaaS control plane
