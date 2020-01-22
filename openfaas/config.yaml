@@ -1,0 +1,59 @@
+# this will be replaced by Okteto during deployment
+functionNamespace: $NAMESPACE
+
+basicAuthPassword: "Password123!"
+
+faasIdler:
+  # Set to true to disable scaling down to zero replicas when function is idle
+  dryRun: false
+  resources:
+    limits:
+      memory: "64Mi"
+      cpu: "100m"
+
+faasnetes:
+  resources:
+    limits:
+      memory: "120Mi"
+      cpu: "50m"
+
+queueWorker:
+    limits:
+      memory: "120Mi"
+      cpu: "50m"
+
+prometheus:
+  resources:
+    limits:
+      memory: "512Mi"
+      cpu: "100m"
+
+alertmanager:
+    limits:
+      memory: "50Mi"
+      cpu: "100m"
+
+nats:
+  resources:
+    limits:
+      memory: "120Mi"
+      cpu: "50m"
+
+generateBasicAuth: true
+
+gateway:
+  resources:
+    limits:
+      memory: "120Mi"
+      cpu: "50m"
+
+basicAuthPlugin:
+  resources:
+    limits:
+      memory: "50Mi"
+      cpu: "20m"
+
+ingress:
+  enabled: true
+  annotations:
+     dev.okteto.com/generate-host: true
