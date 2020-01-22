@@ -1,3 +1,7 @@
 name: helm
 image: okteto/desk:latest
 command: ["bash"]
+services:
+  - labels:
+      app.kubernetes.io/name: "nginx"
+    mountpath: /usr/share/nginx/html
