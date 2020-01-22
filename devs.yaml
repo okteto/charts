@@ -1,0 +1,10 @@
+entries.hello-world[0].devs[+].name: 'hello-world'
+entries.hello-world[0].devs[0].repo: 'https://github.com/okteto/go-getting-started'
+entries.hello-world[0].devs[0].manifest: 'okteto.yaml'
+
+entries.movies[0].devs[+].name: 'api'
+entries.movies[0].devs[0].repo: 'https://github.com/okteto/movies'
+entries.movies[0].devs[0].manifest: 'api/okteto.yaml'
+entries.movies[0].devs[+].name: 'frontend'
+entries.movies[0].devs[1].repo: 'https://github.com/okteto/movies'
+entries.movies[0].devs[1].manifest: 'frontend/okteto.yaml'
