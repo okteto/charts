@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   hello-world:
   - apiVersion: v2
-    created: "2020-01-22T11:18:24.172774-08:00"
+    created: "2020-01-22T11:39:03.820955-08:00"
     description: Hello world chart for Okteto Cloud
-    digest: 504aa6e7d1e71f503be586cb1fd9359120cfc953fcf80f3f53c6da2dab229267
+    digest: 68f54e7619509483662acc47c787b331a112e592b1c26d1965af0bab098016f3
     icon: https://apps.okteto.com/hello-world/icon.png
     name: hello-world
     type: application
@@ -16,14 +16,14 @@ entries:
       repo: https://github.com/okteto/go-getting-started
       manifest: okteto.yaml
   mariadb:
-  - apiVersion: v1
+  - apiVersion: v2
     appVersion: 10.3.18
-    created: "2020-01-22T11:18:24.175361-08:00"
+    created: "2020-01-22T11:39:03.824254-08:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
-    digest: 2cbb9c3726fd5490acdacdef77490daa195f5fb75851ba24a27ff7b37b9765ea
+    digest: dc0f6be9dfd3b39aec0882f309051aeecb0c58cc6b5399d4c747b3c0bdbeabd2
     home: https://mariadb.org
     icon: https://apps.okteto.com/mariadb/icon.png
     keywords:
@@ -42,13 +42,13 @@ entries:
     - https://apps.okteto.com/mariadb/mariadb-6.10.1.tgz
     version: 6.10.1
   mongodb:
-  - apiVersion: v1
+  - apiVersion: v2
     appVersion: 4.0.12
-    created: "2020-01-22T11:18:24.177861-08:00"
+    created: "2020-01-22T11:39:03.827507-08:00"
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
-    digest: d5da30d4057360bad167870481a6be959311d03d0deb2345f89a805a95d7608b
+    digest: 3327a9a8ef473a2a773269a2fd060004ee604789cf8380b10b2f8652fff533de
     home: https://mongodb.org
     icon: https://apps.okteto.com/mongodb/icon.png
     keywords:
@@ -70,7 +70,7 @@ entries:
   movies:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-01-22T11:18:24.182941-08:00"
+    created: "2020-01-22T11:39:03.833368-08:00"
     dependencies:
     - name: mongodb
       repository: https://apps.okteto.com
@@ -78,7 +78,7 @@ entries:
       - movies-database
       version: 7.x.x
     description: A Node + React application in Kubernetes
-    digest: 74202d673fac46a04ad655501080e7e90cd1fbffed2759c357894a7c7b6ecb2a
+    digest: e4867c94a661e3f64ccbc7786b7d84eb0dadff0aa5085a0610cf5a417037a6cc
     icon: https://apps.okteto.com/movies/icon.png
     name: movies
     type: application
@@ -93,10 +93,10 @@ entries:
       repo: https://github.com/okteto/movies
       manifest: frontend/okteto.yaml
   openfaas:
-  - apiVersion: v1
-    created: "2020-01-22T11:18:24.185848-08:00"
+  - apiVersion: v2
+    created: "2020-01-22T11:39:03.83658-08:00"
     description: Enable Kubernetes as a backend for OpenFaaS (Functions as a Service)
-    digest: 731a7f33380788118e1f1fd6c976f9b18ff6758abc30c37b40427fead05ebea1
+    digest: 130b319ff0babff5b99dcf07c383f1781e43be0c7755b2174bbdff594a6be937
     home: https://www.openfaas.com
     icon: https://apps.okteto.com/openfaas/icon.png
     keywords:
@@ -117,12 +117,12 @@ entries:
     - https://apps.okteto.com/openfaas/openfaas-5.4.0.tgz
     version: 5.4.0
   postgresql:
-  - apiVersion: v1
+  - apiVersion: v2
     appVersion: 11.5.0
-    created: "2020-01-22T11:18:24.188064-08:00"
+    created: "2020-01-22T11:39:03.839523-08:00"
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
-    digest: 62c7ecb9adc504805bd487940934738ef49928d091d98123dfe6de78f2c4330c
+    digest: 724106e72671d0f86c5a3e262b08b6482901c921578f157b348162db13f4902c
     home: https://www.postgresql.org/
     icon: https://apps.okteto.com/postgresql/icon.png
     keywords:
@@ -142,12 +142,12 @@ entries:
     - https://apps.okteto.com/postgresql/postgresql-6.3.12.tgz
     version: 6.3.12
   rabbitmq:
-  - apiVersion: v1
+  - apiVersion: v2
     appVersion: 3.7.19
-    created: "2020-01-22T11:18:24.190017-08:00"
+    created: "2020-01-22T11:39:03.842295-08:00"
     description: Open source message broker software that implements the Advanced
       Message Queuing Protocol (AMQP)
-    digest: a666a5976995e45ddb2d718b179063d38efd427350bac6058ac15c6a432040b5
+    digest: 5a09cb2211df46274dbb7119c477f519826435d926dfb0b487c1279d506c5ce4
     home: https://www.rabbitmq.com
     icon: https://apps.okteto.com/rabbitmq/icon.png
     keywords:
@@ -164,13 +164,13 @@ entries:
     - https://apps.okteto.com/rabbitmq/rabbitmq-6.8.2.tgz
     version: 6.8.2
   redis:
-  - apiVersion: v1
+  - apiVersion: v2
     appVersion: 5.0.5
-    created: "2020-01-22T11:18:24.19435-08:00"
+    created: "2020-01-22T11:39:03.845618-08:00"
     description: Open source, advanced key-value store. It is often referred to as
       a data structure server since keys can contain strings, hashes, lists, sets
       and sorted sets.
-    digest: 11f324f2fa3023e2b69e07f958d47dc5e6ce42bb39b45000329a65ad8e619ed7
+    digest: 7d9b01ea9d70d003a10721e48d96bb71bf45e8b40ccf8266e8b3ea989b7409ea
     home: http://redis.io/
     icon: https://apps.okteto.com/redis/icon.png
     keywords:
@@ -187,9 +187,9 @@ entries:
     - https://apps.okteto.com/redis/redis-9.2.2.tgz
     version: 9.2.2
   wordpress:
-  - apiVersion: v1
+  - apiVersion: v2
     appVersion: 5.2.3
-    created: "2020-01-22T11:18:24.200594-08:00"
+    created: "2020-01-22T11:39:03.852669-08:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -198,7 +198,7 @@ entries:
       - wordpress-database
       version: 6.x.x
     description: Web publishing platform for building blogs and websites.
-    digest: 9caba34b518340e68666997b21023074d72775c9cc73bf41d1bee920cab8fac8
+    digest: ce6ee3b035ad84e399cab74af645967d823fa1931b28a0a6f40eb55473860f56
     home: http://www.wordpress.com/
     icon: https://apps.okteto.com/wordpress/icon.png
     keywords:
@@ -218,4 +218,4 @@ entries:
     urls:
     - https://apps.okteto.com/wordpress/wordpress-7.3.9.tgz
     version: 7.3.9
-generated: "2020-01-22T11:18:24.169265-08:00"
+generated: "2020-01-22T11:39:03.819433-08:00"

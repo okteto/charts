@@ -1,6 +1,8 @@
 #!/bin/bash
+set -ex
 
 for d in */ ; do
+    helm3 lint $d
     helm3 package $d --destination $d
 done
 
