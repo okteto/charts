@@ -2,14 +2,15 @@
 
 This Helm repository contains the default Helm charts for the Okteto Cloud default repository:
 
-- [Hello World](https://github.com/okteto/charts/tree/master/hello-world)
-- [Redis](https://github.com/okteto/charts/tree/master/redis)
-- [MongoDB](https://github.com/okteto/charts/tree/master/mongodb)
-- [PostgreSQL](https://github.com/okteto/charts/tree/master/postgresql)
-- [MariaDB](https://github.com/okteto/charts/tree/master/mariadb)
-- [RabbitMQ](https://github.com/okteto/charts/tree/master/rabbitmq)
-- [WordPress](https://github.com/okteto/charts/tree/master/wordpress)
-- [Movies](https://github.com/okteto/charts/tree/master/movies)
+- [Hello World](charts/hello-world)
+- [MariaDB](charts/mariadb)
+- [Movies](charts/movies)
+- [MongoDB](charts/mong
+- [OpenFaaS](charts/openfaas)
+- [PostgreSQL](charts/postgresql)
+- [RabbitMQ](charts/rabbitmq)
+- [Redis](charts/redis)
+- [WordPress](charts/wordpress)
 
 
 # How to submit a new chart
