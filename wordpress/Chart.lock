@@ -1,0 +1,6 @@
+dependencies:
+- name: mariadb
+  repository: https://apps.okteto.com/
+  version: 6.x.x
+digest: sha256:621420525f889c1767cf938b59f714f06595281d42f83269a645d4c53bcbb41c
+generated: "2020-01-22T11:11:57.846551-08:00"

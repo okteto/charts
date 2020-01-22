@@ -18,4 +18,11 @@ sources:
 maintainers:
 - name: okteto
   email: hello@okteto.com
-engine: gotpl
+dependencies:
+- name: mariadb
+  version: 6.x.x
+  repository: https://apps.okteto.com/
+  condition: mariadb.enabled
+  tags:
+    - wordpress-database
+
