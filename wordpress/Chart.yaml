@@ -2,7 +2,7 @@ apiVersion: v2
 name: wordpress
 version: 7.3.9
 appVersion: 5.2.3
-description: Web publishing platform for building blogs and websites.
+description: Web publishing platform for building blogs and websites
 icon: https://apps.okteto.com/wordpress/icon.png
 keywords:
 - wordpress
