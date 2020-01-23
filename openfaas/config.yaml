@@ -6,6 +6,9 @@ basicAuthPassword: "Password123!"
 faasIdler:
   # Set to true to disable scaling down to zero replicas when function is idle
   dryRun: false
+
+  # If a function is inactive for 15 minutes, it may be scaled to zero
+  inactivityDuration: 15m
   resources:
     limits:
       memory: "64Mi"
