@@ -9,7 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - run: ls -la  
     - name: Helm 3
       uses: WyriHaximus/github-action-helm3@v1.0.0
       with:
-        exec: ./generate.sh
+        exec: sh generate.sh 
