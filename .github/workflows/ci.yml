@@ -10,7 +10,17 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - run: ls -la  
-    - name: Helm 3
+    - name: lint
       uses: WyriHaximus/github-action-helm3@v1.0.0
       with:
-        exec: sh generate.sh 
+        exec: make lint
+    - name: package
+      uses: WyriHaximus/github-action-helm3@v1.0.0
+      with:
+        exec: make packages
+    - name: index
+      uses: WyriHaximus/github-action-helm3@v1.0.0
+      with:
+        exec: make index
+    - name: merge
+      run: make merge
