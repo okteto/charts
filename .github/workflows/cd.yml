@@ -22,7 +22,7 @@ jobs:
       run: make all
     - name: deploy
       uses: peaceiris/actions-gh-pages@v2
-      with:
+      env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         BRANCH: gh-pages
         FOLDER: ./dist
