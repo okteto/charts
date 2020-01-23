@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Lint Helm
+      uses: WyriHaximus/github-action-helm3@v1
+      with:
+        exec: ./generate.sh
