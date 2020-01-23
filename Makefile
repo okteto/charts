@@ -1,21 +1,23 @@
 URL?=https://apps.okteto.com
+DIRS = $(shell ls -d -- */|grep -v dist)
 
-.PHONY: all
-all: lint package index merge
+.PHONY: all clean dist package index $(DIRS)
+all: clean package index
 
-.PHONY: lint
-lint: 
-	@for f in $(shell ls -d -- */); do helm lint $${f}; done
+clean:
+	rm -rf dist
+	mkdir -p dist
 
-.PHONY: package
-package: 
-	@for f in $(shell ls -d -- */); do helm package $${f} --destination $${f}; done
+package: $(DIRS)
 
-.PHONY: index
+$(DIRS):
+	helm lint $@
+	helm package $@ --destination dist/$@
+	cp $@*.png dist/$@
+
 index:
-	helm repo index --url $(URL) .
-
-.PHONY: merge
-merge:
-	yq w -s devs.yaml index.yaml > index.yaml.generated
-	mv index.yaml.generated index.yaml
+	helm repo index --url $(URL) dist
+	yq w -s devs.yaml dist/index.yaml > dist/index.yaml.generated
+	mv dist/index.yaml.generated dist/index.yaml
+	
+	

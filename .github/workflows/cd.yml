@@ -25,4 +25,4 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages-test
-        FOLDER: .
+        FOLDER: dist
