@@ -9,18 +9,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - run: ls -la  
-    - name: lint
-      uses: WyriHaximus/github-action-helm3@v1.0.0
-      with:
-        exec: make lint
-    - name: package
-      uses: WyriHaximus/github-action-helm3@v1.0.0
-      with:
-        exec: make packages
-    - name: index
-      uses: WyriHaximus/github-action-helm3@v1.0.0
-      with:
-        exec: make index
-    - name: merge
-      run: make merge
+    - name: prereqs
+      run: |
+        curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+        chmod 700 get_helm.sh
+        ./get_helm.sh
+        curl -fsSL -o yq https://github.com/mikefarah/yq/releases/download/2.4.1/yq_linux_amd64
+        chmod 700 yq
+        mv yq /usr/local/bin
+    - name: all
+      run: make all
