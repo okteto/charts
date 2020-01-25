@@ -21,6 +21,7 @@ faasnetes:
       cpu: "50m"
 
 queueWorker:
+  resources:
     limits:
       memory: "120Mi"
       cpu: "50m"
@@ -32,6 +33,7 @@ prometheus:
       cpu: "100m"
 
 alertmanager:
+  resources:
     limits:
       memory: "50Mi"
       cpu: "100m"
