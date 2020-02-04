@@ -1,0 +1,5 @@
+jupyter:
+  password: okteto
+
+service:
+  type: ClusterIP

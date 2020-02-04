@@ -1,0 +1,19 @@
+apiVersion: v2
+appVersion: 10.3.18
+description: Fast, reliable, scalable, and easy to use open-source relational database
+  system
+home: https://mariadb.org
+icon: https://apps.okteto.com/mariadb/icon.png
+keywords:
+- mariadb
+- mysql
+- database
+- sql
+maintainers:
+- email: hello@okteto.com
+  name: okteto
+name: mariadb
+sources:
+- https://github.com/bitnami/bitnami-docker-mariadb
+- https://github.com/prometheus/mysqld_exporter
+version: 6.10.1

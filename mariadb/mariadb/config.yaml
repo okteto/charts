@@ -1,0 +1,10 @@
+rootUser:
+  password: okteto
+
+db:
+  user: okteto
+  password: okteto
+  name: okteto
+
+replication:
+  enabled: false
