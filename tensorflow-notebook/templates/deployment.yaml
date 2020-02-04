@@ -29,7 +29,6 @@ spec:
             - jupyter
           args:
             - notebook
-            - --NotebookApp.base_url=/jupyter-notebook
             - --allow-root      
           env:
             - name: PASSWORD
@@ -39,11 +38,11 @@ spec:
                   key: password
           livenessProbe:
             httpGet:
-              path: /jupyter-notebook
+              path: /
               port: 8888
           readinessProbe:
             httpGet:
-              path: /jupyter-notebook
+              path: /
               port: 8888
           volumeMounts:
             - mountPath: /output/training_logs
