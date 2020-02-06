@@ -6,7 +6,7 @@ jupyter:
     repository: tensorflow/tensorflow
     tag: 1.6.0-devel
     pullPolicy: IfNotPresent
-  password: tensorflow
+  password: okteto
   resources: {}
   # limits:
   #  cpu: 100m
@@ -22,4 +22,4 @@ tensorboard:
     tag: 1.6.0-devel
     pullPolicy: IfNotPresent
 service:
-  type: LoadBalancer
+  type: ClusterIP

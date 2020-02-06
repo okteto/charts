@@ -1,9 +1,10 @@
-1. Get the application URL by running these commands:
+1. Get The applications URLs:
+  export NOTEBOOK=$(kubectl get ingress okteto-jupyter-{{ template "tensorflow-notebook.fullname" .}} --namespace={{ .Release.Namespace }} -o jsonpath='{.spec.rules[].host}')
+  export DASHBOARD=$(kubectl get ingress okteto-dashboard-{{ template "tensorflow-notebook.fullname" .}} --namespace={{ .Release.Namespace }} -o jsonpath='{.spec.rules[].host}')
 
-{{- if contains "LoadBalancer" .Values.service.type }}
-     NOTE: It may take a few minutes for the LoadBalancer IP to be available.
-           You can watch the status of by running 'kubectl get svc -w {{ template "tensorflow-notebook.fullname" . }}'
-  export SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "tensorflow-notebook.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-  echo notebook_url=http://$SERVICE_IP:8888
-  echo tensorboard_url=http://$SERVICE_IP:6006
-{{- end }}
+  echo "Notebook URL: https://$NOTEBOOK"
+  echo "Tensorboard URL: https://$DASHBOARD"
+
+2. Get credentials
+
+echo "Notebook Password: $(kubectl get secrets {{ template "tensorflow-notebook.fullname" .}} --namespace={{ .Release.Namespace }} -o jsonpath='{.data.password}' | base64 --decode)"

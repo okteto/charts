@@ -57,7 +57,6 @@ spec:
             - tensorboard
           args:
             - --logdir
-            - --path_prefix /tf/
             - /output/training_logs
             - --host
             - 0.0.0.0
