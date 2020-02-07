@@ -28,9 +28,9 @@ chart and their default values.
 | `jupyter.image.tag` | TensorFlow Development image tag | `1.5.0-devel-gpu` | No |
 | `jupyter.password` | The password to access jupyter | `okteto` | No | 
 | `jupyter.image.pullPolicy` | image pullPolicy for the  jupyter | `IfNotPresent` | No |
-| `jupyter.persistence.accessMode` | Volume access mode |  ReadWriteOnce | Yes (Required if persitence is enabled) |
-| `jupyter.persistence.enabled` | Data persistence | true | No |
-| `jupyter.persitence.size` | Volume size | 1Gb | Yes (Required if persitence is enabled) |
+| `jupyter.persistence.accessMode` | Volume access mode |  `ReadWriteOnce` | Yes (Required if persitence is enabled) |
+| `jupyter.persistence.enabled` | Data persistence | `true` | No |
+| `jupyter.persitence.size` | Volume size | `1Gb` | Yes (Required if persitence is enabled) |
 | `resources` | Set the resource to be allocated and allowed for the Pods | `{}` | Yes |
 | `service.type` | service type | `ClusterIP` | No |
 | `tensorboard.image.repository` | TensorFlow Development image repository | `tensorflow/tensorflow` | No |
