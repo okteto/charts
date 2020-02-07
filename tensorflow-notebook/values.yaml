@@ -7,6 +7,10 @@ jupyter:
     tag: 1.6.0-devel
     pullPolicy: IfNotPresent
   password: okteto
+  persistence:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 1Gi
   resources: {}
   # limits:
   #  cpu: 100m

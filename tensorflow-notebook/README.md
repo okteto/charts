@@ -17,77 +17,22 @@ This chart will deploy the followings:
 - Jupyter Notebook with TensorFlow
 - Tensorboard
 
-## Installing the Chart
-
-* To install the chart with the release name `notebook`:
-
-  ```bash
-  $ helm install --name notebook stable/tensorflow-notebook
-  ```
-
-* To install with custom values via file :
-  
-  ```
-  $ helm install  --values values.yaml  --name notebook  stable/tensorflow-notebook
-  ```
-  
-  Below is an example of the custom value file values.yaml with GPU support.
-  
-  ```
-  jupyter:
-    image:
-      repository: tensorflow/tensorflow
-      tag: 1.6.0-devel-gpu
-      pullPolicy: IfNotPresent
-    password: tensorflow
-    resources:
-      limits:
-        nvidia.com/gpu: 1
-    requests:
-        nvidia.com/gpu: 1
-  tensorboard: 
-    image:   
-      repository: tensorflow/tensorflow
-      tag: 1.6.0-devel
-      pullPolicy: IfNotPresent
-  service:
-    type: LoadBalancer
-  ```
-
-
-## Run TensorFlow Example [tensorboard_basic.ipynb](https://github.com/cheyang/TensorFlow-Examples/blob/master/notebooks/4_Utils/tensorboard_basic.ipynb)
-
-> Notice: you should set the log_path  `/output/training_logs`
-
-![](jupyter.jpg)
-
-## Check the TensorBoard
-
-![](tensorboard.jpg)
-
-## Uninstalling the Chart
-
-* To uninstall/delete the `notebook` deployment:
-
-	```bash
-	$ helm delete notebook
-	```
-
-The command removes all the Kubernetes components associated with the chart and deletes the release.
-
 ## Configuration
 
 The following table lists the configurable parameters of the Service Tensorflow Development
 chart and their default values.
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `jupyter.image.repository` | TensorFlow Development image repository | `tensorflow/tensorflow` |
-| `jupyter.image.tag` | TensorFlow Development image tag | `1.5.0-devel-gpu` |
-| `jupyter.password` | The password to access jupyter | `mytest` |
-| `jupyter.image.pullPolicy` | image pullPolicy for the  jupyter | `IfNotPresent` |
-| `tensorboard.image.repository` | TensorFlow Development image repository | `tensorflow/tensorflow` |
-| `tensorboard.image.tag` | TensorFlow Development image tag | `1.5.0-devel-gpu` |
-| `tensorboard.image.pullPolicy` | image pullPolicy for the  tensorboard | `IfNotPresent` |
-| `resources` | Set the resource to be allocated and allowed for the Pods | `{}` |
-| `service.type` | service type | `LoadBalancer` |
+| Parameter | Description | Default | Optional |
+|-----------|-------------|---------|----------|
+| `jupyter.image.repository` | TensorFlow Development image repository | `tensorflow/tensorflow` | No |
+| `jupyter.image.tag` | TensorFlow Development image tag | `1.5.0-devel-gpu` | No |
+| `jupyter.password` | The password to access jupyter | `okteto` | No | 
+| `jupyter.image.pullPolicy` | image pullPolicy for the  jupyter | `IfNotPresent` | No |
+| `jupyter.persistence.accessMode` | Volume access mode |  ReadWriteOnce | Yes (Required if persitence is enabled) |
+| `jupyter.persistence.enabled` | Data persistence | true | No |
+| `jupyter.persitence.size` | Volume size | 1Gb | Yes (Required if persitence is enabled) |
+| `resources` | Set the resource to be allocated and allowed for the Pods | `{}` | Yes |
+| `service.type` | service type | `ClusterIP` | No |
+| `tensorboard.image.repository` | TensorFlow Development image repository | `tensorflow/tensorflow` | No |
+| `tensorboard.image.tag` | TensorFlow Development image tag | `1.5.0-devel-gpu` | No |
+| `tensorboard.image.pullPolicy` | image pullPolicy for the  tensorboard | `IfNotPresent` |No |
