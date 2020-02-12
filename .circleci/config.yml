@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: okteto/golang-ci:1
+      - image: alpine/helm:3.0.3
     steps:
       - checkout
       - run:

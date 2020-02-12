@@ -1,17 +1,18 @@
 URL?=https://apps.okteto.com
 DIRS = $(shell ls -d -- */ | grep -v public)
 
-.PHONY: all public package index publish $(DIRS)
-all: public package index
+.PHONY: all clean package index publish $(DIRS)
+all: clean package index
 
-public:
+clean:
 	rm -rf public
-	mkdir public
+	helm version
 
 package: $(DIRS)
 
 $(DIRS):
 	helm lint $@
+	mkdir -p public/$@
 	helm package $@ --destination public/$@
 
 index:
