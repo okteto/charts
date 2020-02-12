@@ -1,0 +1,38 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: okteto/golang-ci:1
+    steps:
+      - checkout
+      - run:
+         name: build
+         command: make all
+      - persist_to_workspace:
+          root: .
+          paths: 
+            - public
+  publish:
+      docker:
+          - image:  okteto/golang-ci:1
+      steps:
+        - checkout
+        - attach_workspace:
+            at: .
+        - run: 
+           name: publish
+           command: |
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+            make publish
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+      - publish:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+
