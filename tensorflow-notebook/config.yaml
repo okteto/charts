@@ -1,0 +1,12 @@
+jupyter:
+  image:
+    repository: tensorflow/tensorflow
+    tag: 1.6.0-devel
+  password: okteto
+  persistence:
+    enabled: true
+    size: 1Gi
+tensorboard:
+  image:
+    repository: tensorflow/tensorflow
+    tag: 1.6.0-devel

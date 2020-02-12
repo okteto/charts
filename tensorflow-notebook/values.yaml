@@ -5,7 +5,7 @@ jupyter:
   image:
     repository: tensorflow/tensorflow
     tag: 1.6.0-devel
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
   password: okteto
   persistence:
     enabled: true
@@ -24,6 +24,6 @@ tensorboard:
   image:
     repository: tensorflow/tensorflow
     tag: 1.6.0-devel
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
 service:
   type: ClusterIP
