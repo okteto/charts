@@ -1,18 +1,25 @@
 URL?=https://apps.okteto.com
-DIRS = $(shell ls -d -- */)
+DIRS = $(shell ls -d -- */ | grep -v public)
 
-.PHONY: all package index $(DIRS)
-all: package index
+.PHONY: all clean package index publish $(DIRS)
+all: clean package index
+
+clean:
+	rm -rf public
+	helm version
 
 package: $(DIRS)
 
 $(DIRS):
 	helm lint $@
-	helm package $@ --destination $@
+	mkdir -p public/$@
+	helm package $@ --destination public/$@
 
 index:
-	helm repo index --url $(URL) .
-	yq w -s devs.yaml index.yaml > index.yaml.generated
-	mv index.yaml.generated index.yaml
+	helm repo index --url $(URL) public
+	yq w -s devs.yaml public/index.yaml > public/index.yaml.generated
+	mv public/index.yaml.generated public/index.yaml
 	
+publish:
+	cd public; gsutil -m cp -r . gs://apps.okteto.com; cd -;
 	
