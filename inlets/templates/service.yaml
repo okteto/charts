@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "inlets.fullname" . }}
+  labels:
+    {{- include "inlets.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: tunnel
+      protocol: TCP
+      name: tunnel
+  selector:
+    {{- include "inlets.selectorLabels" . | nindent 4 }}

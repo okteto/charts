@@ -1,0 +1,18 @@
+apiVersion: v2
+name: inlets
+version: 0.1.0
+appVersion: 2.6.4
+description: Cloud Native Tunnel 
+type: application
+keywords:
+- service proxy
+- inlets
+- tunnel
+home: https://docs.inlets.dev/
+icon: https://apps.okteto.com/inlets/icon.png
+sources:
+- https://github.com/inlets/inlets
+maintainers:
+- name: okteto
+  email: hello@okteto.com
+

@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "inlets.fullname" . }}
+  labels:
+    {{- include "inlets.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "inlets.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "inlets.selectorLabels" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ include "inlets.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: inlets/inlets:{{ .Chart.AppVersion}}
+          imagePullPolicy: IfNotPresent
+          args:
+            - server
+            {{- if .Values.disableTransportWrapping }}
+            - --disable-transport-wrapping
+            {{- end }}
+            - --print-token
+            - --port={{ .Values.service.port}}
+          ports:
+            - name: tunnel
+              containerPort: {{ .Values.service.port}}
+              protocol: TCP
+          env:
+            - name: TOKEN
+              value: "{{ .Values.token }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
