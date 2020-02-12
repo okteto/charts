@@ -1,0 +1,8 @@
+{{- $token := .Values.token  -}}
+Your tunnel will be ready in a few seconds. To connect to it, first start your local server and then run:
+{{- if .Values.ingress.enabled }}
+  export HOST_NAME=$(kubectl get ing --namespace {{ .Release.Namespace }} {{ include "inlets.fullname" . }} -o jsonpath="{.spec.rules[0].host}")
+  echo inlets client --upstream=http://127.0.0.1:5000 --remote $HOST_NAME --token={{ $token }}
+{{- end }}
+
+You can also get the URL directly from the Okteto Cloud UI.
