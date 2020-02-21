@@ -18,6 +18,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/component: frontend
     spec:
+      terminationGracePeriodSeconds: 0
       containers:
         - name: frontend
           image: okteto/movies-frontend
