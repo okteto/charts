@@ -1,9 +1,2 @@
 jupyter:
-  image:
-    repository: tensorflow/tensorflow
-    tag: 1.6.0-devel
   password: okteto
-tensorboard:
-  image:
-    repository: tensorflow/tensorflow
-    tag: 1.6.0-devel
