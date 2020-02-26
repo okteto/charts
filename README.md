@@ -16,7 +16,7 @@ This Helm repository contains the default Helm charts for the Okteto Cloud defau
 # How to submit a new chart
 
 - Fork https://github.com/okteto/charts.
-- Add your chart source code in a new folder (Review https://okteto.com/docs/cloud/repos.html to see how to make your chart Okteto Cloud friendly). 
+- Add your chart source code in a new folder (Review https://okteto.com/docs/tutorials/repos/index.html to see how to make your chart Okteto Cloud friendly). 
 - Test your chart with Okteto Cloud (Feel free to [reach out](https://twitter.com/oktetohq) if you need help).
 - Run `make all` to run the linter and package it.
 - Submit a PR with the chart.
