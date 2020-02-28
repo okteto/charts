@@ -1,0 +1,21 @@
+apiVersion: v1
+name: ghost
+version: 9.1.10
+appVersion: 3.8.0
+description: A simple, powerful publishing platform that allows you to share your stories with the world
+icon: https://pbs.twimg.com/profile_images/1183301397195833344/XRKixLnT_400x400.png
+keywords:
+  - ghost
+  - blog
+  - http
+  - web
+  - application
+  - nodejs
+  - javascript
+home: http://www.ghost.org/
+sources:
+  - https://github.com/bitnami/bitnami-docker-ghost
+maintainers:
+  - name: Jeevanjot
+    email: jeevanjotsingh@gmail.com
+engine: gotpl
