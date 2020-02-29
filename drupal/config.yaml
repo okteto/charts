@@ -1,0 +1,32 @@
+drupalUsername: okteto
+drupalPassword: okteto
+drupalEmail: user@example.com
+
+mariadb:
+  enabled: true
+  replication:
+    enabled: false
+  db:
+    name: bitnami_drupal
+    user: bn_drupal
+  master:
+    persistence:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 8Gi
+
+persistence:
+  enabled: true
+  drupal:
+    accessMode: ReadWriteOnce
+    size: 8Gi
+
+resources:
+  requests:
+    memory: 512Mi
+    cpu: 300m
+
+service:
+  type: ClusterIP
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
