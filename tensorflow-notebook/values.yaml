@@ -7,15 +7,10 @@ jupyter:
     tag: 1.6.0-devel
     pullPolicy: Always
   password: okteto
-  resources: {}
-  # limits:
-  #  cpu: 100m
-  #  memory: 128Mi
-  #  nvidia.com/gpu: 1
-  # requests:
-  #  cpu: 100m
-  #  memory: 128Mi
-  #  nvidia.com/gpu: 1
+  resources:
+    limits:
+      cpu: 1.25
+      memory: 2.25Gi
 tensorboard:
   image:
     repository: tensorflow/tensorflow

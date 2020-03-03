@@ -8,6 +8,8 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: {{ template "tensorflow-notebook.name" . }}
@@ -45,6 +47,10 @@ spec:
             httpGet:
               path: /
               port: 8888
+          resources:
+            limits:
+              cpu: {{ .Values.jupyter.resources.limits.cpu }}
+              memory:  {{ .Values.jupyter.resources.limits.memory }}
           volumeMounts:
             - mountPath: /output/training_logs
               name: training-logs-volume
@@ -61,6 +67,10 @@ spec:
             - /output/training_logs
             - --host
             - 0.0.0.0
+          resources:
+            limits:
+              cpu: 250m
+              memory:  250Mi
           livenessProbe:
             httpGet:
               path: /
