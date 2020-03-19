@@ -1,0 +1,11 @@
+image: okteto/terminal
+port: 8080
+nameOverride: ""
+fullnameOverride: "" 
+
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - terminal.local
+  tls: []

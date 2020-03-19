@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    {{- include "terminal.labels" . | nindent 4 }}
+  name: {{ include "terminal.fullname" . }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "terminal.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "terminal.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+        imagePullPolicy: IfNotPresent
+        name: terminal
+        ports:
+        - containerPort: {{ .Values.port }}
+          protocol: TCP
+        resources: {}
+      securityContext: {}
+      terminationGracePeriodSeconds: 1

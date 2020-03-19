@@ -1,0 +1,10 @@
+apiVersion: v2
+name: terminal
+version: 0.1
+appVersion: 0.2
+description: Web-based terminal for Kubernetes powered by gotty
+type: application
+icon: https://apps.okteto.com/terminal/icon.png
+maintainers:
+- name: okteto
+  email: hello@okteto.com

@@ -1,0 +1,4 @@
+To access your terminal, click on the URL displayed in the Okteto Cloud UI, and type your username and password.
+
+The terminal is already configured with okteto, kubectl and helm, and runs with namespace-wide permissions.
+
