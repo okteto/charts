@@ -1,6 +1,6 @@
 
-# Before deploying the terminal, create a secret name $TERMINAL_CREDENTIAL 
-# with your "username:password".
+# Before deploying the terminal, create an Okteto secret with the name "TERMINAL_CREDENTIAL"
+# and your "username:password" as the value.
 
 ingress:
   annotations: 
@@ -9,6 +9,6 @@ ingress:
 
 # Increase the value if you want to do heavy processing in the terminal.
 resources:
-    limits:
-      memory: "64Mi"
-      cpu: "100m"
+  limits:
+    memory: "64Mi"
+    cpu: "100m"

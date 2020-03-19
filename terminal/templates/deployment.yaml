@@ -17,9 +17,14 @@ spec:
       - image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: IfNotPresent
         name: terminal
+        env:
+          # Okteto Cloud will inject the value defined in your Okteto Secrets
+          # at deploy time
+          - name: "TERMINAL_CREDENTIAL"
         ports:
         - containerPort: {{ .Values.port }}
           protocol: TCP
-        resources: {}
+        resources: 
+        {{- .Values.resources | toYaml | nindent 10 }}
       securityContext: {}
       terminationGracePeriodSeconds: 1
