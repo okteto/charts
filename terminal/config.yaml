@@ -2,11 +2,6 @@
 # Before deploying the terminal, create an Okteto secret with the name "TERMINAL_CREDENTIAL"
 # and your "username:password" as the value.
 
-ingress:
-  annotations: 
-    # let okteto dynamically generate the ingress hostname
-    dev.okteto.com/generate-host: "true"
-
 # Increase the value if you want to do heavy processing in the terminal.
 resources:
   limits:
