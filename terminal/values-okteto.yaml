@@ -1,0 +1,9 @@
+
+# Before deploying the terminal, create an Okteto secret with the name "TERMINAL_CREDENTIAL"
+# and your "username:password" as the value.
+
+# Increase the value if you want to do heavy processing in the terminal.
+resources:
+  limits:
+    memory: "64Mi"
+    cpu: "100m"
