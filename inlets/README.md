@@ -37,7 +37,7 @@ Create your free account, download your Kubernetes credentials and run:
 
 ```console
 $ git clone https://github.com/rberrelleza/inlets-chart.git
-$ helm install my-release . -f config.yaml
+$ helm install my-release . -f values-okteto.yaml
 ```
 
 ## Uninstalling the Chart
