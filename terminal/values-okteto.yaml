@@ -1,8 +1,8 @@
+# You can also define this as an Okteto Secret 
+# with the name TERMINAL_CREDENTIAL
+# learn more at https://okteto.com/docs/cloud/secrets.html
+credentials: "hello:okteto"
 
-# Before deploying the terminal, create an Okteto secret with the name "TERMINAL_CREDENTIAL"
-# and your "username:password" as the value.
-
-# Increase the value if you want to do heavy processing in the terminal.
 resources:
   limits:
     memory: "64Mi"

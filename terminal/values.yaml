@@ -1,7 +1,10 @@
 image: okteto/terminal
 port: 8080
+credentials: "hello:world"
+
 nameOverride: ""
 fullnameOverride: "" 
+
 ingress:
   enabled: true
   annotations: 
