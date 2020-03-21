@@ -1,6 +1,7 @@
-# You can also define this as an Okteto Secret
+# You can also define this as an Okteto Secret 
+# with the name TERMINAL_CREDENTIAL
 # learn more at https://okteto.com/docs/cloud/secrets.html
-credentials: "hello:world"
+credentials: "hello:okteto"
 
 resources:
   limits:
