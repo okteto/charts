@@ -1,0 +1,11 @@
+cockroachdb:
+  statefulset:
+    replicas: 3
+  storage:
+    # A persistent volume is created per replica
+    persistentVolume:
+      size: 1Gi
+    resources:
+      limits:
+        cpu: "100m"
+        memory: "256Mi"

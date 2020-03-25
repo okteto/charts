@@ -1,0 +1,17 @@
+apiVersion: v2
+name: cockroachdb
+home: https://www.cockroachlabs.com
+version: 3.0.7
+appVersion: 19.2.5
+description: CockroachDB is a scalable, survivable, strongly-consistent SQL database.
+icon: https://apps.okteto.com/cockroachdb/icon.png
+sources:
+- https://github.com/cockroachdb/cockroach
+- https://github.com/okteto/charts/tress/master/cockroachdb
+maintainers:
+- name: ramiro
+  email: ramiro@okteto.com
+dependencies:
+- name: cockroachdb
+  version: "3.0.7"
+  repository: "https://kubernetes-charts.storage.googleapis.com"

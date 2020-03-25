@@ -1,0 +1,6 @@
+dependencies:
+- name: cockroachdb
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 3.0.7
+digest: sha256:8304eeb2a464f1fdcd36b2a3ce47757250ae2e8f58977ba836afb426f1020ebe
+generated: "2020-03-25T14:44:58.120893-07:00"
