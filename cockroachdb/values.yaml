@@ -4,7 +4,7 @@ cockroachdb:
     resources:
       limits:
         cpu: "100m"
-        memory: "512Mi"
+        memory: "256Mi"
 
   storage:
     persistentVolume:
