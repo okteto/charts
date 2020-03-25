@@ -1,6 +1,6 @@
 cockroachdb:
   statefulset:
-    replicas: 2
+    replicas: 3
   storage:
     # A persistent volume is created per replica
     persistentVolume:
