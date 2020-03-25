@@ -1,12 +1,9 @@
-CockroachDB can be accessed via port {{ .Values.cockroachdb.service.ports.grpc.external.port }} 
-at the following DNS name from within your namespace:
+CockroachDB can be accessed via port {{ .Values.cockroachdb.service.ports.grpc.external.port }}  at the following DNS name from within your namespace:
 
     {{ template "cockroachdb.fullname" . }}-public
 
-Because CockroachDB supports the PostgreSQL wire protocol, you can connect to
-the cluster using any available PostgreSQL client.
+Because CockroachDB supports the PostgreSQL wire protocol, you can connect to the cluster using any available PostgreSQL client.
 
-To open up the CockroachDB admin UI, you can download your Kubernetes credentials 
-from Okteto Cloud and port-forward from your local machine:
+To open up the CockroachDB admin UI, you can download your Kubernetes credentials  from Okteto Cloud and port-forward from your local machine:
 
     kubectl port-forward svc/{{ template "cockroachdb.fullname" . }}-public {{ index .Values.cockroachdb.conf `http-port` | int64 }}
