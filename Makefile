@@ -14,7 +14,7 @@ $(DIRS):
 	helm lint $@
 	mkdir -p public/$@
 	helm package $@ --destination public/$@
-	cp $@/icon.png public/$@
+	cp $@/*.png public/$@
 
 index:
 	helm repo index --url $(URL) public
