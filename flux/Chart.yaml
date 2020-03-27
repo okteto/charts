@@ -1,0 +1,24 @@
+apiVersion: v2
+name: flux
+home: https://fluxcd.io
+version: 1.2.0
+appVersion: "1.18.0"
+description: Flux is a tool that automatically ensures that the state of a cluster matches what is specified in version control
+icon: https://apps.okteto.com/flux/icon.png
+sources:
+  - https://github.com/fluxcd/flux
+  - https://github.com/fluxcd/helm-operator
+  - https://github.com/okteto/charts/tree/master/flux
+maintainers:
+  - name: pablo
+    email: pablo@okteto.com
+keywords:
+  - gitops
+  - helm
+dependencies:
+  - name: flux
+    version: "1.2.0"
+    repository: "https://charts.fluxcd.io"
+  - name: helm-operator
+    version: "0.7.0"
+    repository: "https://charts.fluxcd.io"

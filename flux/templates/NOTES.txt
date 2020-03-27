@@ -1,0 +1,19 @@
+
+Flux has been installed successfully. 
+
+Configure a deploy key in your git repository. You can get the public key from the logs by running:
+
+   $ kubectl logs deployment/{{ template "flux.fullname" . }} -c flux | grep "cluster identity.pub"
+
+Also, configure a webhook in your git repo with this information:
+
+   URL: https://{{ template "flux.fullname" . }}-recv-{{ .Release.Namespace }}.cloud.okteto.net
+   Path: $ kubectl logs deployment/{{ template "flux.fullname" . }} -c recv | grep "endpoint GitHub"
+   Secret: {{ .Values.secret }}
+
+To access Flux using fluxctl, follow these steps:
+
+   1. Configure Access to your Okteto Cloud Namespace: `okteto namespace {{ .Release.Namespace }}`
+   2. Install fluxctl: https://docs.fluxcd.io/en/1.17.1/references/fluxctl.html
+   3. $ export FLUX_FORWARD_NAMESPACE={{ .Release.Namespace }}
+   4. $ fluxctl list-workloads

@@ -1,0 +1,68 @@
+flux:
+  rbac:
+    create: false
+    pspEnabled: false
+  serviceAccount:
+    create: false
+  clusterRole:
+    create: false
+  registry:
+    dockercfg:
+      enabled: true
+      secretName: "okteto-regcred"
+      configFileName: /dockercfg/config.json
+  extraContainers:
+    - name: recv
+      image: fluxcd/flux-recv:0.4.0
+      args:
+      - --config=/etc/fluxrecv/fluxrecv.yaml
+      ports:
+      - name: recv
+        containerPort: 8080
+        protocol: TCP
+      resources:
+        limits:
+          cpu: 100m
+          memory: 200Mi
+      readinessProbe:
+        httpGet:
+          path: /health
+          port: 8080
+      volumeMounts:
+      - name: fluxrecv-config
+        mountPath: /etc/fluxrecv
+  extraVolumes:
+    - name: fluxrecv-config
+      secret:
+        secretName: flux-recv
+        defaultMode: 0400
+  resources:  
+    limits:
+      cpu: 100m
+      memory: 128Mi
+  memcached:
+    maxMemory: 128
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128Mi
+
+helm-operator:
+  workers: 1
+  createCRD: false
+  helm:
+    versions: "v3"
+  rbac:
+    create: false
+    pspEnabled: false
+  serviceAccount:
+    create: false
+  clusterRole:
+    create: false
+  git:
+    ssh:
+      secretName: "flux-git-deploy"
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
