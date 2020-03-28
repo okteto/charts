@@ -12,9 +12,6 @@ metadata:
   labels:
     {{- include "inlets.labels" . | nindent 4 }}
   annotations:
-    {{- if .Values.generateHost}}
-    dev.okteto.com/generate-host: "true"
-    {{- end }}
     {{- with .Values.ingress.annotations }}
     {{- toYaml . | nindent 4 }}
     {{- end }}

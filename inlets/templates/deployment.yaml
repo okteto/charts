@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         {{- include "inlets.selectorLabels" . | nindent 8 }}
+      annotations:
+        checksum/secrets: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
     spec:
       serviceAccountName: {{ include "inlets.serviceAccountName" . }}
       securityContext:
@@ -21,22 +23,30 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: inlets/inlets:{{ .Chart.AppVersion}}
+          image: {{ include "inlets.image" . }}
           imagePullPolicy: IfNotPresent
           args:
             - server
-            {{- if .Values.disableTransportWrapping }}
-            - --disable-transport-wrapping
-            {{- end }}
+{{- if eq .Values.edition "pro"}}
+            - --auto-tls=false
+            - --remote-tcp={{ required "A valid .Values.pro.remoteTcp is required" .Values.pro.remoteTcp}}
+{{- else }}
             - --print-token
             - --port={{ .Values.service.port}}
+  {{- if .Values.community.disableTransportWrapping }}
+            - --disable-transport-wrapping
+  {{- end }}
+{{ end }}
           ports:
             - name: tunnel
               containerPort: {{ .Values.service.port}}
               protocol: TCP
           env:
             - name: TOKEN
-              value: "{{ .Values.token }}"
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "inlets.fullname" . }}
+                  key: token
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

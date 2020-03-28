@@ -1,14 +1,26 @@
-token: inlets
-disableTransportWrapping: false
+token: 
+
+# community | pro
+edition: community
+
+community:
+  image: inlets/inlets
+  tag: 2.7.0
+  disableTransportWrapping: false
+
+pro:
+  image: inlets/inlets-pro
+  tag: 0.5.6
+  remoteTcp: 
 
 replicaCount: 1
-generateHost: true
 
 serviceAccount:
   create: false
   name:
 
 podSecurityContext: {}
+
 securityContext: {}
 
 service:
@@ -17,12 +29,20 @@ service:
 
 ingress:
   enabled: true
-  annotations: {}
+  annotations: 
+    dev.okteto.com/generate-host: "true"
   hosts:
     - inlets.local
   tls: []
   
-resources: {}
+resources:
+  requests:
+    cpu: 5m
+    memory: 16Mi
+  limits:
+    cpu: 50m
+    memory: 64Mi
+
 nodeSelector: {}
 tolerations: []
 affinity: {}

@@ -1,2 +1,5 @@
-token: okteto
+token: 
+
+# set it to "pro" to start an inlets-pro tunnel (https://github.com/inlets/inlets-pro)
+edition: community
     
