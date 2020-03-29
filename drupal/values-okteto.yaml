@@ -1,7 +1,7 @@
 drupal:
   drupalUsername: okteto
-  drupalPassword: "Password123!"
-  drupalEmail: user@example.com
+  drupalPassword: "password_okteto"
+  drupalEmail: me@okteto.com
 
   mariadb:
     master:
