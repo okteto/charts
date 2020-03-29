@@ -1,0 +1,21 @@
+apiVersion: v2
+name: drupal
+version: 6.2.10
+appVersion: 8.8.3
+description: One of the most versatile open source content management systems
+keywords:
+  - drupal
+  - cms
+  - blog
+home: http://www.drupal.org/
+icon: https://apps.okteto.com/drupal/icon.png
+sources:
+  - https://github.com/bitnami/bitnami-docker-drupal
+  - https://github.com/okteto/charts/tree/master/drupal
+maintainers:
+  - name: Bitnami
+    email: containers@bitnami.com
+dependencies:
+  - name: drupal
+    version: 6.2.10
+    repository: https://charts.bitnami.com/bitnami

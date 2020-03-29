@@ -1,0 +1,6 @@
+dependencies:
+- name: drupal
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.2.10
+digest: sha256:a9ecfe52753f7dbfb05f540e2ae1d78482d4ecaa26630dee59cea31a94e4138e
+generated: "2020-03-10T15:48:36.841896+01:00"
