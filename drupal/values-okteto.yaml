@@ -14,7 +14,7 @@ drupal:
 
   resources:
     limits:
-      memory: 512Mi
-      cpu: 300m
+      memory: 2Gi
+      cpu: 1
 
 
