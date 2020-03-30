@@ -1,0 +1,8 @@
+drupal:
+  allowEmptyPassword: false
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    annotations:
+      dev.okteto.com/generate-host: "true"

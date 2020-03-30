@@ -1,0 +1,20 @@
+drupal:
+  drupalUsername: okteto
+  drupalPassword: "password_okteto"
+  drupalEmail: me@okteto.com
+
+  mariadb:
+    master:
+      persistence:
+        size: 8Gi
+
+  persistence:
+    drupal:
+      size: 8Gi
+
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: 1
+
+
