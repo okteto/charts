@@ -22,7 +22,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
         - name: {{ .Chart.Name }}
-          image: okteto/hello-world:go
+          image: okteto/hello-world:golang
           ports:
             - name: http
               containerPort: 8080
