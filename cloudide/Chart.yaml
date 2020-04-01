@@ -1,0 +1,9 @@
+apiVersion: v2
+name: cloudide
+description: CloudIDE powered by Coder-Server
+type: application
+version: 0.1.0
+appVersion: 3.0.1
+sources:
+  - https://github.com/codercom/code-server
+  - https://github.com/okteto/charts/tree/cloudide

@@ -1,0 +1,22 @@
+passwd:
+
+persistence:
+  size: 10GB
+
+image:
+  repository:  codercom/code-server
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # If not set it will use the default
+  name:
+
+podSecurityContext:  {}
+service:
+  type: ClusterIP
+  port: 8080
+
