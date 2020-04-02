@@ -61,3 +61,11 @@ Create the name of the service account to use
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Get the image name
+*/}}
+{{- define "cloudide.image" -}}
+{{- printf "%s-%s:%s" .Values.image.repository .Values.runtime .Values.image.tag -}}
+{{- end -}}
+

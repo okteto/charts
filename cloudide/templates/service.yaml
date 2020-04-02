@@ -4,8 +4,6 @@ metadata:
   name: {{ include "cloudide.fullname" . }}
   labels:
     {{- include "cloudide.labels" . | nindent 4 }}
-  annotations:
-    dev.okteto.com/auto-ingress: "true"
 spec:
   type: {{ .Values.service.type }}
   ports:

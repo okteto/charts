@@ -1,4 +1,6 @@
-password:
+
+# available runtimes: go, python, dart, cpp, java, full
+runtime: full
 
 persistence:
   size: 10Gi
