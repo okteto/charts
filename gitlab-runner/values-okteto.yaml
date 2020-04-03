@@ -7,7 +7,7 @@ gitlab-runner:
   ## The registration token for adding new Runners to the GitLab server. This must
   ## be retrieved from your GitLab instance.
   ## ref: https://docs.gitlab.com/ee/ci/runners/
-  runnerRegistrationToken: NtT1sGynWRtr9J2sKjGm
+  runnerRegistrationToken:
   
   ## Configure the maximum number of concurrent jobs
   concurrent: 1
