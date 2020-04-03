@@ -2,8 +2,8 @@
 # available runtimes: go, python, dart, cpp, java, full
 runtime: full
 
-# run `htpasswd locally -n username` to generate your value
-htpasswd: username:$apr1$RYGPGy3r$AyiDAmLULaHNzT58cNy1N.
+# run htpasswd to generate your value e.g `htpasswd -n $(whoami)`
+htpasswd:
 
 persistence:
   size: 10Gi
