@@ -1,3 +1,5 @@
+# Visit https://github.com/okteto/charts/tree/master/stacks#reference for YAML reference
+
 services:
   vote:
     public: true
