@@ -28,6 +28,11 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ template "cloudide.image" . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: username
+              value: {{.Values.username}}
+            - name: password
+              value: {{.Values.password  }}
           ports:
             - name: http
               containerPort: {{.Values.service.port}}

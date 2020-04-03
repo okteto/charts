@@ -2,7 +2,8 @@
 # available runtimes: go, python, dart, cpp, java, full
 runtime: full
 
-credentials: "hello:world"
+# run `htpasswd locally -n username` to generate your value
+htpasswd: username:$apr1$RYGPGy3r$AyiDAmLULaHNzT58cNy1N.
 
 persistence:
   size: 10Gi
