@@ -1,0 +1,34 @@
+gitlab-runner:
+  
+  ## The GitLab Server URL (with protocol) that want to register the runner against
+  ## ref: https://docs.gitlab.com/runner/commands/README.html#gitlab-runner-register
+  gitlabUrl: https://gitlab.com/
+  
+  ## The registration token for adding new Runners to the GitLab server. This must
+  ## be retrieved from your GitLab instance.
+  ## ref: https://docs.gitlab.com/ee/ci/runners/
+  runnerRegistrationToken: 
+  
+  ## Configure the maximum number of concurrent jobs
+  concurrent: 1
+
+  ## Defines in seconds how often to check GitLab for a new builds
+  checkInterval: 30
+
+  ## Configuration for the Pods that the runner launches for each new job
+  runners:
+    image: ubuntu:18.04
+
+    builds:
+      cpuLimit: 100m
+      memoryLimit: 128Mi
+    
+    ## Service Container specific configuration
+    services:
+      cpuLimit: 100m
+      memoryLimit: 128Mi
+
+    ## Helper Container specific configuration
+    helpers:
+      cpuLimit: 100m
+      memoryLimit: 128Mi
