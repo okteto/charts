@@ -1,0 +1,13 @@
+jenkins:
+  master:
+    resources:
+      requests:
+        cpu: "50m"
+        memory: "256Mi"
+      limits:
+        cpu: "2000m"
+        memory: "4096Mi"
+    ingress:
+      enabled: true
+      annotations:
+        dev.okteto.com/generate-host: "true"

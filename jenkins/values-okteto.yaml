@@ -1,0 +1,27 @@
+jenkins:
+  master:
+    adminUser: "admin"
+    # adminPassword find with: printf $(kubectl get secret --namespace contribution-genievot jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
+
+  # This portion for backup management.
+  backup:
+    enabled: false
+    componentName: "backup"
+    schedule: "0 2 * * *"
+    labels: {}
+    annotations: {}
+    image:
+      repository: "maorfr/kube-tasks"
+      tag: "0.2.0"
+    extraArgs: []
+    existingSecret: {}
+    env: []
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: 1
+      limits:
+        memory: 1Gi
+        cpu: 1
+    destination: "s3://jenkins-data/backup"
+  checkDeprecation: true

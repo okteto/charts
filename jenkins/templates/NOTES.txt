@@ -1,0 +1,5 @@
+Visit Url visible in okteto cloud or use okteto mobile app from playstore to get url.
+######
+Get Password with: 
+printf $(kubectl get secret --namespace contribution-genievot jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
+######
