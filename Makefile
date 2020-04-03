@@ -14,7 +14,7 @@ $(DIRS):
 	helm lint $@
 	mkdir -p public/$@
 	helm package $@ --destination public/$@
-	rsync -avzh --ignore-errors $@/*.png public/$@
+	cp $@/*.png public/$@
 
 index:
 	helm repo index --url $(URL) public

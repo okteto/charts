@@ -4,7 +4,7 @@ home: https://gitlab.com
 version: 0.15.0
 appVersion: 12.9.0
 description: GitLab Runner
-icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
+icon: https://charts.okteto.com/gitlab-runner/icon.png
 sources:
   - https://charts.gitlab.io
   - https://github.com/okteto/charts/tree/master/gitlab-runner 
