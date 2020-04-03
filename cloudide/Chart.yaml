@@ -3,7 +3,11 @@ name: cloudide
 description: CloudIDE powered by Coder-Server
 type: application
 version: 0.1.0
-appVersion: 3.0.1
+appVersion: 1.0.0
+icon: https://charts.okteto.com/charts/cloudide/icon.png
+maintainer:
+  - name: Ramiro Berrelleza
+    email: ramiro@okteto.com
 sources:
-  - https://github.com/codercom/code-server
+  - https://github.com/eclipse-theia/theia
   - https://github.com/okteto/charts/tree/cloudide
