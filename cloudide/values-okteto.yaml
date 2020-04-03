@@ -2,6 +2,8 @@
 # available runtimes: go, python, dart, cpp, java, full
 runtime: full
 
+credentials: "hello:world"
+
 persistence:
   size: 10Gi
 

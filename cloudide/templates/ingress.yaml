@@ -9,7 +9,9 @@ metadata:
     {{- include "cloudide.labels" . | nindent 4 }}
   annotations:
     dev.okteto.com/generate-host: "true"
-    nginx.ingress.kubernetes.io/auth-url: https://httpbin.org/status/401
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: {{ include "cloudide.fullname" . }}
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
   name: {{ include "cloudide.fullname" . }}
 spec:
   rules:
