@@ -22,4 +22,5 @@ index:
 	mv public/index.yaml.generated public/index.yaml
 	
 publish:
-	gsutil -m -h "Cache-Control:public, max-age=60" rsync -r -n public gs://apps.okteto.com
+	cd public; gsutil -m cp -r . gs://apps.okteto.com; cd -;
+	
