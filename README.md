@@ -2,16 +2,22 @@
 
 This Helm repository contains the default Helm charts for the Okteto Cloud default repository:
 
+- [CockroachDB](cockroachdb/README.md)
 - [Drupal](drupal/README.md)
+- [Flux](flux/README.md)
 - [Hello World](hello-world/README.md)
+- [Inlets](inlets/README.md)
 - [MariaDB](mariadb/README.md)
-- [Movies](movies/README.md)
 - [MongoDB](mongodb/README.md)
+- [Movies](movies/README.md)
 - [OpenFaaS](openfaas/README.md)
 - [PostgreSQL](postgresql/README.md)
 - [RabbitMQ](rabbitmq/README.md)
 - [Redis](redis/README.md)
+- [Tensorflow-Notebook](tensorflow-notebook/README.md)
+- [Terminal](terminal/README.md)
 - [WordPress](wordpress/README.md)
+
 
 
 # How to submit a new chart
