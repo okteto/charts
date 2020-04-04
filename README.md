@@ -16,6 +16,7 @@ This Helm repository contains the default Helm charts for the Okteto Cloud defau
 - [Redis](redis/README.md)
 - [Tensorflow-Notebook](tensorflow-notebook/README.md)
 - [Terminal](terminal/README.md)
+- [WordPress](wordpress/README.md)
 
 
 
