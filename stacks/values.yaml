@@ -1,5 +1,3 @@
-# Visit https://github.com/okteto/charts/blob/master/stacks/docs/reference.md for YAML reference
-
 services:
   vote:
     public: true

@@ -6,8 +6,8 @@ version: 0.1.0
 appVersion: 0.1.0
 icon: https://apps.okteto.com/stacks/icon.png
 sources:
-  - https://github.com/okteto/charts/tree/master/stacks
-home: www.okteto.com
+  - https://github.com/okteto/charts/blob/master/stacks/docs/reference.md
+home: https://github.com/okteto/charts/tree/master/stacks
 maintainers:
   - name: Okteto
     email: hello@okteto.com
