@@ -26,3 +26,5 @@ This Helm repository contains the default Helm charts for the Okteto Cloud defau
 - Test your chart with Okteto Cloud (Feel free to [reach out](https://twitter.com/oktetohq) if you need help).
 - Run `make all` to run the linter and package it.
 - Submit a PR with the chart.
+
+> For more details, you can visit https://okteto.com/blog/get-started-with-the-okteto-cloud-application-catalog/
