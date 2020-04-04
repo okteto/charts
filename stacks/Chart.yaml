@@ -1,0 +1,13 @@
+apiVersion: v2
+name: stacks
+description: A docker-compose like format to deploy applications in Kubernetes
+type: application
+version: 0.1.0
+appVersion: 0.1.0
+icon: https://apps.okteto.com/stacks/icon.png
+sources:
+  - https://github.com/okteto/charts/tree/master/stacks
+home: https://github.com/okteto/stacks
+maintainers:
+  - name: Okteto
+    email: hello@okteto.com

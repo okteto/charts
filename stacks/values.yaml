@@ -1,0 +1,38 @@
+# Visit https://github.com/okteto/charts/tree/master/stacks#reference for YAML reference
+
+services:
+  vote:
+    public: true
+    image: okteto/vote:1
+    replicas: 2
+    ports:
+      - 80
+
+  result:
+    public: true
+    image: okteto/result:1
+    command: node server.js
+    ports:
+      - 80
+
+  worker:
+    image: okteto/worker:1
+    stop_grace_period: 60
+
+  db:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5432
+    volumes:
+      - /var/lib/postgresql/data
+    resources:
+      cpu: 300m
+      memory: 500Mi
+      disk: 5Gi
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379
