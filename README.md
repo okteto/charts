@@ -2,6 +2,7 @@
 
 This Helm repository contains the default Helm charts for the Okteto Cloud default repository:
 
+- [Drupal](drupal/README.md)
 - [Hello World](hello-world/README.md)
 - [MariaDB](mariadb/README.md)
 - [Movies](movies/README.md)
