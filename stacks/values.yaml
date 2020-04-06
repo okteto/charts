@@ -5,6 +5,9 @@ services:
     replicas: 2
     ports:
       - 80
+    resources:
+      cpu: 100m
+      memory: 128Mi
 
   result:
     public: true
@@ -12,10 +15,16 @@ services:
     command: node server.js
     ports:
       - 80
+    resources:
+      cpu: 100m
+      memory: 128Mi
 
   worker:
     image: okteto/worker:1
     stop_grace_period: 60
+    resources:
+      cpu: 100m
+      memory: 128Mi
 
   db:
     image: postgres:9.4
@@ -26,11 +35,14 @@ services:
     volumes:
       - /var/lib/postgresql/data
     resources:
-      cpu: 300m
-      memory: 500Mi
-      disk: 5Gi
+      cpu: 200m
+      memory: 256Mi
+      disk: 1Gi
 
   redis:
     image: redis:alpine
     ports:
       - 6379
+    resources:
+      cpu: 100m
+      memory: 128Mi
