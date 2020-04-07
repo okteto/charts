@@ -4,13 +4,9 @@ A docker-compose like format to deploy applications in Kubernetes
 
 ## Why do we need Okteto Stacks?
 
-Kubernetes is an open-source project for automating deployment, scaling, and management of containers. It has rapidly become the standard to run production workloads and the community around it is just great!
+Stacks allows you to deploy applications in Okteto Cloud using a simple docker-compose like format. Stacks are designed for developers that don't want to deal with the complexities of Kubernetes manifests or Helm charts.
 
-But learning Kubernetes manifests can be hard for the majority of developers. Developers just want to define the docker image, ports, command, environment variables, volumes and little more. **Stacks** understands a simple docker-compose like format and uses the Helm templating system to traslate this format into Kubernetes resources. Stacks relies on Helm to deploy to Kubernetes, taking advantage of Helm declarative approach and its ecosystem.
-
-## Sample
-
-The next sample is the Okteto Stack definition for the well-known [Voting App](https://github.com/dockersamples/example-voting-app) application. As you can see, it is about 30 lines of yaml:
+The following sample illustrates how easy is to define an [application running five microservices](https://github.com/dockersamples/example-voting-app) using Stacks:
 
 ```yaml
 services:
@@ -55,5 +51,5 @@ The equivalent Helm chart would have more than 400 lines of yaml!
 
 Links:
 
-- [Okteto Stack YAML reference](docs/reference.md)
+- [Stack YAML reference](docs/reference.md)
 - [Using Okteto Stacks with the Helm CLI](docs/helm-cli.md)
