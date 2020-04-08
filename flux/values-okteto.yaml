@@ -73,6 +73,9 @@ flux:
     # Do not scan images that match these glob expressions
     excludeImage:
 
+    # Scan only images that match these glob expressions; if empty, all images are included
+    includeImage:
+
   syncGarbageCollection:
     enabled: false
     dry: false
