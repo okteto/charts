@@ -20,8 +20,8 @@ gitlab-runner:
     image: ubuntu:18.04
 
     builds:
-      cpuLimit: 100m
-      memoryLimit: 128Mi
+      cpuLimit: 1
+      memoryLimit: 1024Mi
     
     # Deploy a Minio instance to enable cross-job caching
     # cache:
