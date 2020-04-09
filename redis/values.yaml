@@ -317,7 +317,7 @@ master:
     # storageClass: "-"
     accessModes:
     - ReadWriteOnce
-    size: 8Gi
+    size: 2Gi
 
   ## Update strategy, can be set to RollingUpdate or onDelete by default.
   ## https://kubernetes.io/docs/tutorials/stateful-application/basic-stateful-set/#updating-statefulsets
