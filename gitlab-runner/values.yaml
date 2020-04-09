@@ -1,0 +1,21 @@
+gitlab-runner:
+  rbac:
+    create: false
+  clusterWideAccess: false
+
+  runners:
+    privileged: false
+
+    builds:
+      cpuLimit: 100m
+      memoryLimit: 128Mi
+
+    ## Service Container specific configuration
+    services:
+      cpuLimit: 100m
+      memoryLimit: 128Mi
+
+    ## Helper Container specific configuration
+    helpers:
+      cpuLimit: 100m
+      memoryLimit: 128Mi
