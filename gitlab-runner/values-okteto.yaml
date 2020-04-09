@@ -15,6 +15,12 @@ gitlab-runner:
   ## Defines in seconds how often to check GitLab for a new builds
   checkInterval: 30
 
+  resources:
+    limits:
+      memory: 256Mi
+      cpu: 200m
+
+
   ## Configuration for the Pods that the runner launches for each new job
   runners:
     image: ubuntu:18.04
