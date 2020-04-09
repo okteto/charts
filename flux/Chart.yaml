@@ -6,8 +6,6 @@ appVersion: "1.19.0"
 description: GitOps for continuous delivery
 icon: https://apps.okteto.com/flux/icon.png
 sources:
-  - https://github.com/fluxcd/flux
-  - https://github.com/fluxcd/helm-operator
   - https://github.com/okteto/charts/tree/master/flux
 maintainers:
   - name: pablo
