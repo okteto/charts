@@ -1,48 +1,21 @@
 services:
   vote:
     public: true
-    image: okteto/vote:1
+    image: okteto/vote:stacks
     replicas: 2
     ports:
-      - 80
+      - 8080
     resources:
       cpu: 100m
       memory: 128Mi
-
-  result:
-    public: true
-    image: okteto/result:1
-    command: node server.js
-    ports:
-      - 80
-    resources:
-      cpu: 100m
-      memory: 128Mi
-
-  worker:
-    image: okteto/worker:1
-    stop_grace_period: 60
-    resources:
-      cpu: 100m
-      memory: 128Mi
-
-  db:
-    image: postgres:9.4
-    environment:
-      - POSTGRES_HOST_AUTH_METHOD=trust
-    ports:
-      - 5432
-    volumes:
-      - /var/lib/postgresql/data
-    resources:
-      cpu: 200m
-      memory: 256Mi
-      disk: 1Gi
 
   redis:
-    image: redis:alpine
+    image: redis
     ports:
       - 6379
     resources:
       cpu: 100m
       memory: 128Mi
+      disk: 1Gi
+    volumes:
+      - /data
