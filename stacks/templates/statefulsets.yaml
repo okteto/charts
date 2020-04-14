@@ -26,6 +26,13 @@ spec:
       {{ if $service.stop_grace_period }}
       terminationGracePeriodSeconds: {{ $service.stop_grace_period }}
       {{ end }}
+      initContainers:
+        - name: "{{ $name }}-init"
+          image: busybox
+          command: ["sh", "-c", "chmod -R 777 /data"]
+          volumeMounts:
+            - name: "pvc"
+              mountPath: "/data"
       containers:
         - name: "{{ $name }}"
           image: "{{ $service.image }}"
@@ -110,10 +117,10 @@ spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:
-            {{ if and ($service.resources) ($service.resources.disk) }}
-            storage: {{ $service.resources.disk }}
+            {{ if and ($service.resources) ($service.resources.storage) }}
+            storage: {{ $service.resources.storage }}
             {{ else }}
-            storage: 10Gi
+            storage: 1Gi
             {{ end }}
     {{ end }}
 ---
