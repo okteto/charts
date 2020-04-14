@@ -95,14 +95,14 @@ spec:
           {{ end }}
           volumeMounts:
             {{- range $index, $volume := $service.volumes }}
-            - name: "pvc-{{ $index }}"
-              subPath: "data"
+            - name: "pvc"
+              subPath: "data-{{ $index }}"
               mountPath: {{ $volume }}
             {{ end }}
   volumeClaimTemplates:
     {{- range $index, $volume := $service.volumes }}
     - metadata:
-        name: "pvc-{{ $index }}"
+        name: "pvc"
         labels:
           stack.okteto.com/name: "{{ $.Release.Name }}"
           stack.okteto.com/service: "{{ $name }}"
