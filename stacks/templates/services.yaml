@@ -4,6 +4,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: "{{ $name }}"
+  namespace: "{{ $.Release.Namespace }}"
   labels:
     stack.okteto.com/name: "{{ $.Release.Name }}"
     stack.okteto.com/service: "{{ $name }}"
