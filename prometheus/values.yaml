@@ -1,6 +1,8 @@
 prometheus:
   alertmanager:
     enabled: true
+    persistentVolume:
+      size: "1Gi"
     ingress:
       enabled: true
       annotations:
@@ -35,6 +37,8 @@ prometheus:
   
   server:
     enabled: true
+    persistentVolume:
+      size: "1Gi"
     ingress:
       enabled: true
       annotations:

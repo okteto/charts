@@ -2,7 +2,7 @@ prometheus:
   alertmanager:
     enabled: true
     persistentVolume:
-      size: "250Mi"
+      size: "1Gi"
     resources:
       limits:
         memory: "128Mi"
@@ -11,7 +11,7 @@ prometheus:
   server:
     enabled: true
     persistentVolume:
-      size: "250Mi"
+      size: "1Gi"
     resources:
       limits:
         memory: "128Mi"
