@@ -1,3 +1,6 @@
 name: charts
 image: okteto/charts:dev
 command: ["bash"]
+push:
+  args:
+    - URL=$CHARTS_URL
