@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: okteto/okteto:1.8.4
+      - image: okteto/charts:dev
     steps:
       - checkout
       - run:
