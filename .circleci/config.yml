@@ -2,15 +2,9 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: okteto/golang-ci:1.14
+      - image: okteto/charts:dev
     steps:
       - checkout
-      - run: 
-          name: install helm3
-          command: |
-            curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-            chmod 700 get_helm.sh
-            ./get_helm.sh
       - run:
          name: build
          command: make all
