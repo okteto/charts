@@ -18,7 +18,7 @@ $(DIRS):
 
 index:
 	helm repo index --url $(URL) public
-	yq w -s devs.yaml public/index.yaml > public/index.yaml.generated
+	yq merge public/index.yaml devs.yaml > public/index.yaml.generated
 	mv public/index.yaml.generated public/index.yaml
 	
 publish:

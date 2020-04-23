@@ -6,7 +6,7 @@ metadata:
     dev.okteto.com/auto-ingress: "true"
 spec:
   selector:
-    app.kubernetes.io/name: nginx
+    app.kubernetes.io/name: okteto-charts
   ports:
     - protocol: TCP
       port: 80
@@ -18,16 +18,16 @@ kind: Deployment
 metadata:
   name: charts
   labels:
-    app.kubernetes.io/name: nginx
+    app.kubernetes.io/name: okteto-charts
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: nginx
+      app.kubernetes.io/name: okteto-charts
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: nginx
+        app.kubernetes.io/name: okteto-charts
     spec:
       containers:
       - name: nginx

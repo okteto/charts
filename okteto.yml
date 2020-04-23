@@ -1,7 +1,3 @@
-name: helm
-image: okteto/desk:latest
+name: charts
+image: okteto/okteto:1.8.4
 command: ["bash"]
-services:
-  - labels:
-      app.kubernetes.io/name: "nginx"
-    mountpath: /usr/share/nginx/html
