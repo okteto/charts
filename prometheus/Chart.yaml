@@ -3,7 +3,7 @@ name: prometheus
 home: https://gitlab.com
 version: 11.0.4
 appVersion: 2.16.0
-description: GitLab Runner fully integrated with your Kubernetes infrastructure
+description: Prometheus is a monitoring system and time series database
 icon: https://apps.okteto.com/prometheus/icon.png
 sources:
   - https://github.com/helm/charts/tree/master/stable/prometheus
