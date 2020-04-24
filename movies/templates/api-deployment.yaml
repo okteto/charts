@@ -47,6 +47,3 @@ spec:
             httpGet:
               path: /api/healthz
               port: 8080
-          resources:
-            limits:
-              cpu: 1
