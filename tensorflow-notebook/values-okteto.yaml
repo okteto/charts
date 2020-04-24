@@ -2,5 +2,5 @@ jupyter:
   password: okteto
   resources:
     limits:
-      cpu: 1
-      memory: 2
+      cpu: 1.25
+      memory: 2.25Gi
