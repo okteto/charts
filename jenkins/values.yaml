@@ -2,11 +2,11 @@ jenkins:
   master:
     resources:
       requests:
-        cpu: "50m"
+        cpu: "800m"
         memory: "256Mi"
       limits:
         cpu: "1000m"
-        memory: "1500Mi"
+        memory: "1024Mi"
     ingress:
       enabled: true
       annotations:
