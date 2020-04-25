@@ -1,7 +1,7 @@
 jenkins:
   master:
     adminUser: "admin"
-    # adminPassword find with: printf $(kubectl get secret --namespace contribution-genievot jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
+    # adminPassword find with: printf $(kubectl get secret jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
 
   # This portion for backup management.
   backup:
