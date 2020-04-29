@@ -9,7 +9,7 @@ ARG URL
 COPY . . 
 RUN make all
 
-FROM nginx:alpine
+FROM bitnami/nginx
+COPY --from=build /usr/src/app/public /app
 
-COPY --from=build /usr/src/app/public /usr/share/nginx/html
 

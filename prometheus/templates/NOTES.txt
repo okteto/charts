@@ -1,0 +1,1 @@
+Your Prometheus instance is configured to automatically discover endpoints, services and pods on this namespace.

@@ -12,10 +12,25 @@ This Helm repository contains the default Helm charts for the Okteto Cloud defau
 - [Redis](redis/README.md)
 - [Stacks](stacks/README.md)
 
-# How to submit a new chart
+# Contributor Guide
 
+We welcome contributions! Are we missing your favorite Cloud Native App? Want to upgrade an existing one?
+
+
+The main process is:
+- File an issue with your idea, in case someone else on the community is already working on it (or ping us via slack).
 - Fork https://github.com/okteto/charts.
 - Add your chart source code in a new folder (Review https://okteto.com/docs/tutorials/repos/index.html to see how to make your chart Okteto Cloud friendly). 
-- Test your chart with Okteto Cloud (Feel free to [reach out](https://twitter.com/oktetohq) if you need help).
-- Run `make all` to run the linter and package it.
-- Submit a PR with the chart.
+- If adding a new chart, include an icon for your chart as $YOUR_CHART/icon.png
+- Submit a PR with the chart. 
+
+To test the chart:
+- Login to Okteto from your terminal:  `okteto login`
+- Export the name of the namespace you'll deploy into (typically your github ID): `export NAMESPACE=rberrelleza`
+- Push your changes to Okteto Cloud: `okteto push --deploy`
+- Add your catalog to your Okteto Cloud account in https://cloud.okteto.com/#/settings/repositories
+- Deploy your app (the apps from the default catalog will have an `okteto` label).
+
+Okteto Cloud is a multitenant platform. Because of this, charts deployed via Okteto have certain restrictions. [Check out this document](https://okteto.com/docs/cloud/multitenancy) to learn more about it.
+
+Feel free to reach out to us in the #okteto channel in the [Kubernetes Slack](https://slack.k8s.io/) or [Twitter](https://twitter.com/oktetohq) if you get stuck.
