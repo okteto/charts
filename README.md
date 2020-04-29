@@ -2,10 +2,12 @@
 
 This Helm repository contains the default Helm charts for the Okteto Cloud default repository:
 
-- [Cockroach DB](cockroachdb/README.md)
+- [CockroachDB](cockroachdb/README.md)
+- [Drupal](drupal/README.md)
 - [Flux](flux/README.md)
-- [Hello World](hello-world/README.md)
 - [Gitlab CI Runner](gitlab/README.md)
+- [Hello World](hello-world/README.md)
+
 - [Inlets](inlets/README.md)
 - [MariaDB](mariadb/README.md)
 - [MongoDB](mongodb/README.md)
@@ -16,7 +18,7 @@ This Helm repository contains the default Helm charts for the Okteto Cloud defau
 - [RabbitMQ](rabbitmq/README.md)
 - [Redis](redis/README.md)
 - [Stacks](stacks/README.md)
-- [Tensorflow Notebook](tensorflow-notebook/README.md)
+- [Tensorflow-Notebook](tensorflow-notebook/README.md)
 - [Terminal](terminal/README.md)
 
 # Contributor Guide
@@ -30,6 +32,8 @@ The main process is:
 - Add your chart source code in a new folder (Review https://okteto.com/docs/tutorials/repos/index.html to see how to make your chart Okteto Cloud friendly). 
 - If adding a new chart, include an icon for your chart as $YOUR_CHART/icon.png
 - Submit a PR with the chart. 
+
+> For more details, you can visit https://okteto.com/blog/get-started-with-the-okteto-cloud-application-catalog/
 
 To test the chart:
 - Login to Okteto from your terminal:  `okteto login`
