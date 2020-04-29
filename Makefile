@@ -18,9 +18,11 @@ $(DIRS):
 
 index:
 	helm repo index --url $(URL) public
-	yq w -s devs.yaml public/index.yaml > public/index.yaml.generated
+	yq merge public/index.yaml devs.yaml > public/index.yaml.generated
 	mv public/index.yaml.generated public/index.yaml
 	
 publish:
-	cd public; gsutil -m cp -r . gs://apps.okteto.com; cd -;
-	
+	gsutil -m -h "Cache-Control:public, max-age=60" rsync -r public gs://apps.okteto.com
+
+dev:
+	okteto build -t okteto/charts:dev --target build .

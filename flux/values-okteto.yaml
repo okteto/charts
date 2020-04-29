@@ -14,9 +14,9 @@ flux:
     # Also configure state.mode to `secret` since storing state in a git tag will no longer be possible.
     readonly: false
     # Username to use as git committer
-    user: "Weave Flux"
+    user: "Okteto Cloud"
     # Email to use as git committer
-    email: "support@weave.works"
+    email: "hello@okteto.com"
     # If set, commits will be signed with this GPG key.
     signingKey: ""
     # If set, the signatures of the sync tag and commits will be verified.
@@ -44,7 +44,7 @@ flux:
     # use `.sync.state: secret` to store flux's state as an annotation on the secret (instead of a git tag)
     state: git
 
-  # Enables manifest generation
+  # If enabled, fluxd will look for .flux.yaml and run Kustomize or other manifest generators
   manifestGeneration: false
 
   gpgKeys:
@@ -72,6 +72,8 @@ flux:
     disableScanning: false
     # Do not scan images that match these glob expressions
     excludeImage:
+    # Scan only images that match these glob expressions; if empty, all images are included
+    includeImage: "registry.cloud.okteto.net/*"
 
   syncGarbageCollection:
     enabled: false
@@ -79,7 +81,7 @@ flux:
 
   image:
     repository: docker.io/fluxcd/flux
-    tag: 1.18.0
+    tag: 1.19.0
 
 helm-operator:
   # Log the diff when a chart release diverges
@@ -106,4 +108,4 @@ helm-operator:
 
   image:
     repository: docker.io/fluxcd/helm-operator
-    tag: 1.0.0-rc9
+    tag: 1.0.0

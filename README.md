@@ -14,10 +14,10 @@ This Helm repository contains the default Helm charts for the Okteto Cloud defau
 - [PostgreSQL](postgresql/README.md)
 - [RabbitMQ](rabbitmq/README.md)
 - [Redis](redis/README.md)
+- [Stacks](stacks/README.md)
 - [Tensorflow-Notebook](tensorflow-notebook/README.md)
 - [Terminal](terminal/README.md)
 - [WordPress](wordpress/README.md)
-
 
 
 # How to submit a new chart

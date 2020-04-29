@@ -6,11 +6,11 @@ drupal:
   mariadb:
     master:
       persistence:
-        size: 8Gi
+        size: 2Gi
 
   persistence:
     drupal:
-      size: 8Gi
+      size: 2Gi
 
   resources:
     limits:
