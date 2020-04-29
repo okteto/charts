@@ -2,15 +2,22 @@
 
 This Helm repository contains the default Helm charts for the Okteto Cloud default repository:
 
+- [Cockroach DB](cockroachdb/README.md)
+- [Flux](flux/README.md)
 - [Hello World](hello-world/README.md)
+- [Gitlab CI Runner](gitlab/README.md)
+- [Inlets](inlets/README.md)
 - [MariaDB](mariadb/README.md)
 - [MongoDB](mongodb/README.md)
 - [Movies](movies/README.md)
 - [OpenFaaS](openfaas/README.md)
 - [PostgreSQL](postgresql/README.md)
+- [Prometheus](prometheus/README.md)
 - [RabbitMQ](rabbitmq/README.md)
 - [Redis](redis/README.md)
 - [Stacks](stacks/README.md)
+- [Tensorflow Notebook](tensorflow-notebook/README.md)
+- [Terminal](terminal/README.md)
 
 # Contributor Guide
 
