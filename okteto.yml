@@ -3,4 +3,4 @@ image: okteto/charts:dev
 command: ["bash"]
 push:
   args:
-    - URL=$CHARTS_URL
+    - NAMESPACE=https://charts-$NAMESPACE.cloud.okteto.net
