@@ -1,0 +1,4 @@
+Minio can be accessed via port {{ .Values.minio.service.port }} on the following DNS name from within your cluster:
+{{ template "minio.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+
+Alternately, you can use your browser or the Minio SDK to access the server.
