@@ -9,15 +9,16 @@ minio:
     existingClaim: ""
 
   defaultBucket:
-    enabled: false
+    enabled: true
     name: okteto
     policy: none
     purge: false
 
   resources:
     limits:
-      memory: 64Mi
-      cpu: 100m
+      memory: 256Mi
+      cpu: 500m
+
 
   
   
