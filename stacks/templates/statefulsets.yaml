@@ -118,8 +118,12 @@ spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:
-            {{ if and ($service.resources) ($service.resources.storage) }}
-            storage: {{ $service.resources.storage }}
+            {{ if $service.resources }}
+              {{ if $service.resources.storage }}
+              storage: {{ $service.resources.storage }}
+              {{ else }}
+              storage: 1Gi
+              {{ end }}
             {{ else }}
             storage: 1Gi
             {{ end }}
