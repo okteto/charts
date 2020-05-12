@@ -1,0 +1,1 @@
+PGAdmin is now available. Click on the endpoint URL in the Okteto Cloud UI to access it.
