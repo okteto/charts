@@ -11,6 +11,8 @@ spec:
       {{- include "pgadmin.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      annotations:
+        checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
       labels:
         {{- include "pgadmin.selectorLabels" . | nindent 8 }}
     spec:
