@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: dpage/pgadmin4
+  pullPolicy: IfNotPresent
+
+service:
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+  type: ClusterIP
+  port: 5050
+
+email:
+password:
+resources:
+  limits:
+    memory: 256Mi
+    cpu: 500m  

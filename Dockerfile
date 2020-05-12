@@ -7,6 +7,7 @@ RUN wget -O /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download
 ARG URL
 
 COPY . . 
+RUN echo $URL
 RUN make all
 
 FROM bitnami/nginx
