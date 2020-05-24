@@ -1,6 +1,7 @@
 To access your terminal, click on the URL displayed in the Okteto Cloud UI, and type your username and password.
 
 {{- if .Values.credentials }}
+
 Username: "{{ (split ":" .Values.credentials)._0 }}"  
 Password: "{{ (split ":" .Values.credentials)._1 }}"
 {{- end }}
