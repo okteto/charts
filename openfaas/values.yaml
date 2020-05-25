@@ -42,7 +42,7 @@ gateway:
       cpu: "50m"
 
 basicAuthPlugin:
-  image: openfaas/basic-auth-plugin:0.18.11
+  image: openfaas/basic-auth-plugin:0.18.17
   replicas: 1
   resources:
     requests:
@@ -73,7 +73,7 @@ oauth2Plugin:
   securityContext: true
 
 faasnetes:
-  image: openfaas/faas-netes:0.10.3
+  image: openfaas/faas-netes:0.10.5
   readTimeout : "60s"
   writeTimeout : "60s"
   imagePullPolicy : "Always"    # Image pull policy for deployed functions
@@ -94,7 +94,7 @@ faasnetes:
 
 # replaces faas-netes with openfaas-operator
 operator:
-  image: openfaas/faas-netes:0.10.3
+  image: openfaas/faas-netes:0.10.5
   create: false
   # set this to false when creating multiple releases in the same cluster
   # must be true for the first one only
@@ -107,7 +107,7 @@ operator:
 queueWorker:
   durableQueueSubscription: false
   queueGroup: "faas"
-  image: openfaas/queue-worker:0.10.1
+  image: openfaas/queue-worker:0.11.0
   ackWait : "60s"
   replicas: 1
   gatewayInvoke: true
@@ -144,6 +144,9 @@ nats:
     port: ""
   image: nats-streaming:0.17.0
   enableMonitoring: false
+  metrics:
+    enabled: false
+    image: synadia/prometheus-nats-exporter:0.6.2 
   resources:
     requests:
       memory: "120Mi"
@@ -183,14 +186,6 @@ faasIdler:
   resources:
     requests:
       memory: "64Mi"
-
-basicAuthPlugin:
-  image: openfaas/basic-auth-plugin:0.17.0
-  replicas: 1
-  resources:
-    requests:
-      memory: "50Mi"
-      cpu: "20m"
 
 nodeSelector:
   beta.kubernetes.io/arch: amd64
