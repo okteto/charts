@@ -121,14 +121,16 @@ openfaas:
   # both components
   prometheus:
     image: prom/prometheus:v2.11.0
-    create: true
+    # prometheus creates a cluster-wide role which is not allowed in okteto cloud
+    create: false
     resources:
       requests:
         memory: "512Mi"
 
   alertmanager:
     image: prom/alertmanager:v0.18.0
-    create: true
+    # prometheus creates a cluster-wide role which is not allowed in okteto cloud
+    create: false
     resources:
       requests:
         memory: "25Mi"
@@ -151,7 +153,7 @@ openfaas:
 
   # ingress configuration
   ingress:
-    enabled: false
+    enabled: true
     # Used to create Ingress record (should be used with exposeServices: false).
     hosts:
       - host: gateway.openfaas.local  # Replace with gateway.example.com if public-facing
@@ -160,6 +162,7 @@ openfaas:
         path: /
     annotations:
       kubernetes.io/ingress.class: nginx
+      dev.okteto.com/generate-host: true
     tls:
       # Secrets must be manually created in the namespace.
 
@@ -193,14 +196,11 @@ openfaas:
         memory: "50Mi"
         cpu: "20m"
 
-  nodeSelector:
-    beta.kubernetes.io/arch: amd64
+  nodeSelector: []
 
   tolerations: []
 
   affinity: {}
-
-  kubernetesDNSDomain: cluster.local
 
   istio:
     mtls: false
