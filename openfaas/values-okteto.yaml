@@ -1,7 +1,6 @@
 openfaas:
   basicAuthPassword: "Password123!"
   generateBasicAuth: true
-
   gateway:
     resources:
       limits:

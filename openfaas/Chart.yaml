@@ -1,7 +1,7 @@
 apiVersion: v2
 description: Enable Kubernetes as a backend for OpenFaaS (Functions as a Service)
 name: openfaas
-version: 5.7.2
+version: 5.8.3
 sources:
 - https://github.com/openfaas/faas
 - https://github.com/openfaas/faas-netes
@@ -20,5 +20,5 @@ maintainers:
   email: stefan.prodan@gmail.com
 dependencies:
   - name: openfaas
-    version: "5.7.2"
+    version: "5.8.3"
     repository: "https://openfaas.github.io/faas-netes"
