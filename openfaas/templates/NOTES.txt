@@ -5,11 +5,5 @@ To verify that openfaas has started, run:
 {{- if .Values.generateBasicAuth }}
 To retrieve the admin password, run:
 
-  kubectl -n {{ .Release.Namespace }} get secret basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode
-{{- end }}
-
-{{- if .Values.ingress.enabled }}
-To retrieve the gateway address, run:
-
-  kubectl -n {{ .Release.Namespace }} get ingress {{ template "openfaas.name" . }}-ingress -o jsonpath="{.spec.tls[0].hosts[0]}"
+  echo $(kubectl -n {{ .Release.Namespace }} get secret basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode)
 {{- end }}

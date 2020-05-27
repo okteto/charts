@@ -1,64 +1,49 @@
-# this will be replaced by Okteto during deployment
-functionNamespace: $NAMESPACE
+openfaas:
+  basicAuthPassword: "Password123!"
+  
+  # set to true to generate a random password
+  generateBasicAuth: false
 
-basicAuthPassword: "Password123!"
+  gateway:
+    resources:
+      limits:
+        memory: "120Mi"
+        cpu: "50m"
 
-faasIdler:
-  # Set to true to disable scaling down to zero replicas when function is idle
-  dryRun: false
+  faasIdler:
+    # Set to true to disable scaling down to zero idle functions
+    dryRun: false
 
-  # If a function is inactive for 15 minutes, it may be scaled to zero
-  inactivityDuration: 15m
-  resources:
-    limits:
-      memory: "64Mi"
-      cpu: "100m"
+    inactivityDuration: 15m
+    resources:
+      limits:
+        memory: "64Mi"
+        cpu: "100m"
 
-faasnetes:
-  resources:
-    limits:
-      memory: "120Mi"
-      cpu: "50m"
+  faasnetes:
+    resources:
+      limits:
+        memory: "120Mi"
+        cpu: "50m"
 
-queueWorker:
-  resources:
-    limits:
-      memory: "120Mi"
-      cpu: "50m"
+  nats:
+    resources:
+      limits:
+        memory: "120Mi"
+        cpu: "50m"
 
-prometheus:
-  resources:
-    limits:
-      memory: "512Mi"
-      cpu: "100m"
+  basicAuthPlugin:
+    resources:
+      limits:
+        memory: "50Mi"
+        cpu: "20m"
 
-alertmanager:
-  resources:
-    limits:
-      memory: "50Mi"
-      cpu: "100m"
+  queueWorker:
+    resources:
+      limits:
+        memory: "120Mi"
+        cpu: "50m"
 
-nats:
-  resources:
-    limits:
-      memory: "120Mi"
-      cpu: "50m"
+  # this will be replaced by Okteto during deployment
+  functionNamespace: $NAMESPACE
 
-generateBasicAuth: true
-
-gateway:
-  resources:
-    limits:
-      memory: "120Mi"
-      cpu: "50m"
-
-basicAuthPlugin:
-  resources:
-    limits:
-      memory: "50Mi"
-      cpu: "20m"
-
-ingress:
-  enabled: true
-  annotations:
-     dev.okteto.com/generate-host: true
