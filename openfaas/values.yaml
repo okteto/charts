@@ -7,7 +7,7 @@ openfaas:
   psp: false
   securityContext: true
   basic_auth: true
-  generateBasicAuth: false
+  generateBasicAuth: true
 
   # image pull policy for openfaas components, can change to `IfNotPresent` in offline env
   openfaasImagePullPolicy: "IfNotPresent"
