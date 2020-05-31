@@ -1,9 +1,7 @@
 openfaas:
-  basicAuthPassword: "Password123!"
   
-  # set to true to generate a random password
-  generateBasicAuth: false
-
+  generateBasicAuth: true
+  
   gateway:
     resources:
       limits:
