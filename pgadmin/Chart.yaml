@@ -4,7 +4,7 @@ home: https://www.pgadmin.org/
 description: pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL
 type: application
 version: 0.1.0
-appVersion: 4.21
+appVersion: 4.22
 icon: https://apps.okteto.com/pgadmin/icon.png
 sources:
   - https://git.postgresql.org/gitweb/?p=pgadmin4.git
