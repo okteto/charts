@@ -1,6 +1,7 @@
 openfaas:
   
-  generateBasicAuth: true
+  # if empty, it will pick up a random password
+  adminPassword: "Password123!"
   
   gateway:
     resources:

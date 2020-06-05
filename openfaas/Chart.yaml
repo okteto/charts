@@ -20,5 +20,5 @@ maintainers:
   email: stefan.prodan@gmail.com
 dependencies:
   - name: openfaas
-    version: "5.8.3"
+    version: "5.8.4"
     repository: "https://openfaas.github.io/faas-netes"

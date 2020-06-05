@@ -7,7 +7,7 @@ openfaas:
   psp: false
   securityContext: true
   basic_auth: true
-  generateBasicAuth: true
+  generateBasicAuth: false # the okteto-level chart sets the password
 
   # image pull policy for openfaas components, can change to `IfNotPresent` in offline env
   openfaasImagePullPolicy: "IfNotPresent"
