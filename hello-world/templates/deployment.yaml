@@ -7,6 +7,9 @@ metadata:
     chart: "{{ template "hello-world.chart" . }}"
     release: {{ .Release.Name | quote }}
     heritage: {{ .Release.Service | quote }}
+  annotations:
+    dev.okteto.com/repository: https://github.com/okteto/go-getting-started
+    dev.okteto.com/path: okteto.yml
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
