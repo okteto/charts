@@ -22,6 +22,25 @@ spec:
         app.kubernetes.io/component: api
     spec:
       terminationGracePeriodSeconds: 0
+      initContainers:
+        - name: load-data
+          image: okteto/movies-api
+          command:
+            - yarn
+            - load
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}-mongodb
+                  key: mongodb-password
+            - name: MONGODB_USERNAME
+              value: {{ .Values.mongodb.mongodbUsername }}
+            - name: MONGODB_DATABASE
+              value: {{ .Values.mongodb.mongodbDatabase }}
+            - name: MONGODB_HOST
+              value: {{ .Release.Name }}-mongodb
       containers:
         - name: api
           image: okteto/movies-api
