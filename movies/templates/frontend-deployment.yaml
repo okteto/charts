@@ -19,7 +19,6 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "movies.name" . }}-frontend
         app.kubernetes.io/instance: {{ .Release.Name }}
-        app.kubernetes.io/component: frontend
     spec:
       terminationGracePeriodSeconds: 0
       containers:
