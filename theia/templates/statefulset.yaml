@@ -12,6 +12,8 @@ spec:
       {{- include "theia.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      annotations:
+        dev.okteto.com/inject-token: "true"
       labels:
         {{- include "theia.selectorLabels" . | nindent 8 }}
     spec:
