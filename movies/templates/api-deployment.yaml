@@ -19,7 +19,6 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "movies.name" . }}-api
         app.kubernetes.io/instance: {{ .Release.Name }}
-        app.kubernetes.io/component: api
     spec:
       terminationGracePeriodSeconds: 0
       initContainers:
@@ -33,14 +32,14 @@ spec:
             - name: MONGODB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Release.Name }}-mongodb
+                  name: {{ include "movies.fullname" . }}-mongodb
                   key: mongodb-password
             - name: MONGODB_USERNAME
-              value: {{ .Values.mongodb.mongodbUsername }}
+              value: okteto
             - name: MONGODB_DATABASE
-              value: {{ .Values.mongodb.mongodbDatabase }}
+              value: okteto
             - name: MONGODB_HOST
-              value: {{ .Release.Name }}-mongodb
+              value: {{ include "movies.fullname" . }}-mongodb
       containers:
         - name: api
           image: okteto/movies-api
@@ -49,14 +48,14 @@ spec:
             - name: MONGODB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Release.Name }}-mongodb
+                  name: {{ include "movies.fullname" . }}-mongodb
                   key: mongodb-password
             - name: MONGODB_USERNAME
-              value: {{ .Values.mongodb.mongodbUsername }}
+              value: okteto
             - name: MONGODB_DATABASE
-              value: {{ .Values.mongodb.mongodbDatabase }}
+              value: okteto
             - name: MONGODB_HOST
-              value: {{ .Release.Name }}-mongodb
+              value: {{ include "movies.fullname" . }}-mongodb
           ports:
             - name: http
               containerPort: 8080

@@ -10,15 +10,3 @@ ingress:
 
 replicaCount: 1
 resources: {}
-
-mongodb:
-  usePassword: true
-  mongodbUsername: okteto
-  mongodbDatabase: okteto 
-  mongodbPassword: "okteto" 
-  persistence:
-    enabled: false
-  livenessProbe:
-    enabled: false
-  readinessProbe:
-    enabled: false
