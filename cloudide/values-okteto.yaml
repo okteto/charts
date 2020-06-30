@@ -3,7 +3,7 @@
 runtime: full
 
 # run htpasswd to generate your value e.g `htpasswd -nb hello world`
-htpasswd: "hello:$apr1$incJ7.H4$xCj1Iz2yCuo.cserwimyk0"
+htpasswd:
 
 persistence:
   size: 1Gi
