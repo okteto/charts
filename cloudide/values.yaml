@@ -1,11 +1,11 @@
 runtime: full
 credentials: 
 persistence:
-  size: 10GB
+  size: 1Gi
 
 image:
   repository: theiaide/theia
-  tag: 1.0.0
+  tag: 1.3.0
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []

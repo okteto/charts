@@ -14,8 +14,6 @@ spec:
     metadata:
       labels:
         {{- include "cloudide.selectorLabels" . | nindent 8 }}
-      annotations:
-        checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum | quote  }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -30,11 +28,6 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ template "cloudide.image" . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          env:
-            - name: username
-              value: {{.Values.username}}
-            - name: password
-              value: {{.Values.password  }}
           ports:
             - name: http
               containerPort: {{.Values.service.port}}
