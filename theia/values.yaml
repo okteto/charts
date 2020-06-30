@@ -27,3 +27,7 @@ service:
   type: ClusterIP
   port: 3000
 
+resources:
+  limits:
+    cpu: "1"
+    memory: 2Gi
