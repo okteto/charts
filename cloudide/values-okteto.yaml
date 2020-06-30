@@ -1,9 +1,9 @@
 
-# available runtimes: go, python, dart, cpp, java, full
-runtime: full
+username:
+password:
 
-# run htpasswd to generate your value e.g `htpasswd -nb hello world`
-htpasswd:
+# available runtimes: go, python, dart, cpp, java, rust, full
+runtime: full
 
 persistence:
   size: 1Gi

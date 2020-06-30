@@ -1,5 +1,7 @@
 runtime: full
-credentials: 
+username: 
+password:
+
 persistence:
   size: 1Gi
 
