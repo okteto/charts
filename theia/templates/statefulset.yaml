@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ include "cloudide.fullname" . }}
+  name: {{ include "theia.fullname" . }}
   labels:
-    {{- include "cloudide.labels" . | nindent 4 }}
+    {{- include "theia.labels" . | nindent 4 }}
 spec:
-  serviceName: "{{ template "cloudide.fullname" . }}"
+  serviceName: "{{ template "theia.fullname" . }}"
   replicas: 1
   selector:
     matchLabels:
-      {{- include "cloudide.selectorLabels" . | nindent 6 }}
+      {{- include "theia.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "cloudide.selectorLabels" . | nindent 8 }}
+        {{- include "theia.selectorLabels" . | nindent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      serviceAccountName: {{ include "cloudide.serviceAccountName" . }}
+      serviceAccountName: {{ include "theia.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ template "cloudide.image" . }}"
+          image: "{{ template "theia.image" . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
@@ -49,7 +49,7 @@ spec:
     - metadata:
         name: data
         labels:
-          app: {{ template "cloudide.name" . }}
+          app: {{ template "theia.name" . }}
           release: "{{ .Release.Name }}"
           heritage: "{{ .Release.Service }}"
       spec:

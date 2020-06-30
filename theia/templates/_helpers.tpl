@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "cloudide.name" -}}
+{{- define "theia.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "cloudide.fullname" -}}
+{{- define "theia.fullname" -}}
 {{- if .Values.fullnameOverride -}}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -27,16 +27,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "cloudide.chart" -}}
+{{- define "theia.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
 Common labels
 */}}
-{{- define "cloudide.labels" -}}
-helm.sh/chart: {{ include "cloudide.chart" . }}
-{{ include "cloudide.selectorLabels" . }}
+{{- define "theia.labels" -}}
+helm.sh/chart: {{ include "theia.chart" . }}
+{{ include "theia.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -46,17 +46,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "cloudide.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "cloudide.name" . }}
+{{- define "theia.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "theia.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "cloudide.serviceAccountName" -}}
+{{- define "theia.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create -}}
-    {{ default (include "cloudide.fullname" .) .Values.serviceAccount.name }}
+    {{ default (include "theia.fullname" .) .Values.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
@@ -65,7 +65,7 @@ Create the name of the service account to use
 {{/*
 Get the image name
 */}}
-{{- define "cloudide.image" -}}
+{{- define "theia.image" -}}
 {{- printf "%s-%s:%s" .Values.image.repository .Values.runtime .Values.image.tag -}}
 {{- end -}}
 
