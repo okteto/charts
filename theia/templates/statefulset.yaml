@@ -30,6 +30,9 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ template "theia.image" . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: THEIA_PLUGINS
+              value: /home/plugins
           ports:
             - name: http
               containerPort: {{.Values.service.port}}
@@ -47,6 +50,10 @@ spec:
           volumeMounts:
           - name: data
             mountPath: /home/project
+            subPath: data
+          - name: plugins
+            mountPath: /home/plugins
+            subPath: plugins
   volumeClaimTemplates:
     - metadata:
         name: data
