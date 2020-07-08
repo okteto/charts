@@ -7,7 +7,7 @@ appVersion: 0.1.0
 icon: https://apps.okteto.com/stacks/icon.png
 sources:
   - https://okteto.com/docs/tutorials/stacks-getting-started
-  - https://okteto.com/docs/cloud/stacks
+  - https://okteto.com/docs/reference/stacks
 home: https://github.com/okteto/charts/blob/master/stacks
 maintainers:
   - name: Okteto
