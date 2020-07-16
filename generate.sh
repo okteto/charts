@@ -21,5 +21,3 @@ for d in */ ; do
 done
 
 helm repo index --url $URL .
-yq w -s devs.yaml index.yaml > index.yaml.generated
-mv index.yaml.generated index.yaml
