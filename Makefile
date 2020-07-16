@@ -18,8 +18,6 @@ $(DIRS):
 
 index:
 	helm repo index --url $(URL) public
-	yq merge public/index.yaml devs.yaml > public/index.yaml.generated
-	mv public/index.yaml.generated public/index.yaml
 	
 publish:
 	gsutil -m -h "Cache-Control:public, max-age=60" rsync -r public gs://apps.okteto.com

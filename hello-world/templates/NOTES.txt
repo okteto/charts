@@ -1,1 +1,0 @@
-1. Get the application URL by login into to the Okteto Cloud UI
