@@ -51,7 +51,7 @@ spec:
           - name: data
             mountPath: /home/project
             subPath: data
-          - name: plugins
+          - name: data
             mountPath: /home/plugins
             subPath: plugins
   volumeClaimTemplates:

@@ -1,7 +1,3 @@
-
-username:
-password:
-
 # available runtimes: go, python, dart, cpp, java, rust, full
 runtime: full
 
