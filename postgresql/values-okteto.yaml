@@ -1,6 +1,4 @@
-
 postgresqlUsername: okteto
 postgresqlPassword: okteto
 postgresqlDatabase: okteto
 fullnameOverride: postgresql
-
