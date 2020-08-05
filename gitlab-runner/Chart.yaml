@@ -15,5 +15,5 @@ keywords:
   - ci/cd
 dependencies:
   - name: gitlab-runner
-    version: "0.15.0"
+    version: "0.19.1"
     repository: "https://charts.gitlab.io"
