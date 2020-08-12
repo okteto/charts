@@ -1,0 +1,38 @@
+{{ if or (eq .Values.operatorMode "standard") (eq .Values.operatorMode "admin") }}
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: {{ include "litmus.fullname" . }}
+  labels:
+    name: {{ include "litmus.name" . }}
+    instance: {{ .Release.Name  }}
+    chart: {{ include "litmus.chart" . }}
+    litmuschaos.io/version: {{ .Chart.AppVersion }}
+rules:
+- apiGroups: ["","apps","batch","litmuschaos.io","apps.openshift.io"]
+  resources: ["pods","jobs","deployments","replicasets","replicationcontrollers","deploymentconfigs","daemonsets","statefulsets","events","configmaps","services","chaosengines","chaosexperiments","chaosresults"]
+  verbs: ["get","create","update","patch","delete","list","watch","deletecollection"]
+{{ end }} 
+{{ if eq .Values.operatorMode "admin" }}
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: {{ include "litmus.fullname" . }}-admin
+  labels:
+    name: {{ include "litmus.name" . }}
+    instance: {{ .Release.Name  }}
+    chart: {{ include "litmus.chart" . }}
+    litmuschaos.io/version: {{ .Chart.AppVersion }}
+rules:
+- apiGroups: ["","apps","batch","extensions","litmuschaos.io","openebs.io","storage.k8s.io"]
+  resources: ["chaosengines","chaosexperiments","chaosresults","cstorpools","cstorvolumereplicas","configmaps","secrets","pods","pods/exec","pods/log","pods/eviction","jobs","replicasets","deployments","daemonsets","statefulsets","persistentvolumeclaims","persistentvolumes","storageclasses","services","events"]
+  verbs: ["*"]
+- apiGroups: [""]
+  resources: ["nodes"]
+  verbs: ["get","list","patch"]
+- apiGroups: ["admissionregistration.k8s.io"]
+  resources: ["validatingwebhookconfigurations"]
+  verbs: ["get","create","list","delete","update"]
+{{ end }}
