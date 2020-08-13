@@ -1,7 +1,7 @@
 apiVersion: v2
 appVersion: "1.6.2"
 description: Cloud-Native Chaos Engineering for Kubernetes Developers
-name: litmus
+name: litmuschaos
 version: 1.6.4
 home: https://litmuschaos.io
 sources:
