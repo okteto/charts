@@ -7,11 +7,10 @@ This Helm repository contains the default Helm charts for the Okteto Cloud defau
 - [Flux](flux/README.md)
 - [Gitlab CI Runner](gitlab/README.md)
 - [Hello World](hello-world/README.md)
-
+- [Litmus Chaos](litmuschaos/README.md)
 - [Inlets](inlets/README.md)
 - [MariaDB](mariadb/README.md)
 - [MongoDB](mongodb/README.md)
-- [Movies](movies/README.md)
 - [OpenFaaS](openfaas/README.md)
 - [PostgreSQL](postgresql/README.md)
 - [Prometheus](prometheus/README.md)
