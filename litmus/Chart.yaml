@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 appVersion: "1.6.2"
 description: Cloud-Native Chaos Engineering for Kubernetes Developers
 name: litmus
