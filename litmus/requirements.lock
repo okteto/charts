@@ -1,0 +1,6 @@
+dependencies:
+- name: litmus
+  repository: https://litmuschaos.github.io/litmus-helm
+  version: 1.6.4
+digest: sha256:e32c68777aa7d648606354cdf1c0102620bd0348a1511e3fadcd8be668d3d1f3
+generated: "2020-08-13T11:06:14.285142-07:00"

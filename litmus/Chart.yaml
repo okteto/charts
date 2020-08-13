@@ -16,3 +16,7 @@ maintainers:
   - name: chandankumar4
     email: chandan.kumar@mayadata.io
 icon: https://apps.okteto.com/litmus/icon.png
+dependencies:
+  - name: litmus
+    version: "1.6.4"
+    repository: "https://litmuschaos.github.io/litmus-helm"
