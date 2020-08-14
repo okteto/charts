@@ -54,6 +54,9 @@ spec:
           - name: data
             mountPath: /home/plugins
             subPath: plugins
+          - name: data
+            mountPath: /home/node/.ssh
+            subPath: ssh
   volumeClaimTemplates:
     - metadata:
         name: data
