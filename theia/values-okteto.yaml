@@ -1,5 +1,5 @@
-# available runtimes: go, python, dart, cpp, java, rust, full
-runtime: full
+# available runtimes: go, python, dart, cpp, java, rust
+runtime: go
 
 persistence:
   size: 1Gi
