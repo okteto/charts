@@ -9,10 +9,7 @@ metadata:
     {{- include "theia.labels" . | nindent 4 }}
   annotations:
     dev.okteto.com/generate-host: "true"
-    #nginx.ingress.kubernetes.io/auth-url: https://okteto.sf.okteto.net/auth/endpoint
-    #nginx.ingress.kubernetes.io/auth-signin: "https://okteto.sf.okteto.net/#/login"
-    #nginx.ingress.kubernetes.io/auth-snippet: |
-    #  proxy_set_header x-okteto-namespace ramiro;
+    dev.okteto.com/private: "true"
   name: {{ include "theia.fullname" . }}
 spec:
   rules:
