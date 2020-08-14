@@ -24,6 +24,16 @@ spec:
       serviceAccountName: {{ include "theia.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: "ssh-keygen"
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: ramiro/ssh-keygen
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+          - name: data
+            mountPath: /data
+            subPath: ssh
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
