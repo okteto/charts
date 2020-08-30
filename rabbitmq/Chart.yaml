@@ -1,7 +1,7 @@
 apiVersion: v2
 name: rabbitmq
-version: 6.8.2
-appVersion: 3.7.19
+version: 7.6.4
+appVersion: 3.8.7
 description: Open source message broker software that implements AMQP
 keywords:
 - rabbitmq
@@ -14,3 +14,7 @@ sources:
 maintainers:
 - name: okteto
   email: hello@okteto.com
+dependencies:
+- name: rabbitmq
+  version: "7.6.4"
+  repository: "https://charts.bitnami.com/bitnami"
