@@ -1,5 +1,4 @@
 rabbitmq:
-  username: okteto
-  password: okteto
-
-rbacEnabled: false
+  auth:
+    username: okteto
+    password: okteto

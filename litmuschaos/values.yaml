@@ -1,0 +1,7 @@
+litmus:
+  operatorMode: namespaced
+  replicaCount: 1
+  resources:
+    limits: 
+      cpu: 500m
+      memory: 128Mi

@@ -1,0 +1,49 @@
+minio:
+  mode: standalone
+  accessKey: ""
+  secretKey: ""
+  replicas: 1
+
+  defaultBucket:
+    enabled: false
+    name: okteto
+    policy: none
+    purge: false
+
+  ingress:
+    enabled: true
+    annotations:
+      dev.okteto.com/generate-host: "true"
+  
+  tls:
+    enabled: false
+
+  metrics:
+    serviceMonitor:
+      enabled: false
+
+  persistence:
+    enabled: true
+    existingClaim: ""
+    size: 500Mb
+  
+  resources:
+    limits:
+      memory: 64Mi
+      cpu: 100m
+
+    requests:
+      memory: 0Mi
+      cpu: 0m
+      
+  securityContext:
+    enabled: true
+    runAsUser: 1000
+    runAsGroup: 1000
+    fsGroup: 100
+
+  service:
+    type: ClusterIP
+  
+  serviceAccount:
+    create: false

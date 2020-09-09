@@ -17,13 +17,11 @@ spec:
       - image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: IfNotPresent
         name: terminal
-        env:
-          - name: "TERMINAL_CREDENTIAL"
-            valueFrom:
-              secretKeyRef:
-                name: {{ include "terminal.fullname" . }}
-                key: credentials
-                
+        command:
+        - /usr/local/bin/gotty
+        - --permit-write 
+        - --reconnect 
+        - /bin/bash
         ports:
         - containerPort: {{ .Values.port }}
           protocol: TCP

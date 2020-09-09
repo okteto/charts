@@ -1,0 +1,19 @@
+apiVersion: v2
+name: prometheus
+home: https://prometheus.io
+version: 11.0.4
+appVersion: 2.16.0
+description: Prometheus is a monitoring system and time series database
+icon: https://apps.okteto.com/prometheus/icon.png
+sources:
+  - https://github.com/helm/charts/tree/master/stable/prometheus
+  - https://github.com/okteto/charts/tree/master/prometheus
+maintainers:
+  - name: ramiro
+    email: ramiro@okteto.com
+keywords:
+  - observability
+dependencies:
+  - name: prometheus
+    version: "11.0.4"
+    repository: "https://kubernetes-charts.storage.googleapis.com"

@@ -1,0 +1,26 @@
+minio:
+  mode: standalone
+  accessKey: ""
+  secretKey: ""
+  replicas: 1
+  persistence:
+    size: 1Gi
+    # set if you want to use an existing volume
+    existingClaim: ""
+
+  defaultBucket:
+    enabled: true
+    name: okteto
+    policy: none
+    purge: false
+
+  resources:
+    limits:
+      memory: 256Mi
+      cpu: 500m
+
+
+  
+  
+
+  

@@ -1,0 +1,26 @@
+{{- range $name, $service := .Values.services }}
+{{ if $service.ports }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: "{{ $name }}"
+  namespace: "{{ $.Release.Namespace }}"
+  labels:
+    stack.okteto.com/name: "{{ $.Release.Name }}"
+    stack.okteto.com/service: "{{ $name }}"
+    app.kubernetes.io/name: "{{ $name }}"
+    app.kubernetes.io/component: "{{ $name }}"
+    {{- include "stack.labels" $ | nindent 4 }}
+spec:
+  type: {{ if $service.public }}LoadBalancer{{ else }}ClusterIP{{ end }}
+  ports:
+  {{- range $port := $service.ports }}
+  -  name: "port-{{ $port }}"
+     port: {{ $port }}
+  {{ end }}
+  selector:
+    stack.okteto.com/name: "{{ $.Release.Name }}"
+    stack.okteto.com/service: "{{ $name }}"
+---
+{{- end }}
+{{- end }}

@@ -1,7 +1,6 @@
-name: helm
-image: okteto/desk:latest
+name: charts
+image: okteto/charts:dev
 command: ["bash"]
-services:
-  - labels:
-      app.kubernetes.io/name: "nginx"
-    mountpath: /usr/share/nginx/html
+push:
+  args:
+    - URL=https://charts-$NAMESPACE.cloud.okteto.net

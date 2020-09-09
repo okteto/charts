@@ -1,0 +1,7 @@
+email:
+password:
+replicaCount: 1
+resources:
+  limits:
+    memory: 256Mi
+    cpu: 500m  
