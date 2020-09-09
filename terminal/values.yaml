@@ -1,6 +1,5 @@
 image: okteto/terminal
 port: 8080
-credentials: "hello:world"
 
 nameOverride: ""
 fullnameOverride: "" 
@@ -10,6 +9,12 @@ ingress:
   annotations: 
     # let okteto dynamically generate the ingress hostname
     dev.okteto.com/generate-host: "true"
+    dev.okteto.com/private: "true"
   hosts:
     - terminal.local
   tls: []
+
+resources:
+  limits:
+    memory: "64Mi"
+    cpu: "100m"
