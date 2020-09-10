@@ -52,7 +52,7 @@ spec:
           volumeMounts:
           - name: data
             mountPath: /home/project
-            subPath: data
+            subPath: project
       {{- end }}  
       containers:
         - name: {{ .Chart.Name }}
@@ -63,7 +63,7 @@ spec:
           command: 
           - sh 
           - -c
-          - PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
+          - (mkdir -p $HOME/.ssh && chmod 700 $HOME/.ssh && cp /var/okteto/ssh/* $HOME/.ssh/ && chmod 600 $HOME/.ssh/id_rsa*); PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
           env:
             - name: THEIA_PLUGINS
               value: /home/plugins
@@ -84,9 +84,14 @@ spec:
           volumeMounts:
           - name: cloudbin
             mountPath: /var/okteto/bin
+            readOnly: true
+          - name: data
+            mountPath: /var/okteto/ssh
+            subPath: ssh
+            readOnly: true
           - name: data
             mountPath: /home/project
-            subPath: data
+            subPath: project
           - name: data
             mountPath: /home/plugins
             subPath: plugins
