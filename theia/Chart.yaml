@@ -3,7 +3,7 @@ name: theia
 description: Cloud IDE platform
 type: application
 version: 0.1.0
-appVersion: 1.0.0
+appVersion: 1.4.0
 icon: https://charts.okteto.com/charts/theia/icon.png
 maintainer:
   - name: Ramiro Berrelleza

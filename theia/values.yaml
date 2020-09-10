@@ -1,5 +1,6 @@
-runtime: full
-
+runtime: nodejs
+repository:
+  
 persistence:
   size: 1Gi
 
@@ -17,9 +18,9 @@ serviceAccount:
   name:
 
 podSecurityContext:
-  runAsUser: 1000
+  runAsUser: 1001
   runAsGroup: 1000
-  fsGroup: 1000
+  fsGroup: 1001
   
 service:
   type: ClusterIP

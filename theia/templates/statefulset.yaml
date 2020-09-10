@@ -24,22 +24,17 @@ spec:
       serviceAccountName: {{ include "theia.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-      initContainers:
-        - name: "ssh-keygen"
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: ramiro/ssh-keygen
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          volumeMounts:
-          - name: data
-            mountPath: /data
-            subPath: ssh
+      
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ template "theia.image" . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: 
+          - sh 
+          - -c
+          - node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
           env:
             - name: THEIA_PLUGINS
               value: /home/plugins
@@ -65,8 +60,8 @@ spec:
             mountPath: /home/plugins
             subPath: plugins
           - name: data
-            mountPath: /home/node/.ssh
             subPath: ssh
+            mountPath: /var/okteto/ssh
   volumeClaimTemplates:
     - metadata:
         name: data

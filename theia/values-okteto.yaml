@@ -1,5 +1,8 @@
-# available runtimes: go, python, dart, cpp, java, rust
-runtime: go
+# available runtimes: go, python, dart, cpp, java, rust, nodejs
+runtime: nodejs
+
+# optional
+repository: https://github.com/okteto/movies
 
 persistence:
   size: 1Gi
