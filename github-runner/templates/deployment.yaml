@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "github-runner.fullname" . }}
+  labels:
+    {{- include "github-runner.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "github-runner.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+      labels:
+        {{- include "github-runner.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          {{- if .Values.global.enabled }}
+            - name: GITHUB_ORGANIZATION
+              value: {{ required "organization name is missing" .Values.organization }}
+          {{- else }}
+            - name: GITHUB_OWNER
+              value: {{ required "owner is missing" .Values.owner }}
+            - name: GITHUB_REPOSITORY
+              value: {{ required "repository is missing" .Values.repository }}
+          {{- end }}
+            - name: GITHUB_PAT
+              valueFrom:
+                secretKeyRef:
+                  name:  {{ template "github-runner.fullname" . }}
+                  key: token
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

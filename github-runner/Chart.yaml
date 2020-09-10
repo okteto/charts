@@ -1,0 +1,16 @@
+apiVersion: v2
+name: github-runner
+home: https://github.com/features/actions
+description: The Runner for GitHub Actions 🚀
+type: application
+version: 0.1.0
+appVersion: 2.273.0
+icon: https://apps.okteto.com/github-runner/icon.png
+sources:
+  - https://github.com/actions/runner
+  - https://github.com/okteto/charts/tree/master/github-runner
+maintainers:
+  - name: ramiro
+    email: ramiro@okteto.com
+keywords:
+- ci/cd

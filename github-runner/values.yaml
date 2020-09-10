@@ -1,0 +1,16 @@
+single:
+  enabled: true
+  owner:
+  repository:
+
+global:
+  enabled: false
+  organization:
+
+token: 
+
+replicaCount: 1
+
+image:
+  repository: okteto/github-runner
+  pullPolicy: IfNotPresent
