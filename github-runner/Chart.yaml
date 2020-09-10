@@ -8,6 +8,7 @@ appVersion: 2.273.0
 icon: https://apps.okteto.com/github-runner/icon.png
 sources:
   - https://github.com/actions/runner
+  - https://github.com/okteto/github-runner
   - https://github.com/okteto/charts/tree/master/github-runner
 maintainers:
   - name: ramiro
