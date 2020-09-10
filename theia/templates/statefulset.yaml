@@ -36,7 +36,7 @@ spec:
           command: 
           - sh 
           - -c
-          - test -f /var/okteto/ssh/id_rsa && cat /var/okteto/ssh/id_rsa && exit 0; ssh-keygen -q -t rsa -N '' -f '/var/okteto/ssh/id_rsa' && cat /var/okteto/ssh/id_rsa.pub
+          - test -f /var/okteto/ssh/id_rsa && cat /var/okteto/ssh/id_rsa.pub && exit 0; ssh-keygen -q -t rsa -N '' -f '/var/okteto/ssh/id_rsa' && cat /var/okteto/ssh/id_rsa.pub
           volumeMounts:
           - name: data
             mountPath: /var/okteto/ssh
