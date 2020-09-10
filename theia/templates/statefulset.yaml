@@ -24,7 +24,6 @@ spec:
       serviceAccountName: {{ include "theia.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-      
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -59,9 +58,6 @@ spec:
           - name: data
             mountPath: /home/plugins
             subPath: plugins
-          - name: data
-            subPath: ssh
-            mountPath: /var/okteto/ssh
   volumeClaimTemplates:
     - metadata:
         name: data
