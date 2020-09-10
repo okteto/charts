@@ -1,12 +1,19 @@
+# Generate a token with the `repo` permissions here: https://github.com/settings/tokens
+token:
+
 single:
   enabled: true
   owner:
   repository:
 
+# enable this if you want to use the runner for actions across your entire organization.
 global:
   enabled: false
   organization:
 
-token:
-
 replicaCount: 1
+
+resources:
+  limits:
+    memory: 256Mi
+    cpu: 500m
