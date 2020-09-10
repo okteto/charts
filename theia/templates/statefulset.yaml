@@ -29,6 +29,31 @@ spec:
       serviceAccountName: {{ include "theia.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: ssh-key
+          image: "{{ template "theia.image" . }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: 
+          - sh 
+          - -c
+          - test -f /var/okteto/ssh/id_rsa && cat /var/okteto/ssh/id_rsa && exit 0; ssh-keygen -q -t rsa -N '' -f '/var/okteto/ssh/id_rsa' && cat /var/okteto/ssh/id_rsa.pub
+          volumeMounts:
+          - name: data
+            mountPath: /var/okteto/ssh
+            subPath: ssh
+      {{- if .Values.repository }}
+        - name: git-clone
+          image: "{{ template "theia.image" . }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: 
+          - sh 
+          - -c
+          - "test -d /home/project/.git && exit 0; git clone {{ .Values.repository }} /home/project"
+          volumeMounts:
+          - name: data
+            mountPath: /home/project
+            subPath: data
+      {{- end }}  
       containers:
         - name: {{ .Chart.Name }}
           securityContext:

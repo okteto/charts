@@ -1,7 +1,7 @@
 # available runtimes: go, python, dart, cpp, java, rust, nodejs
 runtime: nodejs
 
-# optional
+# use this to clone a repo as part of the deployment (optional)
 repository: https://github.com/okteto/movies
 
 persistence:
