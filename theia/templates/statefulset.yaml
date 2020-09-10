@@ -17,6 +17,11 @@ spec:
       labels:
         {{- include "theia.selectorLabels" . | nindent 8 }}
     spec:
+      volumes:
+        - name: cloudbin
+          hostPath: 
+            path: /var/okteto/cloudbin
+            type: Directory
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -33,7 +38,7 @@ spec:
           command: 
           - sh 
           - -c
-          - node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
+          - PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
           env:
             - name: THEIA_PLUGINS
               value: /home/plugins
@@ -52,6 +57,8 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
+          - name: cloudbin
+            mountPath: /var/okteto/bin
           - name: data
             mountPath: /home/project
             subPath: data
