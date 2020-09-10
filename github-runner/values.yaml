@@ -18,4 +18,4 @@ image:
 resources:
   limits:
     memory: 256Mi
-    cpu: 500m  
+    cpu: 500m 
