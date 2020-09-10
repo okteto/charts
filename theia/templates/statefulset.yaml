@@ -41,19 +41,6 @@ spec:
           - name: data
             mountPath: /var/okteto/ssh
             subPath: ssh
-      {{- if .Values.repository }}
-        - name: git-clone
-          image: "{{ template "theia.image" . }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: 
-          - sh 
-          - -c
-          - "test -d /home/project/.git && exit 0; git clone {{ .Values.repository }} /home/project"
-          volumeMounts:
-          - name: data
-            mountPath: /home/project
-            subPath: project
-      {{- end }}  
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -63,7 +50,7 @@ spec:
           command: 
           - sh 
           - -c
-          - (mkdir -p $HOME/.ssh && chmod 700 $HOME/.ssh && cp /var/okteto/ssh/* $HOME/.ssh/ && chmod 600 $HOME/.ssh/id_rsa*); PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
+          - (mkdir -p $HOME/.ssh && chmod 700 $HOME/.ssh && cp /var/okteto/ssh/* $HOME/.ssh/ && chmod 600 $HOME/.ssh/id_rsa*); {{ if .Values.repository }}(test -d /home/project/.git || git clone {{ .Values.repository }} /home/project);{{ end }}PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
           env:
             - name: THEIA_PLUGINS
               value: /home/plugins
