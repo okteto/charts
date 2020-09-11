@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "theia.fullname" . }}
+  labels:
+    {{- include "theia.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+    rollingUpdate: null
+  selector:
+    matchLabels:
+      {{- include "theia.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        dev.okteto.com/inject-token: "true"
+      labels:
+        {{- include "theia.selectorLabels" . | nindent 8 }}
+    spec:
+      volumes:
+        - name: cloudbin
+          hostPath: 
+            path: /var/okteto/cloudbin
+            type: Directory
+        - name: cred-helper
+          configMap:
+            name: {{ include "theia.fullname" . }}
+        - name: data
+          persistentVolumeClaim:
+            claimName:  {{ include "theia.fullname" . }}
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "theia.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ template "theia.image" . }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: 
+          - sh 
+          - -c
+          - {{ if .Values.token }}(cp /var/okteto/helper/creds $HOME/.creds && chmod +x $HOME/.creds && git config --global credential.helper $HOME/.creds);{{ end }}{{ if .Values.repository }}(test -d /home/project/.git || git clone {{ .Values.repository }} /home/project);{{ end }}PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
+          env:
+            - name: THEIA_PLUGINS
+              value: /home/plugins
+            - name: GIT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: token
+                  name: {{ include "theia.fullname" . }}
+          ports:
+            - name: http
+              containerPort: {{.Values.service.port}}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+          - name: cloudbin
+            mountPath: /var/okteto/bin
+            readOnly: true
+          - name: cred-helper
+            mountPath: /var/okteto/helper
+            readOnly: true
+          - name: data
+            mountPath: /var/okteto/ssh
+            subPath: ssh
+            readOnly: true
+          - name: data
+            mountPath: /home/project
+            subPath: project
+          - name: data
+            mountPath: /home/plugins
+            subPath: plugins
+  

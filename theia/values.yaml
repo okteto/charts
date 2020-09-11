@@ -1,0 +1,33 @@
+runtime: nodejs
+repository:
+token:
+  
+persistence:
+  size: 1Gi
+
+image:
+  repository: theiaide/theia
+  tag: 1.4.0
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # If not set it will use the default
+  name:
+
+podSecurityContext:
+  runAsUser: 1001
+  runAsGroup: 1000
+  fsGroup: 1001
+  
+service:
+  type: ClusterIP
+  port: 3000
+
+resources:
+  limits:
+    cpu: "1"
+    memory: 2Gi

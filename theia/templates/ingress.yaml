@@ -1,0 +1,22 @@
+{{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: networking.k8s.io/v1beta1
+{{- else -}}
+apiVersion: extensions/v1beta1
+{{- end }}
+kind: Ingress
+metadata:
+  labels:
+    {{- include "theia.labels" . | nindent 4 }}
+  annotations:
+    dev.okteto.com/generate-host: "true"
+    dev.okteto.com/private: "true"
+  name: {{ include "theia.fullname" . }}
+spec:
+  rules:
+    - host: okteto
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ template "theia.fullname" . }}
+              servicePort: {{ .Values.service.port }}
