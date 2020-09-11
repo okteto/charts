@@ -1,6 +1,6 @@
 apiVersion: v2
 name: theia
-description: Cloud IDE platform
+description: Cloud-based IDE
 type: application
 version: 0.1.0
 appVersion: 1.4.0
