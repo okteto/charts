@@ -24,6 +24,9 @@ spec:
           hostPath: 
             path: /var/okteto/cloudbin
             type: Directory
+        - name: cred-helper
+          configMap:
+            name: {{ include "theia.fullname" . }}
         - name: data
           persistentVolumeClaim:
             claimName:  {{ include "theia.fullname" . }}
@@ -43,10 +46,15 @@ spec:
           command: 
           - sh 
           - -c
-          - {{ if .Values.repository }}(test -d /home/project/.git || git clone {{ .Values.repository }} /home/project);{{ end }}PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
+          - {{ if .Values.token }}(cp /var/okteto/helper/creds $HOME/.creds && chmod +x $HOME/.creds && git config --global credential.helper $HOME/.creds);{{ end }}{{ if .Values.repository }}(test -d /home/project/.git || git clone {{ .Values.repository }} /home/project);{{ end }}PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
           env:
             - name: THEIA_PLUGINS
               value: /home/plugins
+            - name: GIT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: token
+                  name: {{ include "theia.fullname" . }}
           ports:
             - name: http
               containerPort: {{.Values.service.port}}
@@ -64,6 +72,9 @@ spec:
           volumeMounts:
           - name: cloudbin
             mountPath: /var/okteto/bin
+            readOnly: true
+          - name: cred-helper
+            mountPath: /var/okteto/helper
             readOnly: true
           - name: data
             mountPath: /var/okteto/ssh
