@@ -46,14 +46,14 @@ spec:
           command: 
           - sh 
           - -c
-          - {{ if .Values.token }}(cp /var/okteto/helper/creds $HOME/.creds && chmod +x $HOME/.creds && git config --global credential.helper $HOME/.creds);{{ end }}{{ if .Values.repository }}(test -d /home/project/.git || git clone {{ .Values.repository }} /home/project);{{ end }}PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
+          - {{ if .Values.gitToken }}(cp /var/okteto/helper/creds $HOME/.creds && chmod +x $HOME/.creds && git config --global credential.helper $HOME/.creds);{{ end }}{{ if .Values.repository }}(test -d /home/project/.git || git clone {{ .Values.repository }} /home/project);{{ end }}PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0
           env:
             - name: THEIA_PLUGINS
               value: /home/plugins
             - name: GIT_TOKEN
               valueFrom:
                 secretKeyRef:
-                  key: token
+                  key: gitToken
                   name: {{ include "theia.fullname" . }}
           ports:
             - name: http
