@@ -5,7 +5,8 @@ runtime: nodejs
 repository: https://github.com/okteto/movies
 
 # set this when using a private repository https://github.com/settings/tokens
-token:
+# or add a GIT_TOKEN okteto secret
+gitToken:
 
 persistence:
   size: 1Gi
