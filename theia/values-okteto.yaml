@@ -4,7 +4,8 @@ runtime: nodejs
 # use this to clone a public repository automatically
 repository: https://github.com/okteto/movies
 
-# set this when using a private repository https://github.com/settings/tokens
+# set this when using a private repository 
+#   (https://github.com/settings/tokens)
 # or add a GIT_TOKEN okteto secret
 gitToken:
 

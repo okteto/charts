@@ -50,11 +50,13 @@ spec:
           env:
             - name: THEIA_PLUGINS
               value: /home/plugins
+        {{- if .Values.gitToken }}
             - name: GIT_TOKEN
               valueFrom:
                 secretKeyRef:
                   key: gitToken
                   name: {{ include "theia.fullname" . }}
+        {{- end }}
           ports:
             - name: http
               containerPort: {{.Values.service.port}}
