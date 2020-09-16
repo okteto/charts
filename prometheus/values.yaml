@@ -7,6 +7,7 @@ prometheus:
       enabled: true
       annotations:
         dev.okteto.com/generate-host: "true"
+        dev.okteto.com/private: "true"
       hosts:
         - localhost
     resources:
@@ -43,6 +44,7 @@ prometheus:
       enabled: true
       annotations:
         dev.okteto.com/generate-host: "true"
+        dev.okteto.com/private: "true"
       hosts:
         - localhost
     resources:
