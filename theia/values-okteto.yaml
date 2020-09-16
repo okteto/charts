@@ -4,10 +4,6 @@ runtime: nodejs
 # use this to clone a public repository automatically
 repository: https://github.com/okteto/movies
 
-# This is the port that Theia is running on. Change this if you want to use this port instead
-service:
-  port: 3000 # Default Theia port
-
 # set this when using a private repository https://github.com/settings/tokens
 # or add a GIT_TOKEN okteto secret
 gitToken:
@@ -19,3 +15,8 @@ resources:
   limits:
     cpu: "1"
     memory: 2Gi
+
+# This is the port that Theia is running on. Change this if you want to use this port instead
+service:
+  port: 3000 # Default Theia port
+
