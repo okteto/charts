@@ -67,7 +67,7 @@ Get the image name
 */}}
 {{- define "theia.image" -}}
 {{- $tag := default (include "theia.tag" .) .Values.image.tag -}}
-{{- $runtimes := list "nodejs" "go" "php" "dart" "cpp" "java" "rust" "python" -}}
+{{- $runtimes := list "nodejs" "go" "php" "dart" "cpp" "java" "rust" "python" "full" -}}
 
 {{if has .Values.runtime $runtimes }}
    {{- if eq .Values.runtime "nodejs" -}}

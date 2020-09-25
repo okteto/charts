@@ -1,4 +1,4 @@
-# available runtimes: go, python, dart, cpp, java, rust, nodejs
+# available runtimes: go, python, dart, cpp, java, rust, nodejs, full
 runtime: nodejs
 
 # use this to clone a repository automatically
