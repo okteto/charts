@@ -64,8 +64,8 @@ spec:
           {{ if $service.environment }}
           env:
             {{- range $env := $service.environment }}
-            - name: {{ (splitn "=" 2 $env)._0 }}
-              value: {{ (splitn "=" 2 $env)._1 }}
+            - name: "{{ (splitn "=" 2 $env)._0 }}"
+              value: "{{ (splitn "=" 2 $env)._1 }}"
             {{ end }}
           {{ end }}
           {{ if and $service.healthchecks $service.ports }}
