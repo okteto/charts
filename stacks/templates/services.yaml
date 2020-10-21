@@ -5,6 +5,10 @@ kind: Service
 metadata:
   name: "{{ $name }}"
   namespace: "{{ $.Release.Namespace }}"
+  {{ if $service.public }}
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+  {{ end }}
   labels:
     stack.okteto.com/name: "{{ $.Release.Name }}"
     stack.okteto.com/service: "{{ $name }}"
