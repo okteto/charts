@@ -10,7 +10,13 @@ metadata:
     stack.okteto.com/service: "{{ $name }}"
     app.kubernetes.io/name: "{{ $name }}"
     app.kubernetes.io/component: "{{ $name }}"
-    {{- include "stack.labels" $ | nindent 4 }}
+    {{- range $key, $value := $service.labels }}
+    {{ $key }}: "{{ $value }}"
+    {{- end }}
+  annotations:
+    {{- range $key, $value := $service.annotations }}
+    {{ $key }}: "{{ $value }}"
+    {{- end }}
 spec:
   replicas: {{ $service.replicas }}
   selector:
@@ -22,6 +28,13 @@ spec:
       labels:
         stack.okteto.com/name: "{{ $.Release.Name }}"
         stack.okteto.com/service: "{{ $name }}"
+        {{- range $key, $value := $service.labels }}
+        {{ $key }}: "{{ $value }}"
+        {{- end }}
+      annotations:
+        {{- range $key, $value := $service.annotations }}
+        {{ $key }}: "{{ $value }}"
+        {{- end }}
     spec:
       {{ if $service.stop_grace_period }}
       terminationGracePeriodSeconds: {{ $service.stop_grace_period }}
