@@ -5,16 +5,21 @@ kind: Service
 metadata:
   name: "{{ $name }}"
   namespace: "{{ $.Release.Namespace }}"
-  {{ if $service.public }}
-  annotations:
-    dev.okteto.com/auto-ingress: "true"
-  {{ end }}
   labels:
     stack.okteto.com/name: "{{ $.Release.Name }}"
     stack.okteto.com/service: "{{ $name }}"
     app.kubernetes.io/name: "{{ $name }}"
     app.kubernetes.io/component: "{{ $name }}"
-    {{- include "stack.labels" $ | nindent 4 }}
+    {{- range $key, $value := $service.labels }}
+    {{ $key }}: "{{ $value }}"
+    {{- end }}
+  annotations:
+    {{- range $key, $value := $service.annotations }}
+    {{ $key }}: "{{ $value }}"
+    {{- end }}
+  {{ if $service.public }}
+    dev.okteto.com/auto-ingress: "true"
+  {{ end }}
 spec:
   type: {{ if $service.public }}LoadBalancer{{ else }}ClusterIP{{ end }}
   ports:
