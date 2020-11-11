@@ -73,6 +73,22 @@ spec:
               value: "{{ (splitn "=" 2 $env)._1 }}"
             {{ end }}
           {{ end }}
+          {{ if or $service.cap_add $service.cap_drop }}
+          securityContext:
+            capabilities:
+              {{ if $service.cap_add }}
+              add:
+                {{- range $cap := $service.cap_add }}
+                - {{ $cap }}
+                {{ end }}
+              {{ end }}
+              {{ if $service.cap_drop }}
+              drop:
+                {{- range $cap := $service.cap_drop }}
+                - {{ $cap }}
+                {{ end }}
+              {{ end }}
+          {{ end }}
           {{ if and $service.healthchecks $service.ports }}
           readinessProbe:
             httpGet:
