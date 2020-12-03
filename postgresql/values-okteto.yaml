@@ -2,3 +2,5 @@ postgresqlUsername: okteto
 postgresqlPassword: okteto
 postgresqlDatabase: okteto
 fullnameOverride: postgresql
+persistence:
+  size: 2Gi

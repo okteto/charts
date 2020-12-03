@@ -6,5 +6,8 @@ db:
   password: okteto
   name: okteto
 
+persistence:
+  size: 2Gi
+
 replication:
   enabled: false
