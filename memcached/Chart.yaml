@@ -1,0 +1,19 @@
+apiVersion: v2
+name: memcached
+version: 5.3.0
+appVersion: 1.6.9
+description: Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering.
+keywords:
+  - memcached
+home: http://memcached.org/
+icon: https://apps.okteto.com/memcached/icon.png
+sources:
+  - https://github.com/bitnami/charts/tree/master/bitnami/memcached
+  - https://github.com/bitnami/bitnami-docker-memcached
+maintainers:
+  - name: Bitnami
+    email: containers@bitnami.com
+dependencies:
+  - name: memcached
+    version: 5.3.0
+    repository: https://charts.bitnami.com/bitnami

@@ -1,0 +1,6 @@
+memcached:
+  replicaCount: 1
+  memcachedUsername: okteto
+  memcachedPassword: okteto
+  persistence:
+    size: 1Gi

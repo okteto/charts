@@ -1,0 +1,1 @@
+1. Login into to the Okteto Cloud UI to see the state of your Memcached server.
