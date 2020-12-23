@@ -16,6 +16,7 @@ services:
     resources:
       cpu: 100m
       memory: 128Mi
-      storage: 1Gi
+      storage:
+        size: 1Gi
     volumes:
       - /data
