@@ -17,7 +17,8 @@ $(DIRS):
 	cp $@/*.png public/$@
 
 index:
-	helm repo index --url $(URL) public
+	curl $(URL)/index.yaml -o public/index.yaml
+	helm repo index --merge public/index.yaml --url $(URL) public
 	
 publish:
 	gsutil -m -h "Cache-Control:public, max-age=60" rsync -r public gs://apps.okteto.com
