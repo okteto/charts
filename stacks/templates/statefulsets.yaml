@@ -145,14 +145,13 @@ spec:
           stack.okteto.com/service: "{{ $name }}"
       spec:
         accessModes: [ "ReadWriteOnce" ]
+        {{ if and $service.resources $service.resources.storage $service.resources.storage.class }}
+        storageClassName: {{ $service.resources.storage.class }}
+        {{ end }}
         resources:
           requests:
-            {{ if $service.resources }}
-              {{ if $service.resources.storage }}
-              storage: {{ $service.resources.storage }}
-              {{ else }}
-              storage: 1Gi
-              {{ end }}
+            {{ if and $service.resources $service.resources.storage $service.resources.storage.size }}
+            storage: {{ $service.resources.storage.size }}
             {{ else }}
             storage: 1Gi
             {{ end }}
