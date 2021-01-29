@@ -19,6 +19,9 @@ openfaas:
 
   alertmanager:
     create: false
+  
+  faasIdler:
+    create: false
 
   # ingress configuration
   ingress:
