@@ -9,16 +9,6 @@ openfaas:
         memory: "120Mi"
         cpu: "50m"
 
-  faasIdler:
-    # Set to true to disable scaling down to zero idle functions
-    dryRun: false
-
-    inactivityDuration: 15m
-    resources:
-      limits:
-        memory: "64Mi"
-        cpu: "100m"
-
   faasnetes:
     resources:
       limits:
