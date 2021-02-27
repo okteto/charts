@@ -13,7 +13,7 @@ flux:
       configFileName: /dockercfg/config.json
   extraContainers:
     - name: recv
-      image: fluxcd/flux-recv:0.4.0
+      image: fluxcd/flux-recv:0.6.0
       args:
       - --config=/etc/fluxrecv/fluxrecv.yaml
       ports:
