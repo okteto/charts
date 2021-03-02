@@ -66,7 +66,7 @@ Create the name of the service account to use
 Get the image name
 */}}
 {{- define "theia.image" -}}
-{{- $runtimes := list "nodejs" "go" "php" "dart" "cpp" "java" "rust" -}}
+{{- $runtimes := list "nodejs" "go" "php" "dart" "cpp" "java" "rust" "python" -}}
 {{if has .Values.runtime $runtimes }}
    {{- if eq .Values.runtime "nodejs" -}}
    {{- printf "%s:%s" .Values.image.repository .Values.image.tag -}}
