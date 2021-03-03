@@ -46,7 +46,7 @@ spec:
           command: 
           - sh 
           - -c
-          - ( [[ ! -z "$GIT_TOKEN" ]] && (cp /var/okteto/helper/creds $HOME/.creds && chmod +x $HOME/.creds && git config --global credential.helper $HOME/.creds));{{ if .Values.repository }}(test -d /home/project/.git || git clone {{ .Values.repository }} /home/project);{{ end }}PATH=$PATH:/var/okteto/bin node $HOME/src-gen/backend/main.js /home/project --hostname=0.0.0.0{{ if .Values.service.port }} --port {{ .Values.service.port }}{{ end }}
+          - ( [ ! -z "$GIT_TOKEN" ] && (cp /var/okteto/helper/creds /home/theia/.creds && chmod +x /home/theia/.creds && git config --global credential.helper /home/theia/.creds));{{ if .Values.repository }}(test -d /home/project/.git || git clone {{ .Values.repository }} /home/project);{{ end }}PATH=$PATH:/var/okteto/bin node /home/theia/src-gen/backend/main.js /home/project --hostname=0.0.0.0{{ if .Values.service.port }} --port {{ .Values.service.port }}{{ end }}
           env:
             - name: THEIA_PLUGINS
               value: /home/plugins
