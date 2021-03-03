@@ -5,12 +5,13 @@ RUN wget -O /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download
 
 # the public URL of the repo e.g. https://charts-rberrelleza.cloud.okteto.net
 ARG URL
+ARG TASK=all
 
 COPY . . 
 RUN echo $URL
-RUN make all
+RUN make $TASK
 
-FROM bitnami/nginx
+FROM bitnami/nginx:1.19
 COPY --from=build /usr/src/app/public /app
 
 
