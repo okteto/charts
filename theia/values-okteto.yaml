@@ -1,11 +1,10 @@
 # available runtimes: go, python, dart, cpp, java, rust, nodejs
 runtime: nodejs
 
-# use this to clone a public repository automatically
+# use this to clone a repository automatically
 repository: https://github.com/okteto/movies
 
 # set this when using a private repository https://github.com/settings/tokens
-# or add a GIT_TOKEN okteto secret
 gitToken:
 
 persistence:
@@ -16,7 +15,7 @@ resources:
     cpu: "1"
     memory: 2Gi
 
-# This is the port that Theia is running on. Change this if you want to use this port instead
+# This is the port that Theia is running on. 
+# Change this if your want to use port 3000 for your app.
 service:
   port: 3000 # Default Theia port
-

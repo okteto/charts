@@ -1,13 +1,13 @@
 runtime: nodejs
 repository:
-gitToken:
+gitToken: 
 
 persistence:
   size: 1Gi
 
 image:
   repository: theiaide/theia
-  tag: 1.4.0
+  tag:
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []

@@ -4,5 +4,6 @@ command: ["bash"]
 push:
   args:
     - URL=https://charts-$NAMESPACE.cloud.okteto.net
+    - TASK=dev
 sync:
 - .:/usr/src/app
