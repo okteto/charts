@@ -1,4 +1,7 @@
 password: okteto
 
-cluster:
-  enabled: false
+master:
+  resources:
+    limits:
+      memory: 256Mi
+      cpu: 500m
