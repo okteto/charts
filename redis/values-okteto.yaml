@@ -1,4 +1,21 @@
 password: okteto
 
+master:
+  persistence:
+    size: 2Gi
+  resources:
+    limits:
+      memory: 256Mi
+      cpu: 500m
+
 cluster:
   enabled: false
+  slaveCount: 2
+
+slave:
+  persistence:
+    size: 2Gi
+  resources:
+    limits:
+      memory: 256Mi
+      cpu: 500m
