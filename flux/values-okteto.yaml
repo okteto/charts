@@ -108,4 +108,4 @@ helm-operator:
 
   image:
     repository: docker.io/fluxcd/helm-operator
-    tag: 1.0.0
+    tag: 1.2.0
