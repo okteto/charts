@@ -2,11 +2,10 @@
 runtime: nodejs
 
 # use this to clone a public repository automatically
+# if cloning a private repository do this before deploying your CloudIDE:
+# 1. create a personal token (https://github.com/settings/tokens)
+# 2. create a secret named GIT_TOKEN with the token as the value.
 repository: https://github.com/okteto/movies
-
-# set this when using a private repository https://github.com/settings/tokens
-# or add a GIT_TOKEN okteto secret
-gitToken:
 
 persistence:
   size: 1Gi
@@ -20,3 +19,5 @@ resources:
 service:
   port: 3000 # Default Theia port
 
+# this will be replaced by Okteto in deployment time
+gitToken: $GIT_TOKEN
