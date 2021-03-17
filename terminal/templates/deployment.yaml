@@ -5,6 +5,7 @@ metadata:
     {{- include "terminal.labels" . | nindent 4 }}
   name: {{ include "terminal.fullname" . }}
 spec:
+  replicas: 1
   selector:
     matchLabels:
       {{- include "terminal.selectorLabels" . | nindent 6 }}
@@ -13,7 +14,6 @@ spec:
       labels:
         {{- include "terminal.selectorLabels" . | nindent 8 }}
     spec:
-      replicas: 1
       containers:
       - image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: IfNotPresent
