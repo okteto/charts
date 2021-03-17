@@ -13,6 +13,7 @@ spec:
       labels:
         {{- include "terminal.selectorLabels" . | nindent 8 }}
     spec:
+      replicas: 1
       containers:
       - image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: IfNotPresent
