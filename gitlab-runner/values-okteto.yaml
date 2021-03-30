@@ -22,28 +22,15 @@ gitlab-runner:
 
 
   ## Configuration for the Pods that the runner launches for each new job
+  ## https://docs.gitlab.com/runner/executors/kubernetes.html
   runners:
-    image: ubuntu:18.04
-
-    builds:
-      cpuLimit: 1
-      memoryLimit: 1024Mi
-    
-    # Deploy a Minio instance to enable cross-job caching
-    # cache:
-    #  cacheType: s3
-    #  s3ServerAddress: minio:9000
-    #  s3BucketName: cache
-    #  s3CacheInsecure: true
-    #  cacheShared: true
-
-    
-    ## Service Container specific configuration
-    services:
-      cpuLimit: 100m
-      memoryLimit: 128Mi
-
-    ## Helper Container specific configuration
-    helpers:
-      cpuLimit: 100m
-      memoryLimit: 128Mi
+    config: |
+      [[runners]]
+        [runners.kubernetes]
+          image = "ubuntu:18.04"
+          cpu_limit = "1"
+          memory_limit = "1024Mi"
+          helper_cpu_limit = "200m"
+          helper_memory_limit = "1024Mi"
+          service_cpu_limit = "100m"
+          service_memory_limit = "512Mi"
