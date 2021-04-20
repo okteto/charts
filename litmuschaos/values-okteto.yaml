@@ -1,6 +1,9 @@
 litmus:
-  replicaCount: 1
-  resources:
-    limits: 
-      cpu: 500m
-      memory: 128Mi
+  adminConfig:
+    DBUSER: "admin"
+    DBPASSWORD: "1234"
+    JWTSecret: "litmus-portal@123"
+  
+  mongo:
+    persistence:
+      size: 1Gi
