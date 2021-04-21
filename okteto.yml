@@ -1,5 +1,6 @@
 name: charts
-image: okteto/charts:dev
+autocreate: true
+image: okteto.dev/charts
 command: ["bash"]
 push:
   args:
