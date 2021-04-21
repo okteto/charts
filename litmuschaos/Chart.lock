@@ -1,6 +1,6 @@
 dependencies:
 - name: litmus-2-0-0-beta
   repository: https://litmuschaos.github.io/litmus-helm
-  version: 2.0.9-Beta3
-digest: sha256:728ef635894af7d6493c174f5fea292603886603bac04414891ca1644feaa3b2
-generated: "2021-04-19T22:04:29.081286-07:00"
+  version: 2.0.11-Beta3
+digest: sha256:9e74ba50788fcfe3905bfca2c8bcc11d3cb46b00247575291993f1e9722d784b
+generated: "2021-04-20T17:30:32.706302-07:00"

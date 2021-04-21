@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "2.0.0"
 description: Cloud-Native Chaos Engineering for Kubernetes Developers
 name: litmuschaos
-version: 2.0.9-Beta3
+version: 2.0.11-Beta3
 home: https://litmuschaos.io
 sources:
   - https://github.com/litmuschaos/litmus
@@ -21,5 +21,5 @@ icon: https://apps.okteto.com/litmus/icon.png
 dependencies:
   - name: litmus-2-0-0-beta
     alias: litmus
-    version: "2.0.9-Beta3"
+    version: "2.0.11-Beta3"
     repository: "https://litmuschaos.github.io/litmus-helm"
