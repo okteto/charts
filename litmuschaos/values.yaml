@@ -1,57 +1,6 @@
 litmus:
   portalScope: namespace
   
-  adminConfig:
-    DBUSER: "admin"
-    DBPASSWORD: "1234"
-    JWTSecret: "litmus-portal@123"
-
-  portal:
-    authServer:
-      resources:
-        limits:
-          cpu: 200m
-          memory: 250Mi
-    frontend:
-      resources:
-        limits:
-          cpu: 200m
-          memory: 400Mi
-    server:
-      graphqlServer:
-        env:
-          SUBSCRIBER_IMAGE: "litmuschaos/litmusportal-subscriber:2.0.0-Beta3"
-          EVENT_TRACKER_IMAGE: "litmuschaos/litmusportal-event-tracker:2.0.0-Beta3"
-          ARGO_SERVER_IMAGE: "argoproj/argocli:v2.9.3"
-          ARGO_WORKFLOW_CONTROLLER_IMAGE: "argoproj/workflow-controller:v2.9.3"
-          ARGO_WORKFLOW_EXECUTOR_IMAGE: "argoproj/argoexec:v2.9.3"
-          LITMUS_CHAOS_OPERATOR_IMAGE: "litmuschaos/chaos-operator:1.13.3"
-          LITMUS_CHAOS_RUNNER_IMAGE: "litmuschaos/chaos-runner:1.13.3"
-          LITMUS_CHAOS_EXPORTER_IMAGE: "litmuschaos/chaos-exporter:1.13.3"
-          SELF_CLUSTER: "true"
-          SERVER_SERVICE_NAME: "litmusportal-server-service"
-          PORTAL_ENDPOINT: "http://litmusportal-server-service:9002"
-          CONTAINER_RUNTIME_EXECUTOR: "k8sapi"
-        resources:
-          limits:
-            cpu: 200m
-            memory: 400Mi
-      authServer:
-        resources:
-          limits:
-            cpu: 200m
-            memory: 400Mi
-      
-  ingress:
-    enabled: true
-    annotations:
-      dev.okteto.com/generate-host: "true"
-      nginx.ingress.kubernetes.io/rewrite-target: "/$1"
-      
   mongo:
     persistence:
-      size: 1Gi
-    resources:
-      limits:
-        cpu: 200m
-        memory: 400Mi
+      size: 3Gi

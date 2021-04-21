@@ -1,9 +1,4 @@
 litmus:
-  adminConfig:
-    DBUSER: "admin"
-    DBPASSWORD: "1234"
-    JWTSecret: "litmus-portal@123"
-  
   mongo:
     persistence:
-      size: 1Gi
+      size: 3Gi
