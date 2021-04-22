@@ -1,7 +1,6 @@
 minio:
-  mode: standalone
-  accessKey: ""
-  secretKey: ""
+  accessKey: "myaccesskey"
+  secretKey: "mysecretkey"
   replicas: 1
   persistence:
     size: 1Gi
@@ -18,9 +17,6 @@ minio:
     limits:
       memory: 256Mi
       cpu: 500m
-
-
-  
   
 
   
