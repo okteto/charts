@@ -1,8 +1,8 @@
 apiVersion: v2
-appVersion: "1.7.0"
+appVersion: "2.0.0"
 description: Cloud-Native Chaos Engineering for Kubernetes Developers
 name: litmuschaos
-version: 1.7.0
+version: 2.0.13-Beta4
 home: https://litmuschaos.io
 sources:
   - https://github.com/litmuschaos/litmus
@@ -11,12 +11,15 @@ keywords:
   - resiliency
   - kubernetes
 maintainers:
-  - name: ksatchit
-    email: karthik.s@mayadata.io
-  - name: chandankumar4
-    email: chandan.kumar@mayadata.io
+  - name: rajdas98
+    email: raj.das@mayadata.io
+  - name: ispeakc0de
+    email: shubham.chaudhary@mayadata.io
+  - name: jasstkn
+    email: jasssstkn@yahoo.com
 icon: https://apps.okteto.com/litmus/icon.png
 dependencies:
-  - name: litmus
-    version: "1.7.0"
+  - name: litmus-2-0-0-beta
+    alias: litmus
+    version: "2.0.13-Beta4"
     repository: "https://litmuschaos.github.io/litmus-helm"
