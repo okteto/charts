@@ -4,7 +4,7 @@ image: okteto.dev/charts
 command: ["bash"]
 push:
   args:
-    - URL=https://charts-$NAMESPACE.cloud.okteto.net
+    - URL=https://charts-$OKTETO_NAMESPACE.cloud.okteto.net
     - TASK=dev
 sync:
 - .:/usr/src/app
