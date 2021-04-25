@@ -1,9 +1,9 @@
 dependencies:
 - name: flux
   repository: https://charts.fluxcd.io
-  version: 1.8.0
+  version: 1.9.0
 - name: helm-operator
   repository: https://charts.fluxcd.io
   version: 1.2.0
-digest: sha256:ea811bcb4c98f408c858cb9f6a5cdaa6430b2ac76755bb9d18e444f597fbcf75
-generated: "2021-04-01T19:49:09.94702-04:00"
+digest: sha256:ece1d404bafcedf1d9d3aefb0f209dc84dd7008de5aeffed514b080f1f7c8fcd
+generated: "2021-04-24T09:27:03.663404-04:00"
