@@ -8,11 +8,11 @@ TensorFlow is an open source software library for numerical computation using da
 
 ## Prerequisites
 
-- Kubernetes cluster v1.8+ 
+- Kubernetes cluster v1.8+
 
 ## Chart Details
 
-This chart will deploy the followings:
+This chart will deploy the following:
 
 - Jupyter Notebook with TensorFlow
 - Tensorboard
@@ -26,7 +26,7 @@ chart and their default values.
 |-----------|-------------|---------|----------|
 | `jupyter.image.repository` | TensorFlow Development image repository | `tensorflow/tensorflow` | No |
 | `jupyter.image.tag` | TensorFlow Development image tag | `1.5.0-devel-gpu` | No |
-| `jupyter.password` | The password to access jupyter | `okteto` | No | 
+| `jupyter.password` | The password to access jupyter | `okteto` | No |
 | `jupyter.image.pullPolicy` | image pullPolicy for the  jupyter | `IfNotPresent` | No |
 | `jupyter.persistence.accessMode` | Volume access mode |  `ReadWriteOnce` | Yes (Required if persitence is enabled) |
 | `jupyter.persistence.enabled` | Data persistence | `true` | No |

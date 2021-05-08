@@ -1,5 +1,5 @@
 
-Flux has been installed successfully. 
+Flux has been installed successfully.
 
 Configure a deploy key in your git repository. You can get the public key from the logs by running:
 

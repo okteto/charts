@@ -7,11 +7,9 @@ RUN wget -O /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download
 ARG URL
 ARG TASK=all
 
-COPY . . 
+COPY . .
 RUN echo $URL
 RUN make $TASK
 
 FROM bitnami/nginx:1.19
 COPY --from=build /usr/src/app/public /app
-
-

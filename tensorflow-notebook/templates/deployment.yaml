@@ -32,7 +32,7 @@ spec:
             - jupyter
           args:
             - notebook
-            - --allow-root      
+            - --allow-root
           env:
             - name: PASSWORD
               valueFrom:

@@ -1,6 +1,6 @@
 runtime: nodejs
 repository:
-gitToken: 
+gitToken:
 
 persistence:
   size: 1Gi
@@ -22,7 +22,7 @@ podSecurityContext:
   runAsUser: 1001
   runAsGroup: 1000
   fsGroup: 1001
-  
+
 service:
   type: ClusterIP
   port: 3000

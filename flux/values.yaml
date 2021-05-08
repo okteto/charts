@@ -36,7 +36,7 @@ flux:
       secret:
         secretName: flux-recv
         defaultMode: 0400
-  resources:  
+  resources:
     limits:
       cpu: 100m
       memory: 128Mi

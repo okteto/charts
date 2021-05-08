@@ -1,6 +1,6 @@
 # inlets-chart
 
-inlets combines a reverse proxy and websocket tunnels to expose your internal and development endpoints to the public Internet via an exit-node. This Helm chart lets you launch an inlet tunnel over a existing Kubernetes cluster.
+inlets combine a reverse proxy and websocket tunnels to expose your internal and development endpoints to the public Internet via an exit-node. This Helm chart lets you launch an inlet tunnel over an existing Kubernetes cluster.
 
 To learn more about inlets go to `https://docs.inlets.dev/#/`
 
@@ -52,7 +52,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Parameters
 
-The following table lists the configurable parameters of the inlets chart and their default values.
+The following table lists the configurable parameters of the inlets chart, and their default values.
 |                 Parameter                 |                                              Description                                               |                           Default                            |
 |-------------------------------------------|--------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
 | `token`                                   | Token for authentication                                                                               | `inlets`                                                     |
@@ -73,5 +73,3 @@ The following table lists the configurable parameters of the inlets chart and th
 | `tolerations`                             | List of node taints to tolerate                                                                        | `[]`                                                         |
 | `affinity`                                | Map of node/pod affinities                                                                             | `{}`                                                         |
 | `podAnnotations`                          | Pod annotations                                                                                        | `{}`                                                         |
-
-

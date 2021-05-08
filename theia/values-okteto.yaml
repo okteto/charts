@@ -15,7 +15,7 @@ resources:
     cpu: "1"
     memory: 2Gi
 
-# This is the port that Theia is running on. 
+# This is the port that Theia is running on.
 # Change this if your want to use port 3000 for your app.
 service:
   port: 3000 # Default Theia port

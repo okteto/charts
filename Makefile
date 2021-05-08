@@ -25,6 +25,6 @@ index:
 
 devindex:
 	helm repo index --url $(URL) public
-	
+
 publish:
 	gsutil -m -h "Cache-Control:public, max-age=60" rsync -r public gs://apps.okteto.com

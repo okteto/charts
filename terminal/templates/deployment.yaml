@@ -20,13 +20,13 @@ spec:
         name: terminal
         command:
         - /usr/local/bin/gotty
-        - --permit-write 
-        - --reconnect 
+        - --permit-write
+        - --reconnect
         - /bin/bash
         ports:
         - containerPort: {{ .Values.port }}
           protocol: TCP
-        resources: 
+        resources:
         {{- .Values.resources | toYaml | nindent 10 }}
       securityContext: {}
       terminationGracePeriodSeconds: 1

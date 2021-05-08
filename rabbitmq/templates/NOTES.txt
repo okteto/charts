@@ -5,5 +5,5 @@ Credentials:
 
     Username      : {{ .Values.rabbitmq.auth.username }}
     Password      : {{ .Values.rabbitmq.auth.password }}
-    
+
 RabbitMQ can be accessed within the cluster on port {{ .Values.rabbitmq.service.nodePort }} at {{ template "rabbitmq.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local

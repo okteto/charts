@@ -21,7 +21,7 @@ ingress:
   hosts:
     - inlets.local
   tls: []
-  
+
 resources: {}
 nodeSelector: {}
 tolerations: []

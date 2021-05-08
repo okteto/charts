@@ -14,7 +14,7 @@ minio:
     enabled: true
     annotations:
       dev.okteto.com/generate-host: "true"
-  
+
   tls:
     enabled: false
 
@@ -26,7 +26,7 @@ minio:
     enabled: true
     existingClaim: ""
     size: 500Mb
-  
+
   resources:
     limits:
       memory: 64Mi
@@ -35,7 +35,7 @@ minio:
     requests:
       memory: 0Mi
       cpu: 0m
-      
+
   securityContext:
     enabled: true
     runAsUser: 1000
@@ -44,6 +44,6 @@ minio:
 
   service:
     type: ClusterIP
-  
+
   serviceAccount:
     create: false

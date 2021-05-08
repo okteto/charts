@@ -92,6 +92,3 @@ Get the image tag based on the runtime
     {{- printf "1.10.0" -}}
 {{- end -}}
 {{- end -}}
-
-
-

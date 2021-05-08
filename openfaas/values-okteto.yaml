@@ -1,8 +1,8 @@
 openfaas:
-  
+
   # if empty, it will pick up a random password
   adminPassword: "Password123!"
-  
+
   gateway:
     resources:
       limits:
@@ -35,4 +35,3 @@ openfaas:
 
   # this will be replaced by Okteto during deployment
   functionNamespace: $NAMESPACE
-
