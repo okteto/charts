@@ -91,4 +91,10 @@ spec:
           - name: data
             mountPath: /home/theia/.theia
             subPath: theia
+          - name: data
+            mountPath: /home/theia/.local
+            subPath: local
+          - name: data
+            mountPath: /home/theia/.cache
+            subPath: cache
   
