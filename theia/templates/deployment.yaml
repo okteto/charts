@@ -88,7 +88,7 @@ spec:
           - name: data
             mountPath: /home/plugins
             subPath: plugins
-          - name: theia
+          - name: data
             mountPath: /home/theia/.theia
             subPath: theia
   
