@@ -2,6 +2,7 @@ rabbitmq:
   auth:
     username: okteto
     password: okteto
+    erlangCookie: okteto
 
-persistence:
-  size: 1Gi
+  persistence:
+    size: 1Gi
