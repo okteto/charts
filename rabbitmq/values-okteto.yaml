@@ -2,3 +2,6 @@ rabbitmq:
   auth:
     username: okteto
     password: okteto
+
+persistence:
+  size: 1Gi
