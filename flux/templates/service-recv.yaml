@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ include "flux.fullname" . }}-recv
   annotations:
-    dev.okteto.com/auto-ingress: "true"    
+    dev.okteto.com/auto-ingress: "true"
   labels:
     app: "{{ template "flux.fullname" . }}"
     chart: "{{ template "flux.chart" . }}"

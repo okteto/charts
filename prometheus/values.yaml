@@ -20,7 +20,7 @@ prometheus:
         resources:
           limits:
             memory: "64Mi"
-            cpu: "100m"  
+            cpu: "100m"
     prometheus:
         resources:
           limits:
@@ -29,13 +29,13 @@ prometheus:
 
   kubeStateMetrics:
     enabled: false
-  
+
   nodeExporter:
     enabled: false
-  
+
   pushgateway:
     enabled: false
-  
+
   server:
     enabled: true
     persistentVolume:
@@ -53,7 +53,7 @@ prometheus:
         cpu: "200m"
   rbac:
     create: false
-  
+
   serviceAccounts:
     alertmanager:
       create: false

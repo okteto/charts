@@ -7,7 +7,7 @@ prometheus:
       limits:
         memory: "128Mi"
         cpu: "200m"
-        
+
   server:
     enabled: true
     persistentVolume:
@@ -27,7 +27,7 @@ prometheus:
         resources:
           limits:
             memory: "64Mi"
-            cpu: "100m"  
+            cpu: "100m"
     prometheus:
         resources:
           limits:

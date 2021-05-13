@@ -1,14 +1,14 @@
 gitlab-runner:
-  
+
   ## The GitLab Server URL (with protocol) that want to register the runner against
   ## ref: https://docs.gitlab.com/runner/commands/README.html#gitlab-runner-register
   gitlabUrl: https://gitlab.com/
-  
+
   ## The registration token for adding new Runners to the GitLab server. This must
   ## be retrieved from your GitLab instance.
   ## ref: https://docs.gitlab.com/ee/ci/runners/
   runnerRegistrationToken:
-  
+
   ## Configure the maximum number of concurrent jobs
   concurrent: 1
 

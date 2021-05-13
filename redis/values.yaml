@@ -2,10 +2,10 @@ redis:
   auth:
     enabled: true
     password: ""
-  
+
   architecture: standalone
-  
-  replica: 
+
+  replica:
     replicaCount: 1
 
   master:

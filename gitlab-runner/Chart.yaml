@@ -7,7 +7,7 @@ description: GitLab Runner fully integrated with your Kubernetes infrastructure
 icon: https://apps.okteto.com/gitlab-runner/icon.png
 sources:
   - https://charts.gitlab.io
-  - https://github.com/okteto/charts/tree/master/gitlab-runner 
+  - https://github.com/okteto/charts/tree/master/gitlab-runner
 maintainers:
   - name: ramiro
     email: ramiro@okteto.com

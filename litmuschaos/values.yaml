@@ -1,6 +1,6 @@
 litmus:
   portalScope: namespace
-  
+
   mongo:
     persistence:
       size: 3Gi

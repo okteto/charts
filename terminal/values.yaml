@@ -2,11 +2,11 @@ image: okteto/terminal
 port: 8080
 
 nameOverride: ""
-fullnameOverride: "" 
+fullnameOverride: ""
 
 ingress:
   enabled: true
-  annotations: 
+  annotations:
     # let okteto dynamically generate the ingress hostname
     dev.okteto.com/generate-host: "true"
     dev.okteto.com/private: "true"

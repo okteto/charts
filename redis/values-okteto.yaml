@@ -2,7 +2,7 @@ redis:
   auth:
     enabled: true
     password: ""
-  
+
   master:
     persistence:
       size: 1Gi

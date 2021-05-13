@@ -1,3 +1,4 @@
+# https://circleci.com/docs/2.0/configuration-reference/
 version: 2.1
 jobs:
   build:
@@ -6,11 +7,11 @@ jobs:
     steps:
       - checkout
       - run:
-         name: build
+         name: Build
          command: make all
       - persist_to_workspace:
           root: .
-          paths: 
+          paths:
             - public
   publish:
       docker:
@@ -19,8 +20,8 @@ jobs:
         - checkout
         - attach_workspace:
             at: .
-        - run: 
-           name: publish
+        - run:
+           name: Publish
            command: |
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
             make publish
@@ -36,4 +37,3 @@ workflows:
           filters:
             branches:
               only: master
-

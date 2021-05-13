@@ -32,4 +32,4 @@ spec:
       chart: {{ template "mongodb.chart" . }}
       release: "{{ .Release.Name }}"
       heritage: "{{ .Release.Service }}"
-{{- end }}      
+{{- end }}
