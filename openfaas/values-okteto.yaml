@@ -1,37 +1,6 @@
 openfaas:
-
   # if empty, it will pick up a random password
   adminPassword: "Password123!"
-
-  gateway:
-    resources:
-      limits:
-        memory: "120Mi"
-        cpu: "50m"
-
-  faasnetes:
-    resources:
-      limits:
-        memory: "120Mi"
-        cpu: "50m"
-
-  nats:
-    resources:
-      limits:
-        memory: "120Mi"
-        cpu: "50m"
-
-  basicAuthPlugin:
-    resources:
-      limits:
-        memory: "50Mi"
-        cpu: "20m"
-
-  queueWorker:
-    resources:
-      limits:
-        memory: "120Mi"
-        cpu: "50m"
 
   # this will be replaced by Okteto during deployment
   functionNamespace: $NAMESPACE

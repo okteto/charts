@@ -13,8 +13,3 @@ ingress:
   hosts:
     - terminal.local
   tls: []
-
-resources:
-  limits:
-    memory: "64Mi"
-    cpu: "100m"

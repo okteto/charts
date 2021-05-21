@@ -1,19 +1,10 @@
 cockroachdb:
   statefulset:
     replicas: 2
-    resources:
-      limits:
-        cpu: "100m"
-        memory: "256Mi"
 
   storage:
     persistentVolume:
       size: 1Gi
-  init:
-    resources:
-      limits:
-        cpu: "10m"
-        memory: "128Mi"
   tls:
     # this requires a clusterrole
     enabled: false

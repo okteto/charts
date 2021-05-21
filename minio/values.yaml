@@ -27,15 +27,6 @@ minio:
     existingClaim: ""
     size: 500Mb
 
-  resources:
-    limits:
-      memory: 64Mi
-      cpu: 100m
-
-    requests:
-      memory: 0Mi
-      cpu: 0m
-
   securityContext:
     enabled: true
     runAsUser: 1000

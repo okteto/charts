@@ -47,10 +47,6 @@ spec:
             httpGet:
               path: /
               port: 8888
-          resources:
-            limits:
-              cpu: {{ .Values.jupyter.resources.limits.cpu }}
-              memory:  {{ .Values.jupyter.resources.limits.memory }}
           volumeMounts:
             - mountPath: /output/training_logs
               name: training-logs-volume

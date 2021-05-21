@@ -20,10 +20,6 @@ flux:
       - name: recv
         containerPort: 8080
         protocol: TCP
-      resources:
-        limits:
-          cpu: 100m
-          memory: 200Mi
       readinessProbe:
         httpGet:
           path: /health
@@ -36,16 +32,8 @@ flux:
       secret:
         secretName: flux-recv
         defaultMode: 0400
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
   memcached:
     maxMemory: 128
-    resources:
-      limits:
-        cpu: 100m
-        memory: 128Mi
 
 helm-operator:
   workers: 1
@@ -62,7 +50,3 @@ helm-operator:
   git:
     ssh:
       secretName: "flux-git-deploy"
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
