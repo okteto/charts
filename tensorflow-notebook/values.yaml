@@ -7,10 +7,6 @@ jupyter:
     tag: 1.12.0-devel-py3
     pullPolicy: Always
   password: okteto
-  resources:
-    limits:
-      cpu: 1.25
-      memory: 2.25Gi
 tensorboard:
   image:
     repository: tensorflow/tensorflow

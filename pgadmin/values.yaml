@@ -12,7 +12,3 @@ service:
 
 email:
 password:
-resources:
-  limits:
-    memory: 256Mi
-    cpu: 500m

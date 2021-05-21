@@ -1,6 +1,2 @@
 jupyter:
   password: okteto
-  resources:
-    limits:
-      cpu: 1
-      memory: 2Gi

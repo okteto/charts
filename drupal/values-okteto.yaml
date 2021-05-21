@@ -11,8 +11,3 @@ drupal:
   persistence:
     drupal:
       size: 2Gi
-
-  resources:
-    limits:
-      memory: 2Gi
-      cpu: 1

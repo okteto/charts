@@ -12,8 +12,3 @@ minio:
     name: okteto
     policy: none
     purge: false
-
-  resources:
-    limits:
-      memory: 256Mi
-      cpu: 500m

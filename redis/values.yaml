@@ -11,7 +11,3 @@ redis:
   master:
     persistence:
       size: 1Gi
-    resources:
-      limits:
-        memory: 256Mi
-        cpu: 500m

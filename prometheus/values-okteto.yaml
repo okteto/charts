@@ -3,36 +3,17 @@ prometheus:
     enabled: true
     persistentVolume:
       size: "1Gi"
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "200m"
 
   server:
     enabled: true
     persistentVolume:
       size: "1Gi"
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "200m"
     alertmanagers:
       - kubernetes_sd_configs:
           - role: pod
             namespaces:
               names:
                 - $NAMESPACE
-  configmapReload:
-    alertmanager:
-        resources:
-          limits:
-            memory: "64Mi"
-            cpu: "100m"
-    prometheus:
-        resources:
-          limits:
-            memory: "64Mi"
-            cpu: "100m"
   serverFiles:
     prometheus.yml:
       scrape_configs:
