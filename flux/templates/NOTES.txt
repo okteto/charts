@@ -14,6 +14,6 @@ Also, configure a webhook in your git repo with this information:
 To access Flux using fluxctl, follow these steps:
 
    1. Configure Access to your Okteto Cloud Namespace: `okteto namespace {{ .Release.Namespace }}`
-   2. Install fluxctl: https://docs.fluxcd.io/en/1.22.2/references/fluxctl.html
+   2. Install fluxctl: https://fluxcd.io/legacy/flux/references/fluxctl/
    3. $ export FLUX_FORWARD_NAMESPACE={{ .Release.Namespace }}
    4. $ fluxctl list-workloads
