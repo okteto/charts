@@ -81,7 +81,7 @@ flux:
 
   image:
     repository: docker.io/fluxcd/flux
-    tag: 1.23.2
+    tag: 1.24.0
 
 helm-operator:
   # Log the diff when a chart release diverges
