@@ -1,7 +1,7 @@
 apiVersion: v2
 name: flux
 home: https://fluxcd.io
-version: 1.11.1
+version: 1.11.2
 appVersion: "1.24.1"
 description: GitOps for continuous delivery
 icon: https://apps.okteto.com/flux/icon.png
@@ -15,7 +15,7 @@ keywords:
   - helm
 dependencies:
   - name: flux
-    version: "1.11.1"
+    version: "1.11.2"
     repository: "https://charts.fluxcd.io"
   - name: helm-operator
     version: "1.4.0"
