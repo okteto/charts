@@ -21,7 +21,7 @@ $(DIRS):
 
 index:
 	curl $(URL)/index.yaml -o public/index.yaml
-	helm repo index --merge public/index.yaml --url $(URL) public
+	helm repo index --url $(URL) public
 
 devindex:
 	helm repo index --url $(URL) public
