@@ -1,4 +1,4 @@
-FROM okteto/okteto:1.12.3 as build
+FROM okteto/okteto:1.14.1 as build
 WORKDIR /usr/src/app
 RUN apk add --no-cache make curl
 RUN wget -O /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download/3.3.0/yq_linux_amd64" && chmod +x /usr/local/bin/yq
