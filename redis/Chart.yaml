@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "6.2.2"
 description: Open source, advanced key-value store.
 name: redis
-version: 14.1.0
+version: 15.5.3
 home: http://redis.io/
 icon: https://apps.okteto.com/redis/icon.png
 keywords:
@@ -16,5 +16,5 @@ maintainers:
     name: desaintmartin
 dependencies:
   - name: redis
-    version: 14.1.0
+    version: 15.5.3
     repository: "https://charts.bitnami.com/bitnami"
