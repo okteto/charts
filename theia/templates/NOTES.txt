@@ -1,3 +1,0 @@
-Theia is now up an running.
-
-Click on the URL in Okteto Cloud to access it.
