@@ -1,6 +1,6 @@
 dependencies:
 - name: litmus
   repository: https://litmuschaos.github.io/litmus-helm
-  version: 1.6.4
-digest: sha256:e32c68777aa7d648606354cdf1c0102620bd0348a1511e3fadcd8be668d3d1f3
-generated: "2020-08-13T11:06:14.285142-07:00"
+  version: 2.11.1
+digest: sha256:d209c824872885db43e13f534ef836069b18057c9ac78f3ebebdfe157a713559
+generated: "2022-07-15T15:51:31.144534+02:00"
