@@ -1,6 +1,6 @@
 dependencies:
 - name: minio
-  repository: https://helm.min.io/
-  version: 8.0.10
-digest: sha256:0ee0db35d987a849953136e5f4611b27e357aa4229fb074b5ea05a6b44ee0486
-generated: "2021-04-22T00:23:25.839932-07:00"
+  repository: https://charts.min.io/
+  version: 5.0.1
+digest: sha256:04f40a625c1a26a8b0f2ffa5d8c52f754381bb690e63f9ec5bfb77d887ffc0a9
+generated: "2022-12-16T14:56:21.146243-08:00"

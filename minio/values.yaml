@@ -2,11 +2,12 @@ minio:
   mode: standalone
   accessKey: ""
   secretKey: ""
+  rootUser: ""
+  rootPassword: ""
   replicas: 1
 
-  defaultBucket:
-    enabled: false
-    name: okteto
+  buckets:
+  - name: okteto
     policy: none
     purge: false
 
@@ -24,8 +25,7 @@ minio:
 
   persistence:
     enabled: true
-    existingClaim: ""
-    size: 500Mb
+    size: 1Gi
 
   securityContext:
     enabled: true
