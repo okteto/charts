@@ -1,17 +1,13 @@
 minio:
   mode: standalone
-  accessKey: ""
-  secretKey: ""
-  rootUser: ""
-  rootPassword: ""
   replicas: 1
 
-  buckets:
-  - name: okteto
-    policy: none
-    purge: false
-
   ingress:
+    # we don't need to expose minio to the world
+    enabled: false
+
+  consoleIngress:
+    # this exposes the UI
     enabled: true
     annotations:
       dev.okteto.com/generate-host: "true"

@@ -1,14 +1,16 @@
 minio:
-  accessKey: "myaccesskey"
-  secretKey: "mysecretkey"
+  rootUser: "myaccesskey"
+  rootPassword: "mysecretkey"
   
   buckets:
   - name: okteto
     policy: none
     purge: false
 
-  rootUser: "root"
-  rootPassword: "okteto"
+  users:
+  - accessKey: okteto
+    secretKey: okteto123
+    policy: consoleAdmin
   
   replicas: 1
   
