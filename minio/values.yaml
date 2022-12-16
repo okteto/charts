@@ -1,16 +1,13 @@
 minio:
   mode: standalone
-  accessKey: ""
-  secretKey: ""
   replicas: 1
 
-  defaultBucket:
-    enabled: false
-    name: okteto
-    policy: none
-    purge: false
-
   ingress:
+    # we don't need to expose minio to the world
+    enabled: false
+
+  consoleIngress:
+    # this exposes the UI
     enabled: true
     annotations:
       dev.okteto.com/generate-host: "true"
@@ -24,8 +21,7 @@ minio:
 
   persistence:
     enabled: true
-    existingClaim: ""
-    size: 500Mb
+    size: 1Gi
 
   securityContext:
     enabled: true
