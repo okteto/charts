@@ -1,14 +1,20 @@
 minio:
-  accessKey: "myaccesskey"
-  secretKey: "mysecretkey"
+  rootUser: "myaccesskey"
+  rootPassword: "mysecretkey"
+  
+  buckets:
+  - name: okteto
+    policy: none
+    purge: false
+
+  users:
+  - accessKey: okteto
+    secretKey: okteto123
+    policy: consoleAdmin
+  
   replicas: 1
+  
   persistence:
     size: 1Gi
     # set if you want to use an existing volume
     existingClaim: ""
-
-  defaultBucket:
-    enabled: true
-    name: okteto
-    policy: none
-    purge: false

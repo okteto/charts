@@ -1,11 +1,11 @@
 apiVersion: v2
 name: minio
 home: https://min.io
-version:  8.0.10
+version:  5.0.1
 description:  MinIO is a high performance data infrastructure for machine learning, analytics and application data workloads.
 icon: https://apps.okteto.com/minio/icon.png
 sources:
-  - https://github.com/helm/charts/tree/master/stable/minio
+  - https://github.com/minio/minio
   - https://github.com/okteto/charts/tree/master/minio
 maintainers:
   - name: ramiro
@@ -14,5 +14,5 @@ keywords:
   - storage
 dependencies:
   - name: minio
-    version: "8.0.10"
-    repository: "https://helm.min.io/"
+    version: "5.0.1"
+    repository: "https://charts.min.io/"
